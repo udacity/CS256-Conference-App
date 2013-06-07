@@ -1,4 +1,4 @@
 conf
 ====
 
-Code for July Coding Month project
+Code for June Coding Month project
