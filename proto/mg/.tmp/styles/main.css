@@ -6803,7 +6803,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   box-sizing: border-box;
 }
 
-/* line 25, ../../app/styles/main.scss */
+/* line 34, ../../app/styles/main.scss */
 html, body {
   height: 100%;
   overflow: hidden;
@@ -6817,14 +6817,19 @@ html, body {
   background-color: #f9f9f9;
 }
 
-/* line 42, ../../app/styles/main.scss */
+/* line 51, ../../app/styles/main.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 55, ../../app/styles/main.scss */
 body > header {
   display: -webkit-flex;
   display: flex;
   flex: 0 0;
   -webkit-flex: 0 0;
 }
-/* line 49, ../../app/styles/main.scss */
+/* line 62, ../../app/styles/main.scss */
 body > header h1 {
   margin: 1rem;
   background-image: url("./../images/io_logo.jpg");
@@ -6834,7 +6839,7 @@ body > header h1 {
   -webkit-flex: 8;
   flex: 8;
 }
-/* line 60, ../../app/styles/main.scss */
+/* line 73, ../../app/styles/main.scss */
 body > header a {
   width: 48px;
   -webkit-justify-content: flex-end;
@@ -6845,28 +6850,28 @@ body > header a {
   background-size: 60%;
   background-position: center;
 }
-/* line 75, ../../app/styles/main.scss */
+/* line 88, ../../app/styles/main.scss */
 body > header a:active, body > header a:hover {
   background-color: #ececec;
 }
-/* line 79, ../../app/styles/main.scss */
+/* line 92, ../../app/styles/main.scss */
 body > header .search {
   background-image: url("./../images/search_icon.png");
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 96, ../../app/styles/main.scss */
 body > header .favorite {
   background-image: url("./../images/favorite_icon.png");
 }
-/* line 87, ../../app/styles/main.scss */
+/* line 100, ../../app/styles/main.scss */
 body > header .info {
   background-image: url("./../images/info_icon.png");
 }
-/* line 91, ../../app/styles/main.scss */
+/* line 104, ../../app/styles/main.scss */
 body > header select {
   margin: auto 0;
 }
 
-/* line 96, ../../app/styles/main.scss */
+/* line 109, ../../app/styles/main.scss */
 .main-content {
   /*This feels nasty, but makes flexbox, avoid stretching past the body 100% height*/
   height: 1px;
@@ -6878,7 +6883,7 @@ body > header select {
   flex: 1 1 0px;
 }
 
-/* line 110, ../../app/styles/main.scss */
+/* line 123, ../../app/styles/main.scss */
 .left-pane {
   display: -webkit-flex;
   display: flex;
@@ -6887,12 +6892,12 @@ body > header select {
   -webkit-flex: 1 1;
   flex: 1 1;
 }
-/* line 120, ../../app/styles/main.scss */
+/* line 133, ../../app/styles/main.scss */
 .left-pane .info-pane {
   -webkit-flex: 3;
   flex: 3;
 }
-/* line 125, ../../app/styles/main.scss */
+/* line 138, ../../app/styles/main.scss */
 .left-pane .menu-items-grid {
   -webkit-flex: 2;
   flex: 2;
@@ -6905,7 +6910,7 @@ body > header select {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-/* line 141, ../../app/styles/main.scss */
+/* line 154, ../../app/styles/main.scss */
 .left-pane .menu-items-grid a {
   -webkit-flex: 0 46%;
   flex: 0 46%;
@@ -6917,13 +6922,13 @@ body > header select {
   color: #f9f9f9;
 }
 @media (min-width: 680px) {
-  /* line 141, ../../app/styles/main.scss */
+  /* line 154, ../../app/styles/main.scss */
   .left-pane .menu-items-grid a {
     font-size: 3rem;
     min-height: 5rem;
   }
 }
-/* line 157, ../../app/styles/main.scss */
+/* line 170, ../../app/styles/main.scss */
 .left-pane .menu-items-grid a span {
   position: absolute;
   display: inline-block;
@@ -6931,17 +6936,17 @@ body > header select {
   padding: 1rem;
   line-height: 1.0;
 }
-/* line 168, ../../app/styles/main.scss */
+/* line 181, ../../app/styles/main.scss */
 .left-pane .menu-items-grid a:active, .left-pane .menu-items-grid a:hover {
   background-color: #787878;
 }
-/* line 173, ../../app/styles/main.scss */
+/* line 186, ../../app/styles/main.scss */
 .left-pane .wifi-details {
   text-align: center;
   margin: 0 auto 1rem auto;
 }
 
-/* line 179, ../../app/styles/main.scss */
+/* line 192, ../../app/styles/main.scss */
 .right-pane {
   display: none;
   -webkit-flex-direction: column;
@@ -6951,28 +6956,105 @@ body > header select {
   overflow-y: scroll;
 }
 @media (min-width: 1000px) {
-  /* line 179, ../../app/styles/main.scss */
+  /* line 192, ../../app/styles/main.scss */
   .right-pane {
     display: -webkit-flex;
     display: flex;
   }
 }
 
-/* line 194, ../../app/styles/main.scss */
-.sessions-now-next table {
-  width: 80%;
+/* line 206, ../../app/styles/main.scss */
+.sessions-now-next {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+/* line 216, ../../app/styles/main.scss */
+.sessions-now-next section {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
   margin: 0 auto;
 }
-/* line 199, ../../app/styles/main.scss */
-.sessions-now-next td {
-  width: 50%;
-  padding: 1rem;
+/* line 231, ../../app/styles/main.scss */
+.sessions-now-next section div {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  border-top-style: solid;
+  border-width: 0.5rem;
 }
-/* line 204, ../../app/styles/main.scss */
-.sessions-now-next td:before {
-  content: '';
-  display: block;
-  min-height: 2px;
-  height: 0.5rem;
-  background-color: #bababa;
+/* line 238, ../../app/styles/main.scss */
+.sessions-now-next section div h3, .sessions-now-next section div p {
+  margin: 1rem;
+}
+/* line 243, ../../app/styles/main.scss */
+.sessions-now-next section h2 {
+  width: 3rem;
+  text-indent: -99999px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+/* line 255, ../../app/styles/main.scss */
+.sessions-now-next section.android h2 {
+  background-color: #99cc00;
+  background-image: url("./../images/product_icons/track_android.png");
+}
+/* line 260, ../../app/styles/main.scss */
+.sessions-now-next section.android div {
+  border-color: #99cc00;
+}
+/* line 266, ../../app/styles/main.scss */
+.sessions-now-next section.chrome h2 {
+  background-color: #0294c7;
+  background-image: url("./../images/product_icons/track_chromeapps.png");
+}
+/* line 271, ../../app/styles/main.scss */
+.sessions-now-next section.chrome div {
+  border-color: #0294c7;
+}
+/* line 277, ../../app/styles/main.scss */
+.sessions-now-next section.g-plus h2 {
+  background-color: #cc4a2c;
+  background-image: url("./../images/product_icons/track_googleplus.png");
+}
+/* line 282, ../../app/styles/main.scss */
+.sessions-now-next section.g-plus div {
+  border-color: #cc4a2c;
+}
+/* line 288, ../../app/styles/main.scss */
+.sessions-now-next section.cloud h2 {
+  background-color: #ff8800;
+  background-image: url("./../images/product_icons/track_googlecloudplatform.png");
+}
+/* line 293, ../../app/styles/main.scss */
+.sessions-now-next section.cloud div {
+  border-color: #ff8800;
+}
+/* line 299, ../../app/styles/main.scss */
+.sessions-now-next section.maps h2 {
+  background-color: #ff4444;
+  background-image: url("./../images/product_icons/track_googlecloudplatform.png");
+}
+/* line 304, ../../app/styles/main.scss */
+.sessions-now-next section.maps div {
+  border-color: #ff4444;
+}
+/* line 310, ../../app/styles/main.scss */
+.sessions-now-next section.youtube h2 {
+  background-color: #cc0000;
+  background-image: url("./../images/product_icons/track_youtube.png");
+}
+/* line 315, ../../app/styles/main.scss */
+.sessions-now-next section.youtube div {
+  border-color: #cc0000;
 }

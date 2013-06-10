@@ -8,6 +8,15 @@ $dark-grey: rgb(120, 120, 120);
 $bg-color: $light-grey;
 $primary-text-color: $dark-grey;
 
+// Product Area Colors
+$android-color: rgb(153, 204, 0);
+$chrome-color: rgb(2, 148, 199);
+$google-plus-color: rgb(204, 74, 44);
+$cloud-color: rgb(255, 136, 0);
+$google-maps-color: rgb(255, 68, 68);
+$youtube-color: rgb(204, 0, 0);
+
+
 $padding: 1rem;
 
 @mixin breakpoint($point) {
@@ -37,6 +46,10 @@ html, body {
 
     color: $primary-text-color;
     background-color: $bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
 }
 
 body > header {
@@ -191,21 +204,117 @@ body > header {
 }
 
 .sessions-now-next {
-    table {
-        width: 80%;
+    -webkit-flex: 1 1;
+    flex: 1 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    section {
+        -webkit-flex: 1 1;
+        flex: 1 1;
+
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        -webkit-flex-direction: row;
+        flex-direction: row;
+
         margin: 0 auto;
-    }
 
-    td {
-        width: 50%;
-        padding: $padding;
-    }
+        div {
+            -webkit-flex: 1 1;
+            flex: 1 1;
 
-    td:before {
-        content: '';
-        display:block;
-        min-height: 2px;
-        height: 0.5rem;
-        background-color: $grey;
+            border-top-style: solid;
+            border-width: ($padding / 2);
+
+            h3, p {
+                margin: $padding;
+            }
+        }
+
+        h2 {
+            width: 3 * $padding;
+
+            text-indent: -99999px;
+            margin: 0;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &.android {
+            h2 {
+                background-color: $android-color;
+                background-image: url('./../images/product_icons/track_android.png');
+            }
+
+            div {
+                border-color: $android-color;
+            }
+        }
+
+        &.chrome {
+            h2 {
+                background-color: $chrome-color;
+                background-image: url('./../images/product_icons/track_chromeapps.png');
+            }
+
+            div {
+                border-color: $chrome-color;
+            }
+        }
+
+        &.g-plus {
+            h2 {
+                background-color: $google-plus-color;
+                background-image: url('./../images/product_icons/track_googleplus.png');
+            }
+
+            div {
+                border-color: $google-plus-color;
+            }
+        }
+
+        &.cloud {
+            h2 {
+                background-color: $cloud-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                border-color: $cloud-color;
+            }
+        }
+
+        &.maps {
+            h2 {
+                background-color: $google-maps-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                border-color: $google-maps-color;
+            }
+        }
+
+        &.youtube {
+            h2 {
+                background-color: $youtube-color;
+                background-image: url('./../images/product_icons/track_youtube.png');
+            }
+
+            div {
+                border-color: $youtube-color;
+            }
+        }
     }
 }
