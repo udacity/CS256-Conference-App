@@ -1,0 +1,472 @@
+@import "compass/css3";
+
+$light-grey: rgb(249, 249, 249);
+$grey: rgb(186, 186, 186);
+$dark-grey: rgb(120, 120, 120);
+
+$bg-color: $light-grey;
+$primary-text-color: $dark-grey;
+
+// Product Area Colors
+$android-color: rgb(153, 204, 0);
+$chrome-color: rgb(2, 148, 199);
+$google-plus-color: rgb(204, 74, 44);
+$cloud-color: rgb(255, 136, 0);
+$google-maps-color: rgb(255, 68, 68);
+$youtube-color: rgb(204, 0, 0);
+
+
+$padding: 1rem;
+
+@mixin breakpoint($point) {
+  @if $point == M {
+    @media (min-width: 580px) { @content; }
+  }
+  @else if $point == L {
+    @media (min-width: 800px)  { @content; }
+  }
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+    color: $primary-text-color;
+    background-color: $bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0, 0.0);
+}
+
+body > header {
+    display: -webkit-flex;
+    display: flex;
+
+    h1, a {
+        line-height: 2rem;
+    }
+
+    h1 {
+        margin: ($padding / 2) $padding;
+
+        background-image: url('./../images/io_logo.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+        -webkit-flex: 8;
+        flex: 8;
+    }
+
+    a {
+        width: 48px;
+
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+
+        padding: ($padding / 2) 0;
+
+        text-indent: -9999px;
+
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+    }
+
+    a:active, a:hover {
+        background-color: darken($light-grey, 5%);
+    }
+
+    .search {
+        background-image: url('./../images/search_icon.png');
+    }
+
+    .favorite {
+        background-image: url('./../images/favorite_icon.png');
+    }
+
+    .info {
+        background-image: url('./../images/info_icon.png');
+    }
+
+    select {
+        margin: auto 0;
+    }
+}
+
+.main-content {
+    /*This feels nasty, but makes flexbox, avoid stretching past the body 100% height*/
+    height: 1px;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.left-pane {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-flex: 1 1;
+    flex: 1 1;
+
+    .info-pane {
+        -webkit-flex: 4;
+        flex: 4;
+    }
+
+    .menu-items-grid {
+        -webkit-flex: 3;
+        flex: 3;
+
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        -webkit-flex-direction: row;
+        flex-direction: row;
+
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+
+        a {
+            -webkit-flex: 0 46%;
+            flex: 0 46%;
+
+            position: relative;
+
+            min-height: 3rem;
+
+            background-color: $grey;
+            margin-bottom: $padding;
+            font-size: 1.5rem;
+
+            color: $bg-color;
+
+            @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
+
+            span {
+                position: absolute;
+
+                display:inline-block;
+
+                bottom: 0px;
+                padding: 1rem;
+                line-height: 1.0;
+            }
+        }
+
+        a:active, a:hover {
+            background-color: $dark-grey;
+        }
+    }
+
+    .wifi-details {
+        margin: $padding auto;
+
+        h2{
+            margin:0;
+        }
+
+        td {
+            padding: 0 ($padding / 2);
+        }
+    }
+}
+
+.right-pane {
+    display:none;
+
+    -webkit-flex: 1 1;
+    flex: 1 1;
+
+    padding: $padding;
+
+    overflow-y: scroll;
+
+    @include breakpoint(L) { display: block; }
+}
+
+table.sessions-now-next {
+
+    width: 100%;
+
+    tr:first-child > td {
+        padding: 0 $padding;
+    }
+
+    h2 {
+        width: 3 * $padding;
+
+        text-indent: -99999px;
+        margin: 0;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    h3, p {
+        margin: $padding;
+    }
+
+    td.active, .heading {
+        border-top-style: solid;
+        border-width: ($padding / 2);
+    }
+
+    td {
+        width: 50%;
+    }
+
+    td:first-child {
+        width: auto;
+    }
+
+    .android {
+        .heading {
+            background-color: $android-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_android.png');
+        }
+
+        td.active, .heading {
+            border-color: $android-color;
+        }
+    }
+
+    .chrome {
+        .heading {
+            background-color: $chrome-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_chromeapps.png');
+        }
+
+        td.active, .heading {
+            border-color: $chrome-color;
+        }
+    }
+
+    .g-plus {
+        .heading {
+            background-color: $google-plus-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_googleplus.png');
+        }
+
+        td.active, .heading {
+            border-color: $google-plus-color;
+        }
+    }
+
+    .cloud {
+        .heading {
+            background-color: $cloud-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+        }
+
+        td.active, .heading {
+            border-color: $cloud-color;
+        }
+    }
+
+    .maps {
+        .heading {
+            background-color: $google-maps-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+        }
+
+        td.active, .heading {
+            border-color: $google-maps-color;
+        }
+    }
+
+    .youtube {
+        .heading {
+            background-color: $youtube-color;
+        }
+
+        h2 {
+            background-image: url('./../images/product_icons/track_youtube.png');
+        }
+
+        td.active, .heading {
+            border-color: $youtube-color;
+        }
+    }
+}
+
+section.sessions-now-next {
+    -webkit-flex: 1 1;
+    flex: 1 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    padding: $padding;
+
+    section {
+        -webkit-flex: 1 1;
+        flex: 1 1;
+
+        display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            -webkit-flex-direction: row;
+            flex-direction: row;
+
+        margin: 0 auto;
+
+        div.sessions {
+            -webkit-flex: 1;
+            flex: 1;
+
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+
+        div.sessions {
+            div {
+                -webkit-flex: 0 49%;
+                flex: 0 49%;
+
+                border-top-style: solid;
+                border-width: ($padding / 2);
+
+                h3, p {
+                    margin: $padding;
+                }
+            }
+
+            div:active, div:hover {
+                background-color: darken($light-grey, 5%);
+            }
+        }
+
+
+
+        h2 {
+            width: 3 * $padding;
+
+            text-indent: -99999px;
+            margin: 0;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &.android {
+            h2 {
+                background-color: $android-color;
+                background-image: url('./../images/product_icons/track_android.png');
+            }
+
+            div {
+                border-color: $android-color;
+            }
+        }
+
+        &.chrome {
+            h2 {
+                background-color: $chrome-color;
+                background-image: url('./../images/product_icons/track_chromeapps.png');
+            }
+
+            div {
+                border-color: $chrome-color;
+            }
+        }
+
+        &.g-plus {
+            h2 {
+                background-color: $google-plus-color;
+                background-image: url('./../images/product_icons/track_googleplus.png');
+            }
+
+            div {
+                border-color: $google-plus-color;
+            }
+        }
+
+        &.cloud {
+            h2 {
+                background-color: $cloud-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                border-color: $cloud-color;
+            }
+        }
+
+        &.maps {
+            h2 {
+                background-color: $google-maps-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                border-color: $google-maps-color;
+            }
+        }
+
+        &.youtube {
+            h2 {
+                background-color: $youtube-color;
+                background-image: url('./../images/product_icons/track_youtube.png');
+            }
+
+            div {
+                border-color: $youtube-color;
+            }
+        }
+    }
+}
