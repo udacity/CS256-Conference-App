@@ -114,199 +114,105 @@ body > header {
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    flex-direction: row;
 
     -webkit-flex: 1;
     flex: 1;
 }
 
-.info-pane {
-    -webkit-flex: 4;
-    flex: 4;
-}
-
-.menu-items-grid {
-    -webkit-flex: 2;
-    flex: 2;
-
+.left-pane {
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    flex-direction: column;
 
-    -webkit-flex-direction: row;
-    flex-direction: row;
+    -webkit-flex: 1 1;
+    flex: 1 1;
 
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
+    .info-pane {
+        -webkit-flex: 4;
+        flex: 4;
+    }
 
-    a {
-        -webkit-flex: 0 46%;
-        flex: 0 46%;
+    .menu-items-grid {
+        -webkit-flex: 3;
+        flex: 3;
 
-        position: relative;
+        display: -webkit-flex;
+        display: flex;
 
-        min-height: 3rem;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
 
-        background-color: $grey;
-        margin-bottom: $padding;
-        font-size: 1.5rem;
+        -webkit-flex-direction: row;
+        flex-direction: row;
 
-        color: $bg-color;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
 
-        @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
+        a {
+            -webkit-flex: 0 46%;
+            flex: 0 46%;
 
-        span {
-            position: absolute;
+            position: relative;
 
-            display:inline-block;
+            min-height: 3rem;
 
-            bottom: 0px;
-            padding: 1rem;
-            line-height: 1.0;
+            background-color: $grey;
+            margin-bottom: $padding;
+            font-size: 1.5rem;
+
+            color: $bg-color;
+
+            @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
+
+            span {
+                position: absolute;
+
+                display:inline-block;
+
+                bottom: 0px;
+                padding: 1rem;
+                line-height: 1.0;
+            }
+        }
+
+        a:active, a:hover {
+            background-color: $dark-grey;
         }
     }
 
-    a:active, a:hover {
-        background-color: $dark-grey;
+    .wifi-details {
+        margin: $padding auto;
+
+        h2{
+            margin:0;
+        }
+
+        td {
+            padding: 0 ($padding / 2);
+        }
     }
 }
 
-.wifi-details {
-    margin: $padding auto;
+.right-pane {
+    display:none;
 
-    h2{
-        margin:0;
-    }
+    -webkit-flex: 1 1;
+    flex: 1 1;
 
-    td {
-        padding: 0 ($padding / 2);
-    }
-}
+    padding: $padding;
 
-.sessions-now-next {
-    display: -webkit-flex;
-    display: flex;
+    overflow-y: scroll;
 
-    -webkit-flex-direction: row;
-    flex-direction: row;
-
-    overflow-x: scroll;
-
-    section {
-        -webkit-flex: 1;
-        flex: 1;
-
-        position: relative;
-        margin: $padding;
-
-        min-width: 12rem;
-
-        h2 {
-            position: absolute;
-            height: 100%;
-            width: 2 * $padding;
-            left: 0px;
-
-            text-indent: -99999px;
-            margin: 0;
-
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-        }
-
-        h3, p {
-            padding-left: 3 * $padding;;
-        }
-
-        h3 {
-            margin: $padding 0 0 0;
-        }
-
-        p {
-            margin: 0 0 $padding 0;
-        }
-
-        &.android {
-            h2 {
-                background-color: $android-color;
-                background-image: url('./../images/product_icons/track_android.png');
-            }
-
-            div {
-                border-color: $android-color;
-            }
-        }
-
-        &.chrome {
-            h2 {
-                background-color: $chrome-color;
-                background-image: url('./../images/product_icons/track_chromeapps.png');
-            }
-
-            div {
-                border-color: $chrome-color;
-            }
-        }
-
-        &.g-plus {
-            h2 {
-                background-color: $google-plus-color;
-                background-image: url('./../images/product_icons/track_googleplus.png');
-            }
-
-            div {
-                border-color: $google-plus-color;
-            }
-        }
-
-        &.cloud {
-            h2 {
-                background-color: $cloud-color;
-                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
-            }
-
-            div {
-                border-color: $cloud-color;
-            }
-        }
-
-        &.maps {
-            h2 {
-                background-color: $google-maps-color;
-                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
-            }
-
-            div {
-                border-color: $google-maps-color;
-            }
-        }
-
-        &.youtube {
-            h2 {
-                background-color: $youtube-color;
-                background-image: url('./../images/product_icons/track_youtube.png');
-            }
-
-            div {
-                border-color: $youtube-color;
-            }
-        }
-    }
+    @include breakpoint(L) { display: block; }
 }
 
 table.sessions-now-next {
+
     width: 100%;
-
-    display:none;
-
-    -webkit-flex: 2;
-    flex: 2;
-
-    @include breakpoint(L) { display: block; }
 
     tr:first-child > td {
         padding: 0 $padding;
@@ -425,7 +331,7 @@ table.sessions-now-next {
     }
 }
 
-/**section.sessions-now-next {
+section.sessions-now-next {
     -webkit-flex: 1 1;
     flex: 1 1;
 
@@ -563,4 +469,4 @@ table.sessions-now-next {
             }
         }
     }
-}**/
+}

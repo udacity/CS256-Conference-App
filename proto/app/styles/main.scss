@@ -114,286 +114,106 @@ body > header {
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: row;
-    flex-direction: row;
+    -webkit-flex-direction: column;
+    flex-direction: column;
 
     -webkit-flex: 1;
     flex: 1;
 }
 
-.left-pane {
+.info-pane {
+    -webkit-flex: 4;
+    flex: 4;
+}
+
+.menu-items-grid {
+    -webkit-flex: 2;
+    flex: 2;
+
+    @include breakpoint(L) { -webkit-flex: 1; flex: 1; };
+
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 
-    -webkit-flex: 1 1;
-    flex: 1 1;
+    -webkit-flex-direction: row;
+    flex-direction: row;
 
-    .info-pane {
-        -webkit-flex: 4;
-        flex: 4;
-    }
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
 
-    .menu-items-grid {
-        -webkit-flex: 3;
-        flex: 3;
+    a {
+        -webkit-flex: 0 46%;
+        flex: 0 46%;
 
-        display: -webkit-flex;
-        display: flex;
+        @include breakpoint(L) { -webkit-flex: 0 24%; flex: 0 24%; };
 
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
+        position: relative;
 
-        -webkit-flex-direction: row;
-        flex-direction: row;
+        min-height: 3rem;
 
-        -webkit-justify-content: space-around;
-        justify-content: space-around;
+        background-color: $grey;
+        margin-bottom: $padding;
+        font-size: 1.5rem;
 
-        a {
-            -webkit-flex: 0 46%;
-            flex: 0 46%;
+        color: $bg-color;
 
-            position: relative;
+        @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
 
-            min-height: 3rem;
+        span {
+            position: absolute;
 
-            background-color: $grey;
-            margin-bottom: $padding;
-            font-size: 1.5rem;
+            display:inline-block;
 
-            color: $bg-color;
-
-            @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
-
-            span {
-                position: absolute;
-
-                display:inline-block;
-
-                bottom: 0px;
-                padding: 1rem;
-                line-height: 1.0;
-            }
-        }
-
-        a:active, a:hover {
-            background-color: $dark-grey;
+            bottom: 0px;
+            padding: 1rem;
+            line-height: 1.0;
         }
     }
 
-    .wifi-details {
-        margin: $padding auto;
-
-        h2{
-            margin:0;
-        }
-
-        td {
-            padding: 0 ($padding / 2);
-        }
+    a:active, a:hover {
+        background-color: $dark-grey;
     }
 }
 
-.right-pane {
-    display:none;
+.wifi-details {
+    margin: $padding auto;
 
-    -webkit-flex: 1 1;
-    flex: 1 1;
-
-    padding: $padding;
-
-    overflow-y: scroll;
-
-    @include breakpoint(L) { display: block; }
-}
-
-table.sessions-now-next {
-
-    width: 100%;
-
-    tr:first-child > td {
-        padding: 0 $padding;
-    }
-
-    h2 {
-        width: 3 * $padding;
-
-        text-indent: -99999px;
-        margin: 0;
-
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
-
-    h3, p {
-        margin: $padding;
-    }
-
-    td.active, .heading {
-        border-top-style: solid;
-        border-width: ($padding / 2);
+    h2{
+        margin:0;
     }
 
     td {
-        width: 50%;
-    }
-
-    td:first-child {
-        width: auto;
-    }
-
-    .android {
-        .heading {
-            background-color: $android-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_android.png');
-        }
-
-        td.active, .heading {
-            border-color: $android-color;
-        }
-    }
-
-    .chrome {
-        .heading {
-            background-color: $chrome-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_chromeapps.png');
-        }
-
-        td.active, .heading {
-            border-color: $chrome-color;
-        }
-    }
-
-    .g-plus {
-        .heading {
-            background-color: $google-plus-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_googleplus.png');
-        }
-
-        td.active, .heading {
-            border-color: $google-plus-color;
-        }
-    }
-
-    .cloud {
-        .heading {
-            background-color: $cloud-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
-        }
-
-        td.active, .heading {
-            border-color: $cloud-color;
-        }
-    }
-
-    .maps {
-        .heading {
-            background-color: $google-maps-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
-        }
-
-        td.active, .heading {
-            border-color: $google-maps-color;
-        }
-    }
-
-    .youtube {
-        .heading {
-            background-color: $youtube-color;
-        }
-
-        h2 {
-            background-image: url('./../images/product_icons/track_youtube.png');
-        }
-
-        td.active, .heading {
-            border-color: $youtube-color;
-        }
+        padding: 0 ($padding / 2);
     }
 }
 
-section.sessions-now-next {
-    -webkit-flex: 1 1;
-    flex: 1 1;
+.sessions-now-next {
+    display: none;
 
-    display: -webkit-flex;
-    display: flex;
+    @include breakpoint(L) { display: -webkit-flex; display: flex; };
 
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    flex-direction: row;
 
-    padding: $padding;
+    overflow-x: scroll;
 
     section {
-        -webkit-flex: 1 1;
-        flex: 1 1;
+        -webkit-flex: 1;
+        flex: 1;
 
-        display: -webkit-flex;
-            display: flex;
+        position: relative;
+        margin: $padding;
 
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-            -webkit-flex-direction: row;
-            flex-direction: row;
-
-        margin: 0 auto;
-
-        div.sessions {
-            -webkit-flex: 1;
-            flex: 1;
-
-            display: -webkit-flex;
-            display: flex;
-
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-            -webkit-flex-direction: row;
-            flex-direction: row;
-        }
-
-        div.sessions {
-            div {
-                -webkit-flex: 0 49%;
-                flex: 0 49%;
-
-                border-top-style: solid;
-                border-width: ($padding / 2);
-
-                h3, p {
-                    margin: $padding;
-                }
-            }
-
-            div:active, div:hover {
-                background-color: darken($light-grey, 5%);
-            }
-        }
-
-
+        min-width: 12rem;
 
         h2 {
-            width: 3 * $padding;
+            position: absolute;
+            height: 100%;
+            width: 2 * $padding;
+            left: 0px;
 
             text-indent: -99999px;
             margin: 0;
@@ -401,6 +221,18 @@ section.sessions-now-next {
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
+        }
+
+        h3, p {
+            padding-left: 3 * $padding;;
+        }
+
+        h3 {
+            margin: $padding 0 0 0;
+        }
+
+        p {
+            margin: 0 0 $padding 0;
         }
 
         &.android {
