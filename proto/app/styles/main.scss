@@ -52,6 +52,10 @@ a {
     -webkit-tap-highlight-color: rgba(0,0,0, 0.0);
 }
 
+.bold {
+    font-weight: bold;
+}
+
 body > header {
     display: -webkit-flex;
     display: flex;
@@ -100,6 +104,10 @@ body > header {
 
     .info {
         background-image: url('./../images/info_icon.png');
+    }
+
+    .filter {
+        background-image: url('./../images/filter_icon.png');
     }
 
     select {
@@ -299,6 +307,86 @@ body > header {
             div {
                 border-color: $youtube-color;
             }
+        }
+    }
+}
+
+$pixels-per-minute: 2px;
+$location-width: 125px;
+$row-height: 50px;
+$number-of-rooms: 10;
+
+.schedule-grid {
+    -webkit-flex: 1;
+    flex: 1;
+
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#timeline {
+    display: -webkit-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 $location-width;
+    overflow-x: scroll;
+    background-color: rgb(150, 150, 150);
+
+    li {
+        display: block;
+        /*One hour == 120px i.e. 2px per minute*/
+        min-width: 60 * $pixels-per-minute - 16px;
+        padding: 8px;
+    }
+}
+
+.content {
+    -webkit-flex: 9;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    height: 100%;
+    background-color: rgb(50, 255, 255);
+}
+
+#locations {
+    list-style: none;
+    width: $location-width;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    background-color: rgb(200, 200, 200);
+
+    li {
+        display: block;
+        height:$row-height - 1px;
+        line-height: $row-height;
+        padding: 0 $padding;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: rgb(185, 185, 185);
+    }
+}
+
+#grid-content {
+    -webkit-flex: 1;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+
+    .row {
+        width:60 * $pixels-per-minute * 24;
+        height: $row-height - 1px;
+        line-height: $row-height;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: rgb(185, 185, 185);
+        position: relative;
+
+        div {
+            position: absolute;
         }
     }
 }
