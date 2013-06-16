@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+  		<!-- meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+     	<!-- title -->
+      <title>Map</title>
+
+      <!-- style -->
+      <link rel="stylesheet" href="./../styles/main.css">
+      <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
+
+      <!-- build:js scripts/vendor/modernizr.js -->
+      <script src="./../bower_components/modernizr/modernizr.js"></script>
+      <!-- endbuild -->
+  </head>
+  <body id="map-main">
+
+  	<!-- header -->
+    <header>
+      <h1>Schedule</h1>
+      <a class="map-pins" href="#">Pins</a>
+    </header>
+
+    <div class="main-content">
+    	
+    	<!-- map (iframe) -->
+    	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;dg=opt&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
+
+    	<!-- overlays -->
+    	<article class="map-current-talk">
+    		<h1>Room 1</h1>
+    		<p class="map-talk-type">Current Talk</p>
+    		<dl>
+    			<dt>Title: The title</dt>
+    			<dd>16:00 - 17:00</dd>
+    		</dl>
+    		<p class="map-talk-type">Next Talk</p>
+    		<dl>
+    			<dt>Title: The title</dt>
+    			<dd>17:00 - 18:00</dd>
+    		</dl> 
+
+    		<img class="map-talk-end" src="./../images/badge-talk-end.png">   		
+    	</article>
+
+    </div>
+
+  </body>
+</html>

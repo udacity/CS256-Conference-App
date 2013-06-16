@@ -14,8 +14,6 @@ $google-plus-color: rgb(204, 74, 44);
 $cloud-color: rgb(255, 136, 0);
 $google-maps-color: rgb(255, 68, 68);
 $youtube-color: rgb(204, 0, 0);
-
-
 $padding: 1rem;
 
 @mixin breakpoint($point) {
@@ -390,3 +388,5 @@ $number-of-rooms: 10;
         }
     }
 }
+
+@import "map";
