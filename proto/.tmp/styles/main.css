@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000330}}
+/* line 34, ../../app/styles/main.scss */
 html, body {
   height: 100%;
   overflow: hidden;
@@ -12,31 +12,31 @@ html, body {
   background-color: #f9f9f9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000347}}
+/* line 51, ../../app/styles/main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000351}}
+/* line 55, ../../app/styles/main.scss */
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000355}}
+/* line 59, ../../app/styles/main.scss */
 .bold {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000359}}
+/* line 63, ../../app/styles/main.scss */
 body > header {
   display: -webkit-flex;
   display: flex;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000363}}
+/* line 67, ../../app/styles/main.scss */
 body > header h1, body > header a {
   line-height: 2rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000367}}
+/* line 71, ../../app/styles/main.scss */
 body > header h1 {
   margin: 0.5rem 1rem;
   background-image: url("./../images/io_logo.jpg");
@@ -46,7 +46,7 @@ body > header h1 {
   -webkit-flex: 8;
   flex: 8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000378}}
+/* line 82, ../../app/styles/main.scss */
 body > header a {
   width: 48px;
   -webkit-justify-content: flex-end;
@@ -57,32 +57,32 @@ body > header a {
   background-size: 80%;
   background-position: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000393}}
+/* line 97, ../../app/styles/main.scss */
 body > header a:active, body > header a:hover {
   background-color: #ececec;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000397}}
+/* line 101, ../../app/styles/main.scss */
 body > header .search {
   background-image: url("./../images/search_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003101}}
+/* line 105, ../../app/styles/main.scss */
 body > header .favorite {
   background-image: url("./../images/favorite_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003105}}
+/* line 109, ../../app/styles/main.scss */
 body > header .info {
   background-image: url("./../images/info_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003109}}
+/* line 113, ../../app/styles/main.scss */
 body > header .filter {
   background-image: url("./../images/filter_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003113}}
+/* line 117, ../../app/styles/main.scss */
 body > header select {
   margin: auto 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003118}}
+/* line 122, ../../app/styles/main.scss */
 .main-content {
   /*This feels nasty, but makes flexbox, avoid stretching past the body 100% height*/
   height: 1px;
@@ -94,13 +94,13 @@ body > header select {
   flex: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003132}}
+/* line 136, ../../app/styles/main.scss */
 .info-pane {
   -webkit-flex: 4;
   flex: 4;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003137}}
+/* line 141, ../../app/styles/main.scss */
 .menu-items-grid {
   -webkit-flex: 2;
   flex: 2;
@@ -114,13 +114,13 @@ body > header select {
   justify-content: space-around;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003137}}
+  /* line 141, ../../app/styles/main.scss */
   .menu-items-grid {
     -webkit-flex: 1;
     flex: 1;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+/* line 159, ../../app/styles/main.scss */
 .menu-items-grid a {
   -webkit-flex: 0 46%;
   flex: 0 46%;
@@ -132,20 +132,20 @@ body > header select {
   color: #f9f9f9;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+  /* line 159, ../../app/styles/main.scss */
   .menu-items-grid a {
     -webkit-flex: 0 24%;
     flex: 0 24%;
   }
 }
 @media (min-width: 580px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+  /* line 159, ../../app/styles/main.scss */
   .menu-items-grid a {
     font-size: 2rem;
     min-height: 4rem;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003173}}
+/* line 177, ../../app/styles/main.scss */
 .menu-items-grid a span {
   position: absolute;
   display: inline-block;
@@ -153,25 +153,25 @@ body > header select {
   padding: 1rem;
   line-height: 1.0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003184}}
+/* line 188, ../../app/styles/main.scss */
 .menu-items-grid a:active, .menu-items-grid a:hover {
   background-color: #787878;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003189}}
+/* line 193, ../../app/styles/main.scss */
 .wifi-details {
   margin: 1rem auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003192}}
+/* line 196, ../../app/styles/main.scss */
 .wifi-details h2 {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003196}}
+/* line 200, ../../app/styles/main.scss */
 .wifi-details td {
   padding: 0 0.5rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003201}}
+/* line 205, ../../app/styles/main.scss */
 .sessions-now-next {
   display: none;
   -webkit-flex-direction: row;
@@ -179,13 +179,13 @@ body > header select {
   overflow-x: scroll;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003201}}
+  /* line 205, ../../app/styles/main.scss */
   .sessions-now-next {
     display: -webkit-flex;
     display: flex;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003211}}
+/* line 215, ../../app/styles/main.scss */
 .sessions-now-next section {
   -webkit-flex: 1;
   flex: 1;
@@ -193,7 +193,7 @@ body > header select {
   margin: 1rem;
   min-width: 12rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003220}}
+/* line 224, ../../app/styles/main.scss */
 .sessions-now-next section h2 {
   position: absolute;
   height: 100%;
@@ -205,148 +205,212 @@ body > header select {
   background-size: contain;
   background-position: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003234}}
+/* line 238, ../../app/styles/main.scss */
 .sessions-now-next section h3, .sessions-now-next section p {
   padding-left: 3rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003238}}
+/* line 242, ../../app/styles/main.scss */
 .sessions-now-next section h3 {
   margin: 1rem 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003242}}
+/* line 246, ../../app/styles/main.scss */
 .sessions-now-next section p {
   margin: 0 0 1rem 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003247}}
+/* line 251, ../../app/styles/main.scss */
 .sessions-now-next section.android h2 {
   background-color: #99cc00;
   background-image: url("./../images/product_icons/track_android.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003252}}
+/* line 256, ../../app/styles/main.scss */
 .sessions-now-next section.android div {
   border-color: #99cc00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003258}}
+/* line 262, ../../app/styles/main.scss */
 .sessions-now-next section.chrome h2 {
   background-color: #0294c7;
   background-image: url("./../images/product_icons/track_chromeapps.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003263}}
+/* line 267, ../../app/styles/main.scss */
 .sessions-now-next section.chrome div {
   border-color: #0294c7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003269}}
+/* line 273, ../../app/styles/main.scss */
 .sessions-now-next section.g-plus h2 {
   background-color: #cc4a2c;
   background-image: url("./../images/product_icons/track_googleplus.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003274}}
+/* line 278, ../../app/styles/main.scss */
 .sessions-now-next section.g-plus div {
   border-color: #cc4a2c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003280}}
+/* line 284, ../../app/styles/main.scss */
 .sessions-now-next section.cloud h2 {
   background-color: #ff8800;
   background-image: url("./../images/product_icons/track_googlecloudplatform.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003285}}
+/* line 289, ../../app/styles/main.scss */
 .sessions-now-next section.cloud div {
   border-color: #ff8800;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003291}}
+/* line 295, ../../app/styles/main.scss */
 .sessions-now-next section.maps h2 {
   background-color: #ff4444;
-  background-image: url("./../images/product_icons/track_googlecloudplatform.png");
+  background-image: url("./../images/product_icons/track_googlemaps.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003296}}
+/* line 300, ../../app/styles/main.scss */
 .sessions-now-next section.maps div {
   border-color: #ff4444;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003302}}
+/* line 306, ../../app/styles/main.scss */
 .sessions-now-next section.youtube h2 {
   background-color: #cc0000;
   background-image: url("./../images/product_icons/track_youtube.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003307}}
+/* line 311, ../../app/styles/main.scss */
 .sessions-now-next section.youtube div {
   border-color: #cc0000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003319}}
+/* line 323, ../../app/styles/main.scss */
 .schedule-grid {
   -webkit-flex: 1;
   flex: 1;
   display: -webkit-flex;
   -webkit-flex-direction: column;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003326}}
+/* line 330, ../../app/styles/main.scss */
 .schedule-grid ::-webkit-scrollbar {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003331}}
+/* line 335, ../../app/styles/main.scss */
 #timeline {
   display: -webkit-flex;
   list-style: none;
   margin: 0;
-  padding: 0 0 0 125px;
+  padding: 0 0 0 10%;
   overflow-x: scroll;
-  background-color: #969696;
+  color: #f9f9f9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003339}}
+/* line 343, ../../app/styles/main.scss */
 #timeline li {
+  background-color: #666666;
   display: block;
-  /*One hour == 120px i.e. 2px per minute*/
-  min-width: 104px;
-  padding: 8px;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #f9f9f9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003347}}
+/* line 355, ../../app/styles/main.scss */
 .content {
   -webkit-flex: 9;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   height: 100%;
-  background-color: #32ffff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003355}}
-#locations {
+/* line 362, ../../app/styles/main.scss */
+#tracks {
   list-style: none;
-  width: 125px;
+  width: 10%;
   margin: 0;
   padding: 0;
   overflow-y: scroll;
-  background-color: #c8c8c8;
+  background-color: #bababa;
+  color: #f9f9f9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003363}}
-#locations li {
+/* line 371, ../../app/styles/main.scss */
+#tracks li {
   display: block;
-  height: 49px;
-  line-height: 50px;
   padding: 0 1rem;
   border-bottom-style: solid;
   border-width: 1px;
-  border-color: #b9b9b9;
+  border-color: #f9f9f9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+}
+/* line 383, ../../app/styles/main.scss */
+#tracks li.android {
+  background-color: #99cc00;
+  background-image: url("./../images/product_icons/track_android.png");
+}
+/* line 388, ../../app/styles/main.scss */
+#tracks li.chrome {
+  background-color: #0294c7;
+  background-image: url("./../images/product_icons/track_chromeapps.png");
+}
+/* line 393, ../../app/styles/main.scss */
+#tracks li.g-plus {
+  background-color: #cc4a2c;
+  background-image: url("./../images/product_icons/track_googleplus.png");
+}
+/* line 398, ../../app/styles/main.scss */
+#tracks li.cloud {
+  background-color: #ff8800;
+  background-image: url("./../images/product_icons/track_googlecloudplatform.png");
+}
+/* line 403, ../../app/styles/main.scss */
+#tracks li.maps {
+  background-color: #ff4444;
+  background-image: url("./../images/product_icons/track_googlemaps.png");
+}
+/* line 408, ../../app/styles/main.scss */
+#tracks li.youtube {
+  background-color: #cc0000;
+  background-image: url("./../images/product_icons/track_youtube.png");
+}
+/* line 413, ../../app/styles/main.scss */
+#tracks li.glass {
+  background-color: #47b7e6;
+  background-image: url("./../images/product_icons/track_glass.png");
+}
+/* line 418, ../../app/styles/main.scss */
+#tracks li.ads {
+  background-color: #66cc66;
+  background-image: url("./../images/product_icons/track_googleads.png");
+}
+/* line 423, ../../app/styles/main.scss */
+#tracks li.wallet {
+  background-color: #009966;
+  background-image: url("./../images/product_icons/track_googlewallet.png");
+}
+/* line 428, ../../app/styles/main.scss */
+#tracks li.knowledge {
+  background-color: #3366cc;
+  background-image: url("./../images/product_icons/track_knowledgestructureddata.png");
+}
+/* line 433, ../../app/styles/main.scss */
+#tracks li.tech-talk {
+  background-color: #99cc99;
+  background-image: url("./../images/product_icons/track_techtalk.png");
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003374}}
+/* line 440, ../../app/styles/main.scss */
 #grid-content {
   -webkit-flex: 1;
   overflow: auto;
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003379}}
+/* line 444, ../../app/styles/main.scss */
 #grid-content .row {
-  width: 2880px;
-  height: 49px;
-  line-height: 50px;
+  position: relative;
+  background-image: url("./../images/schedule_bg.png");
+}
+/* line 448, ../../app/styles/main.scss */
+#grid-content .row div {
+  position: absolute;
+  border-left-style: solid;
+  border-right-style: solid;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #b9b9b9;
-  position: relative;
+  overflow: hidden;
+  background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003388}}
-#grid-content .row div {
-  position: absolute;
+/* line 461, ../../app/styles/main.scss */
+#grid-content .first-row div {
+  border-top-style: solid;
 }

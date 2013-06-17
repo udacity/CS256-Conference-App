@@ -14,7 +14,11 @@ $google-plus-color: rgb(204, 74, 44);
 $cloud-color: rgb(255, 136, 0);
 $google-maps-color: rgb(255, 68, 68);
 $youtube-color: rgb(204, 0, 0);
-
+$glass-color: rgb(71, 183, 230);
+$ads-color: rgb(102, 204, 102);
+$wallet-color: rgb(0, 153, 102);
+$knowledge-color: rgb(51, 102, 204);
+$tech-talk-color: rgb(153, 204, 153);
 
 $padding: 1rem;
 
@@ -290,7 +294,7 @@ body > header {
         &.maps {
             h2 {
                 background-color: $google-maps-color;
-                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+                background-image: url('./../images/product_icons/track_googlemaps.png');
             }
 
             div {
@@ -312,7 +316,7 @@ body > header {
 }
 
 $pixels-per-minute: 2px;
-$location-width: 125px;
+$tracks-width: 10%;
 $row-height: 50px;
 $number-of-rooms: 10;
 
@@ -332,15 +336,19 @@ $number-of-rooms: 10;
     display: -webkit-flex;
     list-style: none;
     margin: 0;
-    padding: 0 0 0 $location-width;
+    padding: 0 0 0 $tracks-width;
     overflow-x: scroll;
-    background-color: rgb(150, 150, 150);
+    color: $light-grey;
 
     li {
+        $border-width: 1px;
+        background-color: rgb(102, 102, 102);
+
         display: block;
-        /*One hour == 120px i.e. 2px per minute*/
-        min-width: 60 * $pixels-per-minute - 16px;
-        padding: 8px;
+
+        border-left-style: solid;
+        border-width: $border-width;
+        border-color: $bg-color;
     }
 }
 
@@ -349,25 +357,83 @@ $number-of-rooms: 10;
     display: -webkit-flex;
     -webkit-flex-direction: row;
     height: 100%;
-    background-color: rgb(50, 255, 255);
 }
 
-#locations {
+#tracks {
     list-style: none;
-    width: $location-width;
+    width: $tracks-width;
     margin: 0;
     padding: 0;
     overflow-y: scroll;
-    background-color: rgb(200, 200, 200);
+    background-color: $grey;
+    color: $light-grey;
 
     li {
         display: block;
-        height:$row-height - 1px;
-        line-height: $row-height;
         padding: 0 $padding;
         border-bottom-style: solid;
         border-width: 1px;
-        border-color: rgb(185, 185, 185);
+        border-color: $bg-color;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: -9999px;
+
+        &.android {
+            background-color: $android-color;
+            background-image: url('./../images/product_icons/track_android.png');
+        }
+
+        &.chrome {
+            background-color: $chrome-color;
+            background-image: url('./../images/product_icons/track_chromeapps.png');
+        }
+
+        &.g-plus {
+            background-color: $google-plus-color;
+            background-image: url('./../images/product_icons/track_googleplus.png');
+        }
+
+        &.cloud {
+            background-color: $cloud-color;
+            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+        }
+
+        &.maps {
+            background-color: $google-maps-color;
+            background-image: url('./../images/product_icons/track_googlemaps.png');
+        }
+
+        &.youtube {
+            background-color: $youtube-color;
+            background-image: url('./../images/product_icons/track_youtube.png');
+        }
+
+        &.glass {
+            background-color: $glass-color;
+            background-image: url('./../images/product_icons/track_glass.png');
+        }
+
+        &.ads {
+            background-color: $ads-color;
+            background-image: url('./../images/product_icons/track_googleads.png');
+        }
+
+        &.wallet {
+            background-color: $wallet-color;
+            background-image: url('./../images/product_icons/track_googlewallet.png');
+        }
+
+        &.knowledge {
+            background-color: $knowledge-color;
+            background-image: url('./../images/product_icons/track_knowledgestructureddata.png');
+        }
+
+        &.tech-talk {
+            background-color: $tech-talk-color;
+            background-image: url('./../images/product_icons/track_techtalk.png');
+        }
     }
 }
 
@@ -375,18 +441,25 @@ $number-of-rooms: 10;
     -webkit-flex: 1;
     overflow: auto;
     background-color: rgb(255, 255, 255);
-
     .row {
-        width:60 * $pixels-per-minute * 24;
-        height: $row-height - 1px;
-        line-height: $row-height;
-        border-bottom-style: solid;
-        border-width: 1px;
-        border-color: rgb(185, 185, 185);
         position: relative;
+        background-image: url('./../images/schedule_bg.png');
 
         div {
             position: absolute;
+            border-left-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-width: 1px;
+            border-color: rgb(185, 185, 185);
+            overflow: hidden;
+            background-color: rgb(255, 255, 255);
+        }
+    }
+
+    .first-row {
+        div {
+            border-top-style: solid;
         }
     }
 }
