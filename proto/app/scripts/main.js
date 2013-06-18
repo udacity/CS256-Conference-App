@@ -10,25 +10,22 @@ require.config({
     }
 });
 
-function launchFullScreen(element) {
+function fakeFullscreen () {
     'use strict';
-    console.log('Attempting fullscreen');
-    if(element.requestFullScreen) {
-        element.requestFullScreen();
-    } else if(element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen();
-    } else if(element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-    }
+    window.scrollTo(0, 1);
 }
 
-require(['app', 'jquery'], function (app, $) {
+require([], function () {
     'use strict';
     // use app here
 
-    launchFullScreen(document.documentElement);
+    fakeFullscreen();
 
-    console.log(app);
-    console.log('Running jQuery %s', $().jquery);
+    var url = window.location.pathname;
+    if(url.indexOf('schedule.html') > 0) {
+        require(['grid-controller'], function(gridController) {
+            gridController.updateSessionsData();
+        });
+    }
 });
 
