@@ -27,13 +27,16 @@
 	top: 3rem;
 	left: 5rem;
 
-	width: 200px;
+	width: 250px;
 	background: $grey;
 	border: 1px solid $dark-grey;
 	border-bottom: 0;
-	padding: 1rem;
 
 	pointer-events: none;
+
+	div{
+		margin: 1rem;
+	}
 
 	h1{
 		margin: 0;	
@@ -62,6 +65,18 @@
 	.map-talk-end{
 		position: absolute;
 		top: 100%;
-		left: 0;
+		left: -1px;
+		width: calc(100% + 1px);
+
+		height: 40px;
+
+		polygon{
+			fill: $grey;
+		}
+		line{
+			vector-effect: non-scaling-stroke;
+			stroke-width: 1px;
+			stroke: $dark-grey;
+		}
 	}	
 }

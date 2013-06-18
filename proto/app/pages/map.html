@@ -29,26 +29,35 @@
       <a class="map-pins" href="#">Pins</a>
     </header>
 
+
     <div class="main-content">
     	
     	<!-- map (iframe) -->
     	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;dg=opt&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
 
+
+
+
     	<!-- overlays -->
     	<article class="map-current-talk">
-    		<h1>Room 1</h1>
-    		<p class="map-talk-type">Current Talk</p>
-    		<dl>
-    			<dt>Title: The title</dt>
-    			<dd>16:00 - 17:00</dd>
-    		</dl>
-    		<p class="map-talk-type">Next Talk</p>
-    		<dl>
-    			<dt>Title: The title</dt>
-    			<dd>17:00 - 18:00</dd>
-    		</dl> 
-
-    		<img class="map-talk-end" src="./../images/badge-talk-end.png">   		
+        <div>
+      		<h1>Room 1</h1>
+      		<p class="map-talk-type">Current Talk</p>
+      		<dl>
+      			<dt>Title: The title can be longer than this</dt>
+      			<dd>16:00 - 17:00</dd>
+      		</dl>
+      		<p class="map-talk-type">Next Talk</p>
+      		<dl>
+      			<dt>Title: The title</dt>
+      			<dd>17:00 - 18:00</dd>
+      		</dl> 
+        </div>
+        <svg class="map-talk-end" viewbox="0 0 1 1" preserveAspectRatio="none">     
+          <polygon points="0 0 0.5 1 1 0" />
+          <line x1="0" x2="0.5" y1="0" y2="1" />
+          <line x1="0.5" x2="1" y1="1" y2="0" />
+        </svg>
     	</article>
 
     </div>
