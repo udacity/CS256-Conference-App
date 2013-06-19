@@ -35,12 +35,6 @@ html, body {
     height: 100%;
     overflow: hidden;
 
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-direction: column;
-    flex-direction: column;
-
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 
@@ -58,6 +52,14 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+body {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
 }
 
 body > header {
@@ -81,6 +83,7 @@ body > header {
 
     a {
         width: 48px;
+        display:inline-block;
 
         -webkit-justify-content: flex-end;
         justify-content: flex-end;
@@ -155,24 +158,22 @@ body > header {
 
     -webkit-justify-content: space-around;
     justify-content: space-around;
+    
+    min-height: 4rem;
 
     a {
         -webkit-flex: 0 46%;
         flex: 0 46%;
 
-        @include breakpoint(L) { -webkit-flex: 0 24%; flex: 0 24%; };
-
         position: relative;
 
-        min-height: 3rem;
+        min-height: 4rem;
 
         background-color: $grey;
         margin-bottom: $padding;
         font-size: 1.5rem;
 
         color: $bg-color;
-
-        @include breakpoint(M) { font-size: 2rem; min-height: 4rem;}
 
         span {
             position: absolute;
@@ -205,16 +206,14 @@ body > header {
 .sessions-now-next {
     display: none;
 
-    @include breakpoint(L) { display: -webkit-flex; display: flex; };
-
     -webkit-flex-direction: row;
     flex-direction: row;
 
     overflow-x: scroll;
+    /* Nasty property required for flinging on iOS devices */
+    -webkit-overflow-scrolling: touch;
 
     section {
-        -webkit-flex: 1;
-        flex: 1;
 
         position: relative;
         margin: $padding;
@@ -463,3 +462,7 @@ $number-of-rooms: 10;
         }
     }
 }
+
+@import "1-fallback";
+@import "2-medium";
+@import "3-large";
