@@ -11,7 +11,16 @@ $padding: 1rem;
         display: -webkit-flex; display: flex;
     }
 
-    .flexboxlegacy {
+    $tracks-width: 5%;
+    #tracks {
+        width: $tracks-width;
+    }
+
+    #timeline {
+        padding-left: $tracks-width;
+    }
+
+    .no-flexbox.flexboxlegacy {
         .menu-items-grid {
             @include display-box;
             @include box-orient(horizontal);
@@ -30,6 +39,10 @@ $padding: 1rem;
 
         .sessions-now-next {
             @include display-box;   
+        }
+
+        #grid-content {
+            left: $tracks-width;
         }
     }
 }

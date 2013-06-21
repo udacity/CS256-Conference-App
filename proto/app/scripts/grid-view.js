@@ -11,12 +11,21 @@ define([], function () {
     var tracksContainer = document.querySelector('#tracks');
     var timeline = document.querySelector('#timeline');
 
+    window.requestAnimFrame = (function(){
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+              function( callback ){
+                window.setTimeout(callback, 1000 / 60);
+              };
+    })();
+
     function onGridScroll() {
         gridScrollValues.left = gridContent.scrollLeft;
         gridScrollValues.top = gridContent.scrollTop;
 
         if(!trackingScroll) {
-            window.requestAnimationFrame(syncScrolls);
+            window.requestAnimFrame(syncScrolls);
         }
 
         clearTimeout(killTrackTimeout);
@@ -30,7 +39,7 @@ define([], function () {
         tracksContainer.scrollTop = gridScrollValues.top;
 
         if (trackingScroll) {
-            window.requestAnimationFrame(syncScrolls);
+            window.requestAnimFrame(syncScrolls);
         }
     }
 
@@ -159,6 +168,7 @@ define([], function () {
     }
 
     gridContent.addEventListener('scroll', onGridScroll);
+    gridContent.addEventListener('touchmove', onGridScroll);
 
     exports.setSessionData = function(tracks) {
         if(tracksContainer === null || typeof(tracksContainer) === 'undefined') {

@@ -1,6 +1,6 @@
 @import "compass/css3";
 
-.flexboxlegacy {
+.no-flexbox.flexboxlegacy {
     body {
         @include display-box;
         @include box-orient(vertical);
@@ -47,5 +47,42 @@
 
     .sessions-now-next {
         @include box-orient(horizontal);
+    }
+
+    .schedule-grid {
+        @include box-flex(1);
+
+        @include display-box;
+        @include box-orient(vertical);
+    }
+
+    #timeline {
+        @include display-box;
+        @include box-orient(horizontal);
+        @include box-flex(0);
+    }
+
+    .content {
+        @include box-flex(1);
+        display: block;
+        position: relative;
+        height: 1px;
+
+    }
+
+    $tracks-width: 10%;
+    #tracks {
+        display:block;
+        position:absolute;
+        left: 0px;
+        height: 100%;
+    }
+
+    #grid-content {
+        display: block;
+        position:absolute;
+        left: $tracks-width;
+        width: 94%;
+        height: 100%;
     }
 }
