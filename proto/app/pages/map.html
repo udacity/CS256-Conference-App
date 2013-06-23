@@ -26,7 +26,16 @@
   	<!-- header -->
     <header>
       <h1>Schedule</h1>
-      <a class="map-pins" href="#">Pins</a>
+      <span data-acts-as-select>
+        <span>
+          <input type="radio" name="value" value="1" id="value1" checked/>
+          <label for="value1"><img src="./../images/pin-icon.png"></label>
+          <input type="radio" name="value" value="2" id="value2"/>
+          <label for="value2"><img src="./../images/pin-icon-2.png"></label>
+          <input type="radio" name="value" value="3" id="value3"/>
+          <label for="value3"><img src="./../images/pin-icon-3.png"></label>    
+        </span>
+      </span>
     </header>
 
 
@@ -34,8 +43,6 @@
     	
     	<!-- map (iframe) -->
     	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;dg=opt&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
-
-
 
 
     	<!-- overlays -->

@@ -10,11 +10,6 @@
 
 /* === map specific classes === */
 
-// pin
-.map-pins{
-	background: url(./../images/pin-icon.png); 
-}
-
 // main iframe
 .map-content{
 	margin: 1rem;
@@ -79,4 +74,67 @@
 			stroke: $dark-grey;
 		}
 	}	
+}
+
+// == map select ==
+
+span[data-acts-as-select]{
+ 	width: 58px;
+  height: 58px;
+  margin: 0.5rem 1rem;
+  display: block;
+  position: relative;
+  
+  background-color: $light-grey;
+  font-family: Georgia;
+  
+  & > span{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    z-index: 2;
+    
+  }
+  
+  &:after{
+    position: absolute;
+    content: '▾';
+    display: block;
+    right:0; bottom: -5px;
+  }
+  
+  label{
+    display: none;
+    white-space: nowrap;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $light-grey;
+
+    &:hover{
+      background-color: $grey;
+    }
+
+    img{
+    	display: block;
+    }
+  }  
+  
+  input[type=radio]{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    
+    &:checked + label{
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: transparent;
+    }
+  }
+  
+  &:hover label{
+    display: block;
+  }
+    
 }
