@@ -1,0 +1,140 @@
+/* === safe patching other classes === */
+#map-main{
+
+	// adding flex
+	.main-content{
+		position: relative;
+	}
+
+}
+
+/* === map specific classes === */
+
+// main iframe
+.map-content{
+	margin: 1rem;
+	border: 0;
+}
+
+// curent-talk badge
+.map-current-talk{
+	position: absolute;
+	top: 3rem;
+	left: 5rem;
+
+	width: 250px;
+	background: $grey;
+	border: 1px solid $dark-grey;
+	border-bottom: 0;
+
+	pointer-events: none;
+
+	div{
+		margin: 1rem;
+	}
+
+	h1{
+		margin: 0;	
+	}
+
+	.map-talk-type{
+		margin: 10px 0 0 0;
+		font-weight: 600;
+	}
+
+	dl{
+		margin: 0;
+		display: -webkit-flex;
+    display: flex;
+
+    dt, dd{
+    	margin: 0;
+    	-webkit-flex: 1;
+    	flex: 1;
+    }
+    dd{
+    	text-align: right;
+    }
+	}
+
+	.map-talk-end{
+		position: absolute;
+		top: 100%;
+		left: -1px;
+		width: calc(100% + 1px);
+
+		height: 40px;
+
+		polygon{
+			fill: $grey;
+		}
+		line{
+			vector-effect: non-scaling-stroke;
+			stroke-width: 1px;
+			stroke: $dark-grey;
+		}
+	}	
+}
+
+// == map select ==
+
+span[data-acts-as-select]{
+ 	width: 58px;
+  height: 58px;
+  margin: 0.5rem 1rem;
+  display: block;
+  position: relative;
+  
+  background-color: $light-grey;
+  font-family: Georgia;
+  
+  & > span{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    z-index: 2;
+    
+  }
+  
+  &:after{
+    position: absolute;
+    content: '▾';
+    display: block;
+    right:0; bottom: -5px;
+  }
+  
+  label{
+    display: none;
+    white-space: nowrap;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $light-grey;
+
+    &:hover{
+      background-color: $grey;
+    }
+
+    img{
+    	display: block;
+    }
+  }  
+  
+  input[type=radio]{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    
+    &:checked + label{
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: transparent;
+    }
+  }
+  
+  &:hover label{
+    display: block;
+  }
+    
+}

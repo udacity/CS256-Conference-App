@@ -470,6 +470,9 @@ $number-of-rooms: 10;
     }
 }
 
+
 @import "1-fallback";
 @import "2-medium";
 @import "3-large";
+
+@import "map";

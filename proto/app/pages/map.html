@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+  		<!-- meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+     	<!-- title -->
+      <title>Map</title>
+
+      <!-- style -->
+      <link rel="stylesheet" href="./../styles/main.css">
+      <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
+
+      <!-- build:js scripts/vendor/modernizr.js -->
+      <script src="./../bower_components/modernizr/modernizr.js"></script>
+      <!-- endbuild -->
+  </head>
+  <body id="map-main">
+
+  	<!-- header -->
+    <header>
+      <h1>Schedule</h1>
+      <span data-acts-as-select>
+        <span>
+          <input type="radio" name="value" value="1" id="value1" checked/>
+          <label for="value1"><img src="./../images/pin-icon.png"></label>
+          <input type="radio" name="value" value="2" id="value2"/>
+          <label for="value2"><img src="./../images/pin-icon-2.png"></label>
+          <input type="radio" name="value" value="3" id="value3"/>
+          <label for="value3"><img src="./../images/pin-icon-3.png"></label>    
+        </span>
+      </span>
+    </header>
+
+
+    <div class="main-content">
+    	
+    	<!-- map (iframe) -->
+    	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;dg=opt&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
+
+
+    	<!-- overlays -->
+    	<article class="map-current-talk">
+        <div>
+      		<h1>Room 1</h1>
+      		<p class="map-talk-type">Current Talk</p>
+      		<dl>
+      			<dt>Title: The title can be longer than this</dt>
+      			<dd>16:00 - 17:00</dd>
+      		</dl>
+      		<p class="map-talk-type">Next Talk</p>
+      		<dl>
+      			<dt>Title: The title</dt>
+      			<dd>17:00 - 18:00</dd>
+      		</dl> 
+        </div>
+        <svg class="map-talk-end" viewbox="0 0 1 1" preserveAspectRatio="none">     
+          <polygon points="0 0 0.5 1 1 0" />
+          <line x1="0" x2="0.5" y1="0" y2="1" />
+          <line x1="0.5" x2="1" y1="1" y2="0" />
+        </svg>
+    	</article>
+
+    </div>
+
+  </body>
+</html>
