@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000328}}
 html, body {
   height: 100%;
   overflow: hidden;
@@ -12,31 +12,31 @@ html, body {
   background-color: #f9f9f9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000345}}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000349}}
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000353}}
 .bold {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000357}}
 body > header {
   display: -webkit-flex;
   display: flex;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000361}}
 body > header h1, body > header a {
   line-height: 2rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000365}}
 body > header h1 {
   margin: 0.5rem 1rem;
   background-image: url("./../images/io_logo.jpg");
@@ -46,7 +46,7 @@ body > header h1 {
   -webkit-flex: 8;
   flex: 8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000376}}
 body > header a {
   width: 48px;
   -webkit-justify-content: flex-end;
@@ -57,32 +57,32 @@ body > header a {
   background-size: 80%;
   background-position: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000391}}
 body > header a:active, body > header a:hover {
   background-color: #ececec;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000395}}
 body > header .search {
   background-image: url("./../images/search_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\0000399}}
 body > header .favorite {
   background-image: url("./../images/favorite_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003103}}
 body > header .info {
   background-image: url("./../images/info_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003107}}
 body > header .filter {
   background-image: url("./../images/filter_icon.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003111}}
 body > header select {
   margin: auto 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003116}}
 .main-content {
   /*This feels nasty, but makes flexbox, avoid stretching past the body 100% height*/
   height: 1px;
@@ -94,13 +94,13 @@ body > header select {
   flex: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003130}}
 .info-pane {
   -webkit-flex: 4;
   flex: 4;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003135}}
 .menu-items-grid {
   -webkit-flex: 2;
   flex: 2;
@@ -114,13 +114,13 @@ body > header select {
   justify-content: space-around;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003135}}
   .menu-items-grid {
     -webkit-flex: 1;
     flex: 1;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003153}}
 .menu-items-grid a {
   -webkit-flex: 0 46%;
   flex: 0 46%;
@@ -132,20 +132,20 @@ body > header select {
   color: #f9f9f9;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003153}}
   .menu-items-grid a {
     -webkit-flex: 0 24%;
     flex: 0 24%;
   }
 }
 @media (min-width: 580px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003153}}
   .menu-items-grid a {
     font-size: 2rem;
     min-height: 4rem;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003171}}
 .menu-items-grid a span {
   position: absolute;
   display: inline-block;
@@ -153,25 +153,25 @@ body > header select {
   padding: 1rem;
   line-height: 1.0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003182}}
 .menu-items-grid a:active, .menu-items-grid a:hover {
   background-color: #787878;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003187}}
 .wifi-details {
   margin: 1rem auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003190}}
 .wifi-details h2 {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003194}}
 .wifi-details td {
   padding: 0 0.5rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003199}}
 .sessions-now-next {
   display: none;
   -webkit-flex-direction: row;
@@ -179,13 +179,13 @@ body > header select {
   overflow-x: scroll;
 }
 @media (min-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003199}}
   .sessions-now-next {
     display: -webkit-flex;
     display: flex;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003209}}
 .sessions-now-next section {
   -webkit-flex: 1;
   flex: 1;
@@ -193,7 +193,7 @@ body > header select {
   margin: 1rem;
   min-width: 12rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003218}}
 .sessions-now-next section h2 {
   position: absolute;
   height: 100%;
@@ -205,86 +205,86 @@ body > header select {
   background-size: contain;
   background-position: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003232}}
 .sessions-now-next section h3, .sessions-now-next section p {
   padding-left: 3rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003236}}
 .sessions-now-next section h3 {
   margin: 1rem 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003240}}
 .sessions-now-next section p {
   margin: 0 0 1rem 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003245}}
 .sessions-now-next section.android h2 {
   background-color: #99cc00;
   background-image: url("./../images/product_icons/track_android.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003250}}
 .sessions-now-next section.android div {
   border-color: #99cc00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003256}}
 .sessions-now-next section.chrome h2 {
   background-color: #0294c7;
   background-image: url("./../images/product_icons/track_chromeapps.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003261}}
 .sessions-now-next section.chrome div {
   border-color: #0294c7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003267}}
 .sessions-now-next section.g-plus h2 {
   background-color: #cc4a2c;
   background-image: url("./../images/product_icons/track_googleplus.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003272}}
 .sessions-now-next section.g-plus div {
   border-color: #cc4a2c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003280}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003278}}
 .sessions-now-next section.cloud h2 {
   background-color: #ff8800;
   background-image: url("./../images/product_icons/track_googlecloudplatform.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003283}}
 .sessions-now-next section.cloud div {
   border-color: #ff8800;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003291}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003289}}
 .sessions-now-next section.maps h2 {
   background-color: #ff4444;
   background-image: url("./../images/product_icons/track_googlecloudplatform.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003294}}
 .sessions-now-next section.maps div {
   border-color: #ff4444;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003300}}
 .sessions-now-next section.youtube h2 {
   background-color: #cc0000;
   background-image: url("./../images/product_icons/track_youtube.png");
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003305}}
 .sessions-now-next section.youtube div {
   border-color: #cc0000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003317}}
 .schedule-grid {
   -webkit-flex: 1;
   flex: 1;
   display: -webkit-flex;
   -webkit-flex-direction: column;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003324}}
 .schedule-grid ::-webkit-scrollbar {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003329}}
 #timeline {
   display: -webkit-flex;
   list-style: none;
@@ -293,7 +293,7 @@ body > header select {
   overflow-x: scroll;
   background-color: #969696;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003337}}
 #timeline li {
   display: block;
   /*One hour == 120px i.e. 2px per minute*/
@@ -301,7 +301,7 @@ body > header select {
   padding: 8px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003345}}
 .content {
   -webkit-flex: 9;
   display: -webkit-flex;
@@ -310,7 +310,7 @@ body > header select {
   background-color: #32ffff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003353}}
 #locations {
   list-style: none;
   width: 125px;
@@ -319,7 +319,7 @@ body > header select {
   overflow-y: scroll;
   background-color: #c8c8c8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003361}}
 #locations li {
   display: block;
   height: 49px;
@@ -330,13 +330,13 @@ body > header select {
   border-color: #b9b9b9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003372}}
 #grid-content {
   -webkit-flex: 1;
   overflow: auto;
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003377}}
 #grid-content .row {
   width: 2880px;
   height: 49px;
@@ -346,7 +346,140 @@ body > header select {
   border-color: #b9b9b9;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/google\/home\/mattgaunt\/Programming\/Sites\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/main\.scss}line{font-family:\00003386}}
 #grid-content .row div {
   position: absolute;
+}
+
+/* === safe patching other classes === */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\000035}}
+#map-main .main-content {
+  position: relative;
+}
+
+/* === map specific classes === */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000314}}
+.map-content {
+  margin: 1rem;
+  border: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000320}}
+.map-current-talk {
+  position: absolute;
+  top: 3rem;
+  left: 5rem;
+  width: 250px;
+  background: #bababa;
+  border: 1px solid #787878;
+  border-bottom: 0;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000332}}
+.map-current-talk div {
+  margin: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000336}}
+.map-current-talk h1 {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000340}}
+.map-current-talk .map-talk-type {
+  margin: 10px 0 0 0;
+  font-weight: 600;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000345}}
+.map-current-talk dl {
+  margin: 0;
+  display: -webkit-flex;
+  display: flex;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000350}}
+.map-current-talk dl dt, .map-current-talk dl dd {
+  margin: 0;
+  -webkit-flex: 1;
+  flex: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000355}}
+.map-current-talk dl dd {
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000360}}
+.map-current-talk .map-talk-end {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 1px);
+  height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000368}}
+.map-current-talk .map-talk-end polygon {
+  fill: #bababa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000371}}
+.map-current-talk .map-talk-end line {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1px;
+  stroke: #787878;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000381}}
+span[data-acts-as-select] {
+  width: 58px;
+  height: 58px;
+  margin: 0.5rem 1rem;
+  display: block;
+  position: relative;
+  background-color: #f9f9f9;
+  font-family: Georgia;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\0000391}}
+span[data-acts-as-select] > span {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003100}}
+span[data-acts-as-select]:after {
+  position: absolute;
+  content: '▾';
+  display: block;
+  right: 0;
+  bottom: -5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003107}}
+span[data-acts-as-select] label {
+  display: none;
+  white-space: nowrap;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003114}}
+span[data-acts-as-select] label:hover {
+  background-color: #bababa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003118}}
+span[data-acts-as-select] label img {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003123}}
+span[data-acts-as-select] input[type=radio] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003127}}
+span[data-acts-as-select] input[type=radio]:checked + label {
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sandro\/Yeoman\/conf\/proto\/app\/styles\/_map\.scss}line{font-family:\00003136}}
+span[data-acts-as-select]:hover label {
+  display: block;
 }
