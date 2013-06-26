@@ -100,6 +100,8 @@ define([], function () {
         rowElement.style.height = rowHeight +'px';
         rowElement.style.width = timelineWidth+'px';
         rowElement.classList.add('row');
+        console.log('track.title = '+track.title);
+        console.log('track.class = '+track.class);
         rowElement.classList.add(track.class);
 
         return rowElement;
@@ -170,7 +172,7 @@ define([], function () {
     gridContent.addEventListener('scroll', onGridScroll);
     gridContent.addEventListener('touchmove', onGridScroll);
 
-    exports.setSessionData = function(tracks) {
+    exports.setSessionData = function(trackData, sessionData) {
         if(tracksContainer === null || typeof(tracksContainer) === 'undefined') {
             return;
         }
@@ -191,7 +193,9 @@ define([], function () {
         var timelineWidth = createTimeLine(pixelsPerMinute, borderWidth, padding, gridStartTime, gridEndTime);
 
         // Create Tracks
+        var tracks = trackData;
         for(var i = 0; i < tracks.length; i++) {
+            console.log('Sorting out track - '+tracks[i].title);
             var track = tracks[i];
             var numberOfRows = createTrack(track, gridStartTime, rowHeight, timelineWidth, borderWidth, padding, pixelsPerMinute);
             createTrackTitle(track, numberOfRows, borderWidth, rowHeight);

@@ -23,9 +23,7 @@ require([], function () {
 
     var url = window.location.pathname;
     if(url.indexOf('schedule.html') > 0) {
-        require(['grid-controller'], function(gridController) {
-            gridController.updateSessionsData();
-        });
+        require(['grid-controller'], function() {});
     }
 });
 
