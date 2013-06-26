@@ -45,4 +45,23 @@ $padding: 1rem;
             left: $tracks-width;
         }
     }
+
+    // map
+    .map-current-talk{
+        width: 250px;
+        opacity: 1;
+
+        h1{
+            font-size: 16px;
+        }
+
+        .map-talk-type{
+            display: block;
+            font-size: 16px;
+        }
+
+        dl{
+            font-size: 16px;
+        }    
+    }
 }

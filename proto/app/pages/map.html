@@ -9,12 +9,13 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
 
      	<!-- title -->
       <title>Map</title>
 
       <!-- style -->
-      <link rel="stylesheet" href="./../styles/main.css">
+      <link rel="stylesheet" href="./../styles/0-main.css">
       <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
 
       <!-- build:js scripts/vendor/modernizr.js -->
@@ -26,26 +27,17 @@
   	<!-- header -->
     <header>
       <h1>Schedule</h1>
-      <span data-acts-as-select>
-        <span>
-          <input type="radio" name="value" value="1" id="value1" checked/>
-          <label for="value1"><img src="./../images/pin-icon.png"></label>
-          <input type="radio" name="value" value="2" id="value2"/>
-          <label for="value2"><img src="./../images/pin-icon-2.png"></label>
-          <input type="radio" name="value" value="3" id="value3"/>
-          <label for="value3"><img src="./../images/pin-icon-3.png"></label>    
-        </span>
-      </span>
+
     </header>
 
 
     <div class="main-content">
     	
     	<!-- map (iframe) -->
-    	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;dg=opt&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
+    	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
 
 
-    	<!-- overlays -->
+    	<!-- overlays  -->
     	<article class="map-current-talk">
         <div>
       		<h1>Room 1</h1>

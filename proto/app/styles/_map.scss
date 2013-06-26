@@ -19,40 +19,52 @@
 // curent-talk badge
 .map-current-talk{
 	position: absolute;
-	top: 3rem;
-	left: 5rem;
+	top: 1rem;
+	left: 1rem;
 
-	width: 250px;
+	width: 200px;
 	background: $grey;
 	border: 1px solid $dark-grey;
 	border-bottom: 0;
 
+  opacity: 0.9;
 	pointer-events: none;
 
 	div{
-		margin: 1rem;
+		margin: 0.5rem;
 	}
 
 	h1{
+    font-size: 14px;
 		margin: 0;	
 	}
 
 	.map-talk-type{
-		margin: 10px 0 0 0;
+    font-size: 11px;
+		margin: 5px 0 0 0;
 		font-weight: 600;
+    display: none;
 	}
 
 	dl{
+    font-size: 11px;
 		margin: 0;
+    display: -webkit-box;
 		display: -webkit-flex;
     display: flex;
 
+    dt{
+      width: 60%;
+    }
+
     dt, dd{
     	margin: 0;
+      -webkit-box-flex: 1; 
     	-webkit-flex: 1;
     	flex: 1;
     }
     dd{
+      white-space: nowrap;
     	text-align: right;
     }
 	}
