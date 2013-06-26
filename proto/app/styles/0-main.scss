@@ -494,6 +494,126 @@ $number-of-rooms: 10;
     }
 }
 
+.avatar {
+    width: 192px;
+    height: 192px;
+    -webkit-mask-box-image: -webkit-radial-gradient(white,white,white,transparent 50%);
+    float: left;
+    margin: -24px;
+}
+
+.speaker-info {
+    margin-left: 148px;
+    
+}
+
+.speaker-name {
+    padding-left: 0px !important;
+}
+
+.speaker-info .talk {
+    margin: 0;
+    padding-left: 2rem;
+
+}
+
+.talk h4, .talk p {
+    padding-left: 0px !important;
+    margin: 0.25rem;
+}
+
+.talks {
+    display: -webkit-flex;
+    display: flex;
+    
+    section {
+
+        position: relative;
+        margin: $padding;
+
+        min-width: 12rem;
+
+        h2 {
+            position: absolute;
+            height: 100%;
+            width: 2 * $padding;
+            left: 0px;
+
+            text-indent: -99999px;
+            margin: 0;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &.android {
+            h2 {
+                background-color: $android-color;
+                background-image: url('./../images/product_icons/track_android.png');
+            }
+
+            div {
+                border-color: $android-color;
+            }
+        }
+
+        &.chrome {
+            h2 {
+                background-color: $chrome-color;
+                background-image: url('./../images/product_icons/track_chromeapps.png');
+            }
+
+            div {
+                border-color: $chrome-color;
+            }
+        }
+
+        &.g-plus {
+            h2 {
+                background-color: $google-plus-color;
+                background-image: url('./../images/product_icons/track_googleplus.png');
+            }
+
+            div {
+                border-color: $google-plus-color;
+            }
+        }
+
+        &.cloud {
+            h2 {
+                background-color: $cloud-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                border-color: $cloud-color;
+            }
+        }
+
+        &.maps {
+            h2 {
+                background-color: $google-maps-color;
+                background-image: url('./../images/product_icons/track_googlemaps.png');
+            }
+
+            div {
+                border-color: $google-maps-color;
+            }
+        }
+
+        &.youtube {
+            h2 {
+                background-color: $youtube-color;
+                background-image: url('./../images/product_icons/track_youtube.png');
+            }
+
+            div {
+                border-color: $youtube-color;
+            }
+        }
+    }
+}
 
 @import "1-fallback";
 @import "2-medium";
