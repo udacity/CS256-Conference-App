@@ -19,6 +19,10 @@ $ads-color: rgb(102, 204, 102);
 $wallet-color: rgb(0, 153, 102);
 $knowledge-color: rgb(51, 102, 204);
 $tech-talk-color: rgb(153, 204, 153);
+$accessibility-color: rgb(153, 51, 102);
+$gtv-color: rgb(50, 50, 50);
+$develop-good-color: rgb(0, 50, 203);
+$gdg-color: rgb(102, 153, 255);
 
 $padding: 1rem;
 
@@ -161,7 +165,7 @@ body > header {
 
     -webkit-justify-content: space-around;
     justify-content: space-around;
-    
+
     min-height: 4rem;
 
     a {
@@ -435,6 +439,26 @@ $number-of-rooms: 10;
         &.tech-talk {
             background-color: $tech-talk-color;
             background-image: url('./../images/product_icons/track_techtalk.png');
+        }
+
+        &.accessibility {
+            background-color: $accessibility-color;
+            background-image: url('./../images/product_icons/track_accessibility.png');
+        }
+
+        &.gtv {
+            background-color: $gtv-color;
+            background-image: url('./../images/product_icons/track_googletv.png');
+        }
+
+        &.develop-good {
+            background-color: $develop-good-color;
+            background-image: url('./../images/product_icons/track_developforgood.png');
+        }
+
+        &.gdg {
+            background-color: $gdg-color;
+            background-image: url('./../images/product_icons/track_googledevelopergroups.png');
         }
     }
 }

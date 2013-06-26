@@ -1,8 +1,43 @@
 /*global define */
-define(['grid-view'], function (gridView) {
+define(['gapi-controller', 'tracks-model', 'grid-view'], function (gapiController, tracksModel, gridView) {
     'use strict';
 
     var exports = {};
+
+    /**function onJSLibLoaded() {
+        console.log('onJSLibLoaded()');
+
+        gapi.client.load('googledevelopers', 'v1', function() {
+            console.log('conferenceAPI loaded');
+            gapi.client.setApiKey('AIzaSyDZcJKjkTzWGACBSF7-6whhkoZN47gBgtg');
+        });
+    }
+
+    function initGAPI() {
+        // Don't load gapi if it's already present
+        if (typeof gapi !== 'undefined') {
+            onJSLibLoaded();
+        }
+
+        require(['https://apis.google.com/js/client.js?onload=define'], function() {
+            // Poll until gapi is ready
+            function checkGAPI() {
+                if (gapi && gapi.client) {
+                    onJSLibLoaded();
+                } else {
+                    setTimeout(checkGAPI, 100);
+                }
+            }
+
+            checkGAPI();
+        });
+    }**/
+
+    gapiController.setOnLoadedListener(onGapiLoaded);
+
+    function onGapiLoaded(gapi) {
+        exports.updateSessionsData();
+    }
 
     var tracks = [
         {
@@ -253,11 +288,20 @@ define(['grid-view'], function (gridView) {
         }
     ];
 
+    function getTrackData(cb) {
+        if(tracksModel) {
+            tracksModel.getTracks(cb);
+        }
 
+        return null;
+    }
 
     exports.updateSessionsData = function () {
-        gridView.setSessionData(tracks);
+        getTrackData(function(tracksData) {
+            gridView.setSessionData(tracksData, []);
+        });
     };
+
 
     return exports;
 });

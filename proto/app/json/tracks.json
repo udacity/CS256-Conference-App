@@ -1,0 +1,77 @@
+/*global define */
+define(['tracksModel'], function (gridView) {
+    'use strict';
+
+    var exports = {};
+    return exports;
+});
+
+{
+ "track": [
+   {
+     "name": "Ads",
+     "color": "#66cc66",
+     "abstract": "Learn about Google's advertising products for developers."
+   },
+   {
+     "name": "Android",
+     "color": "#99cc00",
+     "abstract": "Learn about developing mobile handset and tablet apps for Android."
+   },
+   {
+     "name": "Chrome & Apps",
+     "color": "#0294c7",
+     "abstract": "Build for the modern web with the Chrome platform."
+   },
+   {
+     "name": "Cloud Platform",
+     "color": "#ff8800",
+     "abstract": "Learn about Google's cloud offerings for developers."
+   },
+   {
+     "name": "Code Labs",
+     "color": "#666699",
+     "abstract": "Get your hands dirty in longer, classroom-style sessions. Bring your laptop. Write code."
+   },
+   {
+     "name": "Commerce",
+     "color": "#009966",
+     "abstract": "Learn how to use Google Commerce products to improve monetization on the web, in app, and in store."
+   },
+   {
+     "name": "Design",
+     "color": "#ff3399",
+     "abstract": "Talks related to user interface and user experience design."
+   },
+   {
+     "name": "Glass",
+     "color": "#47b7e6",
+     "abstract": "Learn about developing for Project Glass."
+   },
+   {
+     "name": "Google Maps",
+     "color": "#ff4444",
+     "abstract": "Leverage the power of Google's geospatial technology in your apps."
+   },
+   {
+     "name": "Google+",
+     "color": "#cf4a2c",
+     "abstract": "Learn about developing on the Google+ platform."
+   },
+   {
+     "name": "Knowledge",
+     "color": "#3366cc",
+     "abstract": "Learn about developing with Google's search and knowledge products."
+   },
+   {
+     "name": "Tech Talk",
+     "color": "#99cc99",
+     "abstract": "Tech talks on subjects such as computer science problems, programming languages, and more."
+   },
+   {
+     "name": "YouTube",
+     "color": "#cc0000",
+     "abstract": "Learn about developing for YouTube."
+   }
+ ]
+}
