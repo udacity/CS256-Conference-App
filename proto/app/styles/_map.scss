@@ -34,7 +34,7 @@
 	}
 
 	h1{
-		margin: 0;	
+		margin: 0;
 	}
 
 	.map-talk-type{
@@ -73,7 +73,7 @@
 			stroke-width: 1px;
 			stroke: $dark-grey;
 		}
-	}	
+	}
 }
 
 // == map select ==
@@ -84,26 +84,26 @@ span[data-acts-as-select]{
   margin: 0.5rem 1rem;
   display: block;
   position: relative;
-  
+
   background-color: $light-grey;
   font-family: Georgia;
-  
+
   & > span{
     display: block;
     position: absolute;
     top: 100%;
     left: 0; right: 0;
     z-index: 2;
-    
+
   }
-  
+
   &:after{
     position: absolute;
     content: '▾';
     display: block;
     right:0; bottom: -5px;
   }
-  
+
   label{
     display: none;
     white-space: nowrap;
@@ -118,12 +118,12 @@ span[data-acts-as-select]{
     img{
     	display: block;
     }
-  }  
-  
+  }
+
   input[type=radio]{
     position: absolute;
     clip: rect(0,0,0,0);
-    
+
     &:checked + label{
       display: block;
       position: absolute;
@@ -132,9 +132,9 @@ span[data-acts-as-select]{
       background-color: transparent;
     }
   }
-  
+
   &:hover label{
     display: block;
   }
-    
+
 }
