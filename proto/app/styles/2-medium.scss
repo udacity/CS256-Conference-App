@@ -6,4 +6,21 @@
             min-height: 5rem;
         }
     }
+
+    .speaker {
+	    height:96px;
+	    min-width: 480px;
+	    font-size: 2em;
+	}
+
+	.speaker-thumbnail {
+	    width: 200px;
+	    height: 200px;
+	    margin: -20px;
+	}
+
+	.speaker-info {
+	    margin-left: 144px;
+	}
+
 }

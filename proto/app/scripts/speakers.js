@@ -51,7 +51,7 @@ define([], function () {
 		root.id = speaker.speaker_id;
 
 		var thumbnail = new Image();
-		thumbnail.src = speaker.thumbnail_url;
+		thumbnail.src = speaker.thumbnail_url ? speaker.thumbnail_url : "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100";
 		thumbnail.className = "speaker-thumbnail";
 
 		root.appendChild(thumbnail);
@@ -173,7 +173,7 @@ define([], function () {
 	   "last_name": "Guy",
 	   "user_id": "gooio2012/2180",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/romainguy.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "display_name": "Romain Guy",
 	   "speaker_id": "gooio2012/105//gooio2012/2180"
 	  },
@@ -192,7 +192,7 @@ define([], function () {
 	   "last_name": "Powell",
 	   "user_id": "gooio2012/2184",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/adamp.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "display_name": "Adam Powell",
 	   "speaker_id": "gooio2012/106//gooio2012/2184"
 	  },
@@ -637,13 +637,6 @@ define([], function () {
 	   "speaker_id": "gooio2012/1208//gooio2012/2381"
 	  },
 	  {
-	   "user_id": "gooio2012/2382",
-	   "first_name": "Manish",
-	   "last_name": "Bhargava",
-	   "display_name": "Manish Bhargava",
-	   "speaker_id": "gooio2012/1208//gooio2012/2382"
-	  },
-	  {
 	   "user_id": "gooio2012/2363",
 	   "first_name": "Shawn",
 	   "last_name": "Simister",
@@ -726,19 +719,9 @@ define([], function () {
 	   "last_name": "Raman",
 	   "display_name": "T.V. Raman",
 	   "plusone_url": "http://plus.google.com/103872873250909646668",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/raman.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2199",
 	   "speaker_id": "gooio2012/127//gooio2012/2199"
-	  },
-	  {
-	   "bio": "Charles is a software engineer at Google, working on the Eyes-Free Android project and ChromeVox. He also created the Fire Vox extension for Firefox and worked on Android Text-To-Speech.",
-	   "first_name": "Charles",
-	   "last_name": "Chen",
-	   "display_name": "Charles Chen",
-	   "plusone_url": "https://plus.google.com/u/0/111879113080767742009",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/clchen.jpg",
-	   "user_id": "gooio2012/2200",
-	   "speaker_id": "gooio2012/127//gooio2012/2200"
 	  },
 	  {
 	   "bio": "Peter Lundblad works as a software engineer at Google.  He is part of the accessibility team and Android Eyes-Free project, focusing on Braille.",
@@ -746,7 +729,7 @@ define([], function () {
 	   "last_name": "Lundblad",
 	   "display_name": "Peter Lundblad",
 	   "plusone_url": "http://plus.google.com/104780772893555468975",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/plundblad.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2201",
 	   "speaker_id": "gooio2012/127//gooio2012/2201"
 	  },
@@ -868,13 +851,6 @@ define([], function () {
 	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/rhyndman.jpg",
 	   "user_id": "gooio2012/2043",
 	   "speaker_id": "gooio2012/1401//gooio2012/2043"
-	  },
-	  {
-	   "user_id": "gooio2012/2347",
-	   "first_name": "Fred",
-	   "last_name": "Chung",
-	   "display_name": "Fred Chung",
-	   "speaker_id": "gooio2012/1401//gooio2012/2347"
 	  },
 	  {
 	   "bio": "Trevor is a Senior Developer Programs Engineer with the Android team at Google. In addition to mobile, his interests include open source development, Ruby, user interface design, and digital identity.",
@@ -1090,7 +1066,7 @@ define([], function () {
 	   "last_name": "White",
 	   "user_id": "gooio2012/2304",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/nwhite.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "display_name": "Nate White",
 	   "speaker_id": "gooio2012/1417//gooio2012/2304"
 	  },
@@ -1110,7 +1086,7 @@ define([], function () {
 	   "last_name": "Parkkal Krishnamurthy",
 	   "display_name": "Ram Parkkal Krishnamurthy",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/ramparikkal.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2278",
 	   "speaker_id": "gooio2012/1418//gooio2012/2278"
 	  },
@@ -1119,7 +1095,7 @@ define([], function () {
 	   "last_name": "Yang",
 	   "user_id": "gooio2012/2305",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/jyang.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "display_name": "Jun Yang",
 	   "speaker_id": "gooio2012/1418//gooio2012/2305"
 	  },
@@ -1128,7 +1104,7 @@ define([], function () {
 	   "last_name": "Kaplan",
 	   "user_id": "gooio2012/2306",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/rafek.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "display_name": "Rafe Kaplan",
 	   "speaker_id": "gooio2012/1418//gooio2012/2306"
 	  },
@@ -1138,7 +1114,7 @@ define([], function () {
 	   "last_name": "Ying",
 	   "display_name": "Peng Ying",
 	   "plusone_url": "https://plus.google.com/115132759088093329854",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/pying.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2069",
 	   "speaker_id": "gooio2012/1420//gooio2012/2069"
 	  },
@@ -1499,7 +1475,7 @@ define([], function () {
 	   "last_name": "Cromwell",
 	   "display_name": "Ray Cromwell",
 	   "plusone_url": "https://plus.google.com/u/0/110412141990454266397",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/cromwellian.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2275",
 	   "speaker_id": "gooio2012/226//gooio2012/2275"
 	  },
@@ -1695,7 +1671,7 @@ define([], function () {
 	   "last_name": "Trimble",
 	   "display_name": "Troy Trimble",
 	   "plusone_url": "https://plus.google.com/116108536381888996988",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/ttrimble.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2197",
 	   "speaker_id": "gooio2012/310//gooio2012/2197"
 	  },
@@ -1738,13 +1714,6 @@ define([], function () {
 	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/jbeda.jpg",
 	   "user_id": "gooio2012/2110",
 	   "speaker_id": "gooio2012/313//gooio2012/2110"
-	  },
-	  {
-	   "user_id": "gooio2012/2338",
-	   "first_name": "Evan",
-	   "last_name": "Anderson",
-	   "display_name": "Evan Anderson",
-	   "speaker_id": "gooio2012/313//gooio2012/2338"
 	  },
 	  {
 	   "bio": "Nathan Herring joined Google in 2010, and is a software engineer on the Google Cloud Storage product, focusing on API plumbing and security.",
@@ -1901,7 +1870,7 @@ define([], function () {
 	   "last_name": "Rose",
 	   "display_name": "Kevin Rose",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/kevinrose.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2325",
 	   "speaker_id": "gooio2012/502//gooio2012/2325"
 	  },
@@ -1911,7 +1880,7 @@ define([], function () {
 	   "last_name": "Miner",
 	   "display_name": "Rich Miner",
 	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/miner.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2326",
 	   "speaker_id": "gooio2012/502//gooio2012/2326"
 	  },
@@ -2041,14 +2010,6 @@ define([], function () {
 	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/fink.jpg",
 	   "user_id": "gooio2012/2103",
 	   "speaker_id": "gooio2012/602//gooio2012/2103"
-	  },
-	  {
-	   "first_name": "Dani",
-	   "last_name": "Bacon",
-	   "user_id": "gooio2012/2249",
-	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "display_name": "Dani Bacon",
-	   "speaker_id": "gooio2012/602//gooio2012/2249"
 	  },
 	  {
 	   "bio": "Sven joined Google in 2006, between getting his BS from Stanford University and his PhD from UCLA. He currently works on Google's API infrastructure, helping to make Google's APIs stable, fast, and easy to use.",
@@ -2300,7 +2261,7 @@ define([], function () {
 	   "last_name": "Kenny",
 	   "display_name": "Brendan Kenny",
 	   "plusone_url": "https://plus.google.com/114280001108380956660/about",
-	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/bckenny.jpg",
+	   "thumbnail_url": "http://cwilso.files.wordpress.com/2013/06/missing.jpg?w=100",
 	   "user_id": "gooio2012/2261",
 	   "speaker_id": "gooio2012/903//gooio2012/2261"
 	  },
@@ -2420,15 +2381,6 @@ define([], function () {
 	   "thumbnail_url": "http://commondatastorage.googleapis.com/io2012/headshots/jmcgill.jpg",
 	   "display_name": "James McGill",
 	   "speaker_id": "gooio2012/909//gooio2012/2269"
-	  },
-	  {
-	   "bio": "Peter is Product Manager for Google Earth and is responsible for the Google Earth API, as well as the desktop and mobile Google Earth clients.  He has been at Google since 2006.",
-	   "first_name": "Peter",
-	   "last_name": "Birch",
-	   "display_name": "Peter Birch",
-	   "plusone_url": "https://plus.google.com/111395306401981598462/about",
-	   "user_id": "gooio2012/2270",
-	   "speaker_id": "gooio2012/909//gooio2012/2270"
 	  },
 	  {
 	   "bio": "Andrew is a product manager on Google Maps based in Sydney.  Since joining Google in 2006 he has worked on a number of different Maps products including ads and mobile APIs.",
