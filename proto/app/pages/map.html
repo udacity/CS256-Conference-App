@@ -27,35 +27,85 @@
   	<!-- header -->
     <header>
       <h1>Schedule</h1>
+      <a class="filter" href="#filters">Filter</a>
     </header>
 
 
+    <a id="filters"></a>
     <div class="main-content">
 
-    	<!-- map (iframe) -->
-    	<iframe class="map-content main-content" src="https://www.google.it/maps?t=m&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
+      <div class="filters-map">
+        <a class="close-filter" href="#">close</a>
 
-    	<!-- overlays  -->
-    	<article class="map-current-talk">
-        <div>
-      		<h1>Room 1</h1>
-      		<p class="map-talk-type">Current Talk</p>
-      		<dl>
-      			<dt>Title: The title can be longer than this</dt>
-      			<dd>16:00 - 17:00</dd>
-      		</dl>
-      		<p class="map-talk-type">Next Talk</p>
-      		<dl>
-      			<dt>Title: The title</dt>
-      			<dd>17:00 - 18:00</dd>
-      		</dl>
+        <div class="filters-form">
+          <div class="filters-checkboxes">
+            <h1 class="form-title">Point of interests</h1>
+            <label class="filter-label" for="toilets" onclick="">
+              <input type="checkbox" name="poi" id="toilets">Toilets
+            </label>
+            <label class="filter-label" for="snacks" onclick="">
+              <input type="checkbox" name="poi" id="snacks">Snacks
+            </label>
+            <label class="filter-label" for="info" onclick="">
+              <input type="checkbox" name="poi" id="info">Info Points
+            </label>
+            <label class="filter-label" for="plugs" onclick="">
+              <input type="checkbox" name="poi" id="plugs">Power Plugs
+            </label>                        
+          </div>
+          <div class="filters-select">
+            <h1 class="form-title">Select a Room</h1>
+            <select>
+              <option>Room Number</option>
+              <optgroup label="First Floor">
+                <option>Room #1</option>
+                <option>Room #2</option>
+                <option>Room #3</option>
+              </optgroup>
+              <optgroup label="Second Floor">
+                <option>Room #4</option>
+                <option>Room #5</option>
+                <option>Room #6</option>
+              </optgroup>
+              <optgroup label="Third Floor">
+                <option>Room #7</option>
+                <option>Room #8</option>
+                <option>Room #9</option>
+              </optgroup>
+            </select>
+          </div>
         </div>
-        <svg class="map-talk-end" viewbox="0 0 1 1" preserveAspectRatio="none">
-          <polygon points="0 0 0.5 1 1 0" />
-          <line x1="0" x2="0.5" y1="0" y2="1" />
-          <line x1="0.5" x2="1" y1="1" y2="0" />
-        </svg>
-    	</article>
+      </div>
+
+      <div class="main-map">
+
+      	<!-- map (iframe) -->
+      	<iframe class="map-content" src="https://www.google.it/maps?t=m&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>
+
+
+      	<!-- overlays  -->
+      	<article class="map-current-talk">
+          <div>
+        		<h1>Room 1</h1>
+        		<p class="map-talk-type">Current Talk</p>
+        		<dl>
+        			<dt>Title: The title can be longer than this</dt>
+        			<dd>16:00 - 17:00</dd>
+        		</dl>
+        		<p class="map-talk-type">Next Talk</p>
+        		<dl>
+        			<dt>Title: The title</dt>
+        			<dd>17:00 - 18:00</dd>
+        		</dl> 
+          </div>
+          <svg class="map-talk-end" viewbox="0 0 1 1" preserveAspectRatio="none">     
+            <polygon points="0 0 0.5 1 1 0" />
+            <line x1="0" x2="0.5" y1="0" y2="1" />
+            <line x1="0.5" x2="1" y1="1" y2="0" />
+          </svg>
+      	</article>
+
+      </div>
 
     </div>
 

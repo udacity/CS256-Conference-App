@@ -2,8 +2,11 @@
 #map-main{
 
 	// adding flex
-	.main-content{
-		position: relative;
+	.main-content{       
+    overflow: hidden;
+    position: relative;
+    margin: 1rem;
+    background: $grey;
 	}
 
 }
@@ -12,8 +15,60 @@
 
 // main iframe
 .map-content{
-	margin: 1rem;
 	border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-map{
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;   
+  @include transition(-webkit-transform, 0.3s);
+}
+
+// filters
+#filters:target + .main-content > .main-map{
+  @include transform(translateY(230px));
+}
+
+.filters-map{
+  position: relative;
+}
+
+.close-filter{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  text-decoration: none;
+  color: $light-grey;
+}
+
+.filters-form{
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;  
+}
+
+.form-title{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.filters-checkboxes,.filters-select{
+  -webkit-box-flex: 1; 
+  -webkit-flex: 1;
+  flex: 1;    
+}
+
+.filter-label{
+  display: block;
 }
 
 // curent-talk badge
@@ -50,7 +105,7 @@
     font-size: 11px;
 		margin: 0;
     display: -webkit-box;
-		display: -webkit-flex;
+    display: -webkit-flex;
     display: flex;
 
     dt{
@@ -88,65 +143,30 @@
 	}
 }
 
-// == map select ==
 
-span[data-acts-as-select]{
- 	width: 58px;
-  height: 58px;
-  margin: 0.5rem 1rem;
-  display: block;
-  position: relative;
+@media screen and (min-width:720px) {
+  // map
+  .map-current-talk{
+    width: 250px;
+    opacity: 1;
 
-  background-color: $light-grey;
-  font-family: Georgia;
-
-  & > span{
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    z-index: 2;
-
-  }
-
-  &:after{
-    position: absolute;
-    content: '▾';
-    display: block;
-    right:0; bottom: -5px;
-  }
-
-  label{
-    display: none;
-    white-space: nowrap;
-    padding: 5px;
-    cursor: pointer;
-    background-color: $light-grey;
-
-    &:hover{
-      background-color: $grey;
+    h1{
+        font-size: 16px;
     }
 
-    img{
-    	display: block;
+    .map-talk-type{
+        display: block;
+        font-size: 16px;
     }
+
+    dl{
+        font-size: 16px;
+    }    
   }
 
-  input[type=radio]{
-    position: absolute;
-    clip: rect(0,0,0,0);
-
-    &:checked + label{
-      display: block;
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      background-color: transparent;
-    }
+  .filters-form{
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    flex-direction: row;  
   }
-
-  &:hover label{
-    display: block;
-  }
-
 }
