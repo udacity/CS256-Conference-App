@@ -73,37 +73,37 @@
 
 // curent-talk badge
 .map-current-talk{
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 
-	width: 200px;
-	background: $grey;
-	border: 1px solid $dark-grey;
-	border-bottom: 0;
+  width: 200px;
+  background: $grey;
+  border: 1px solid $dark-grey;
+  border-bottom: 0;
 
   opacity: 0.9;
-	pointer-events: none;
+  pointer-events: none;
 
-	div{
-		margin: 0.5rem;
-	}
+  div{
+    margin: 0.5rem;
+  }
 
-	h1{
+  h1{
     font-size: 14px;
-		margin: 0;	
-	}
+    margin: 0;  
+  }
 
-	.map-talk-type{
+  .map-talk-type{
     font-size: 11px;
-		margin: 5px 0 0 0;
-		font-weight: 600;
+    margin: 5px 0 0 0;
+    font-weight: 600;
     display: none;
-	}
+  }
 
-	dl{
+  dl{
     font-size: 11px;
-		margin: 0;
+    margin: 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -113,34 +113,34 @@
     }
 
     dt, dd{
-    	margin: 0;
+      margin: 0;
       -webkit-box-flex: 1; 
-    	-webkit-flex: 1;
-    	flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
     }
     dd{
       white-space: nowrap;
-    	text-align: right;
+      text-align: right;
     }
-	}
+  }
 
-	.map-talk-end{
-		position: absolute;
-		top: 100%;
-		left: -1px;
-		width: calc(100% + 1px);
+  .map-talk-end{
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    width: calc(100% + 1px);
 
-		height: 40px;
+    height: 40px;
 
-		polygon{
-			fill: $grey;
-		}
-		line{
-			vector-effect: non-scaling-stroke;
-			stroke-width: 1px;
-			stroke: $dark-grey;
-		}
-	}
+    polygon{
+      fill: $grey;
+    }
+    line{
+      vector-effect: non-scaling-stroke;
+      stroke-width: 1px;
+      stroke: $dark-grey;
+    }
+  }
 }
 
 
