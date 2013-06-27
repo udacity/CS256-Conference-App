@@ -59,14 +59,14 @@ define([], function () {
 		var speakerInfo = document.createElement("section");
 		speakerInfo.className = "speaker-info";
 
-		var speakerName = document.createElement("h2");
+		var speakerName = document.createElement("div");
 		speakerName.className = "speaker-name";
 		speakerName.innerText = speaker.display_name;
 
-		var talks = document.createElement("section");
+		var talks = document.createElement("div");
 		talks.className = "speaker-talks";
 
-		var talkTitle = document.createElement("h4");
+		var talkTitle = document.createElement("div");
 		talkTitle.innerText = "Creating Great Lorem Ipsum Texts";
 		talkTitle.className = "talk-title";
 
@@ -78,8 +78,8 @@ define([], function () {
 		talks.appendChild(talkTime);
 
 		speakerInfo.appendChild(speakerName);
+		speakerInfo.appendChild(talks);
 		root.appendChild(speakerInfo);
-		root.appendChild(talks);
 
 		return root;
 	}

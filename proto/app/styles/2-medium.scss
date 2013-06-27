@@ -8,19 +8,20 @@
     }
 
     .speaker {
-	    height:96px;
-	    min-width: 480px;
-	    font-size: 2em;
+	    height:64px;
+	    min-width: 360px;
+	    font-size: 1.25em;
 	}
 
 	.speaker-thumbnail {
-	    width: 200px;
-	    height: 200px;
+	    width: 150px;
+	    height: 150px;
 	    margin: -20px;
 	}
 
 	.speaker-info {
-	    margin-left: 144px;
+	    margin-left: 108px;
+	    padding-top: 10px;
 	}
 
 }

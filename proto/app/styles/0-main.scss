@@ -73,21 +73,30 @@ body > header {
     display: -webkit-flex;
     display: flex;
 
-    h1, a {
+    .logo, a {
         line-height: 2rem;
     }
 
-    h1 {
+    .logo {
         margin: ($padding / 2) $padding;
 
         background-image: url('./../images/io_logo.jpg');
         background-repeat: no-repeat;
         background-size: contain;
         text-indent: -9999px;
-        -webkit-flex: 8;
-        flex: 8;
+        -webkit-flex: 1;
+        flex: 1;
     }
 
+    #page-title {
+        flex: 8;
+        -webkit-flex: 8;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 2rem;
+        padding-top: 10px
+    }
+    
     a {
         width: 48px;
         display:inline-block;
