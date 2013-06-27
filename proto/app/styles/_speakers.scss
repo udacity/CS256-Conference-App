@@ -1,18 +1,24 @@
-.avatar {
-    width: 192px;
-    height: 192px;
+.speaker {
+    height:48px;
+    min-width: 240px;
+    clear: both;
+}
+
+.speaker-thumbnail {
+    width: 100px;
+    height: 100px;
     -webkit-mask-box-image: -webkit-radial-gradient(white,white,white,transparent 50%);
     float: left;
-    margin: -24px;
+    margin: -10px;
 }
 
 .speaker-info {
-    margin-left: 148px;
+    margin-left: 72px;
     
 }
 
 .speaker-name {
-    padding-left: 0px !important;
+    margin: 0;
 }
 
 .speaker-info .talk {
@@ -21,12 +27,20 @@
 
 }
 
-.talk h4, .talk p {
+.speaker-talks .talk-title {
+    margin: 0;
+}
+
+.speaker-talks .talk-time {
+    font-size: 0.6em;
+}
+
+.talk2 h4, .talk2 p {
     padding-left: 0px !important;
     margin: 0.25rem;
 }
 
-.talks {
+.talks2 {
     display: -webkit-flex;
     display: flex;
     

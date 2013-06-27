@@ -25,5 +25,8 @@ require([], function () {
     if(url.indexOf('schedule.html') > 0) {
         require(['grid-controller'], function() {});
     }
+    if(url.indexOf('speakers.html') > 0) {
+        require(['speakers'], function() {});
+    }
 });
 
