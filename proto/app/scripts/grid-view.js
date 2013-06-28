@@ -48,11 +48,13 @@ define([], function () {
     }
 
     function getTimeString(date) {
-        var hours = date.getHours();
+        var adjustedDate = new Date(date);
+        adjustedDate.setUTCHours(adjustedDate.getUTCHours() - (8 + (adjustedDate.getTimezoneOffset() / 60)));
+        var hours = adjustedDate.getUTCHours();
         if(hours < 10) {
             hours = '0'+hours;
         }
-        var minutes = date.getMinutes();
+        var minutes = adjustedDate.getUTCMinutes();
         if(minutes < 10) {
             minutes = '0'+minutes;
         }
@@ -112,17 +114,30 @@ define([], function () {
         var textNode = document.createTextNode(sessionData.title);
         sessionElement.appendChild(textNode);
 
-        var gridStart = gridStartTime.getTime();
-        var sessionStart = parseInt(sessionData.startTimestamp, 10) * 1000;
-        var sessionEnd = parseInt(sessionData.endTimestamp, 10) * 1000;
+        var gridStart = gridStartTime.getTime() / 1000;
+        var sessionStart = parseInt(sessionData.startTimestamp, 10);
+        var sessionEnd = parseInt(sessionData.endTimestamp, 10);
 
-        console.log('sessionData.title = '+sessionData.title);
-        console.log('sessionStart = '+sessionStart);
-        console.log('sessionEnd = '+sessionEnd);
-        console.log('gridStartTime = '+gridStartTime.getTime());
+        /**console.log('sessionData.title = '+sessionData.title);
 
-        var startOffsetMins = ((sessionStart-gridStart) / 1000) / 60;
-        var durationMins = ((sessionEnd-sessionStart) / 1000) / 60;
+        var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+        
+        d.setUTCSeconds(sessionStart);
+        console.log('sessionStart = '+d);
+
+        d = new Date(0);
+        d.setUTCSeconds(sessionEnd);
+        console.log('sessionEnd = '+d);
+
+        d = new Date(0);
+        d.setUTCSeconds(gridStart);
+        console.log('gridStartTime = '+d);
+
+        console.log('gridStart = '+gridStart);
+        console.log('sessionStart = '+sessionStart);**/
+
+        var startOffsetMins = ((sessionStart-gridStart)) / 60;
+        var durationMins = ((sessionEnd-sessionStart)) / 60;
         var leftOffset = startOffsetMins * pixelsPerMinute;
         var sessionWidth = (durationMins * pixelsPerMinute) - (2 * borderWidth);
 
@@ -194,11 +209,20 @@ define([], function () {
         var pixelsPerMinute = 4;
         var padding = 8;
 
-        // Method Variables
-        var gridStartTime = new Date(Date.UTC(2013, 4, 15, 10, 0, 0));
-        gridStartTime.setHours(gridStartTime.getUTCHours() -7);
-        var gridEndTime = new Date(Date.UTC(2013, 4, 17, 18, 0, 0));
-        gridEndTime.setHours(gridEndTime.getUTCHours() -7);
+        // Method Variables - Fix up http://www.worldtimebuddy.com/
+        var gridStartTime = new Date(0);
+        gridStartTime.setUTCDate(15);
+        gridStartTime.setUTCMonth(4);
+        gridStartTime.setUTCFullYear(2013);
+        gridStartTime.setUTCHours(16);
+        gridStartTime.setUTCMinutes(0);
+
+        var gridEndTime = new Date(0);
+        gridEndTime.setUTCDate(18);
+        gridEndTime.setUTCMonth(4);
+        gridEndTime.setUTCFullYear(2013);
+        gridEndTime.setUTCHours(3);
+        gridEndTime.setUTCMinutes(0);
 
         // Create Timeline
         var timelineWidth = createTimeLine(pixelsPerMinute, borderWidth, padding, gridStartTime, gridEndTime);
@@ -207,8 +231,10 @@ define([], function () {
         var tracks = trackData;
         for(var i = 0; i < tracks.length; i++) {
             var track = tracks[i];
-            var numberOfRows = createTrack(track, gridStartTime, rowHeight, timelineWidth, borderWidth, padding, pixelsPerMinute);
-            createTrackTitle(track, numberOfRows, borderWidth, rowHeight);
+            if(track.sessions.length > 0) {
+                var numberOfRows = createTrack(track, gridStartTime, rowHeight, timelineWidth, borderWidth, padding, pixelsPerMinute);
+                createTrackTitle(track, numberOfRows, borderWidth, rowHeight);
+            }
         }
     };
 

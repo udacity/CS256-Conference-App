@@ -1,0 +1,11 @@
+{
+  "name": "io-devsite-tools",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "googleapis": "~0.2.12"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
