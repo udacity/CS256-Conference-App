@@ -100,9 +100,9 @@ define([], function () {
         rowElement.style.height = rowHeight +'px';
         rowElement.style.width = timelineWidth+'px';
         rowElement.classList.add('row');
-        console.log('track.title = '+track.title);
-        console.log('track.class = '+track.class);
-        rowElement.classList.add(track.class);
+        if(typeof track.class !== undefined && track.class.length > 0) {
+            rowElement.classList.add(track.class);
+        }
 
         return rowElement;
     }
@@ -112,8 +112,17 @@ define([], function () {
         var textNode = document.createTextNode(sessionData.title);
         sessionElement.appendChild(textNode);
 
-        var startOffsetMins = ((sessionData.startTime-gridStartTime) / 1000) / 60;
-        var durationMins = ((sessionData.endTime-sessionData.startTime) / 1000) / 60;
+        var gridStart = gridStartTime.getTime();
+        var sessionStart = parseInt(sessionData.startTimestamp, 10) * 1000;
+        var sessionEnd = parseInt(sessionData.endTimestamp, 10) * 1000;
+
+        console.log('sessionData.title = '+sessionData.title);
+        console.log('sessionStart = '+sessionStart);
+        console.log('sessionEnd = '+sessionEnd);
+        console.log('gridStartTime = '+gridStartTime.getTime());
+
+        var startOffsetMins = ((sessionStart-gridStart) / 1000) / 60;
+        var durationMins = ((sessionEnd-sessionStart) / 1000) / 60;
         var leftOffset = startOffsetMins * pixelsPerMinute;
         var sessionWidth = (durationMins * pixelsPerMinute) - (2 * borderWidth);
 
@@ -186,8 +195,10 @@ define([], function () {
         var padding = 8;
 
         // Method Variables
-        var gridStartTime = new Date(2013, 5, 16, 10, 0, 0);
-        var gridEndTime = new Date(2013, 5, 16, 18, 0, 0);
+        var gridStartTime = new Date(Date.UTC(2013, 4, 15, 10, 0, 0));
+        gridStartTime.setHours(gridStartTime.getUTCHours() -7);
+        var gridEndTime = new Date(Date.UTC(2013, 4, 17, 18, 0, 0));
+        gridEndTime.setHours(gridEndTime.getUTCHours() -7);
 
         // Create Timeline
         var timelineWidth = createTimeLine(pixelsPerMinute, borderWidth, padding, gridStartTime, gridEndTime);
@@ -195,7 +206,6 @@ define([], function () {
         // Create Tracks
         var tracks = trackData;
         for(var i = 0; i < tracks.length; i++) {
-            console.log('Sorting out track - '+tracks[i].title);
             var track = tracks[i];
             var numberOfRows = createTrack(track, gridStartTime, rowHeight, timelineWidth, borderWidth, padding, pixelsPerMinute);
             createTrackTitle(track, numberOfRows, borderWidth, rowHeight);

@@ -14,25 +14,77 @@ define([], function () {
       }
 
       gapi.client.googledevelopers.events.tracks.list({eventId: EVENT_ID}).execute(function(resp) {
+        getFullTrackData(resp.tracks, cb);
+/**
         var responseTracks = resp.tracks;
         tracks = [];
+
 
         var singleResponseTrack;
         for(var i = 0; i < responseTracks.length; i++) {
           singleResponseTrack = responseTracks[i];
 
           var className = getClassName(singleResponseTrack.id);
-          if(className.length > 0) {
+          if(className.length > 0 && singleResponseTrack.sessions.length > 0) {
             tracks.push({
               'id': singleResponseTrack.id,
               'title': singleResponseTrack.title,
               'class': className,
-              'sessions': []
+              'sessions': singleResponseTrack.sessions
             });
           }
         }
 
         cb(tracks);
+        **/
+      });
+    }
+
+    function getFullTrackData(origTracks, cb) {
+      getFullTrackDataFromAPI(0, origTracks, [], cb);
+    }
+
+    function getFullTrackDataFromAPI(index, origTracks, tracks, cb) {
+      if(!(index < origTracks.length) || index == 1) {
+        cb(tracks);
+        return;
+      }
+
+      console.log('getFullTrackDataFromAPI index = '+index);
+
+      if(typeof origTracks[index].sessions === 'undefined' || origTracks[index].sessions.length == 0) {
+        getFullTrackDataFromAPI(index+1, origTracks, tracks, cb);
+        return;
+      }
+
+      getTrackSessions(origTracks[index].sessions, function(sessions) {
+        var className = getClassName(origTracks[index].id);
+        tracks.push({
+              'id': origTracks[index].id,
+              'title': origTracks[index].title,
+              'class': className,
+              'sessions': sessions
+            });
+
+        getFullTrackDataFromAPI(index+1, origTracks, tracks, cb);
+      });
+    }
+
+    function getTrackSessions(sessionIds, cb) {
+      getTrackSessionsFromAPI(0, sessionIds, [], cb);
+    }
+
+    function getTrackSessionsFromAPI(index, sessionIds, sessions, cb) {
+      if(!(index < sessionIds.length)) {
+        cb(sessions);
+        return;
+      }
+
+      var sessionId = sessionIds[index];
+
+      gapi.client.googledevelopers.events.sessions.get({'eventId': EVENT_ID, 'sessionId': sessionId}).execute(function(resp) {
+        sessions.push(resp);
+        getTrackSessionsFromAPI(index+1, sessionIds, sessions, cb);
       });
     }
 
