@@ -1,0 +1,9 @@
+Android green: #9C0
+Chrome blue: #0294C7
+Google+ red: #CF4A2C
+Cloud orange: #F80
+Google Maps pink: #F44
+YouTube red: #C00
+Wallet dark green: #096
+Knowledge blue: #36C
+Tech Talk light green: #9C9
