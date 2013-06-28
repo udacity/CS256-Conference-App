@@ -24,7 +24,7 @@
 }
 
 .speaker-info {
-    margin-left: 72px;
+    amargin-left: 72px;
 }
 
 .speaker-name {
@@ -33,8 +33,6 @@
 
 .speaker-info .talk {
     margin: 0;
-    padding-left: 2rem;
-
 }
 
 .speaker-talks .talk-title {
@@ -45,12 +43,19 @@
     font-size: 0.6em;
 }
 
+#speaker-details .talk-title { font-size: 1.5em; color: #222; line-height: 1.0; margin: 10px 0px }
+.talk-tags { margin-left: 20px; font-size: 0.75em; font-weight: bold }
+.talk-description { margin: 5px 20px; font-size: 0.75em; }
+.talk-time { margin-left: 20px; }
+
+
 #insert {
     flex:1;
+    min-width: 400px;
 }
 
 #speaker-details {
-    flex:1;
+    flex:2;
     display:none;
 }
 
