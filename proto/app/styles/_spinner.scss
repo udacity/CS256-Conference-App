@@ -1,0 +1,52 @@
+/************************************
+ * Example taken from:
+ * http://www.designcouch.com/home/why/2013/05/23/dead-simple-pure-css-loading-spinner/
+ ***********************************/
+
+$spinner-width: 60px;
+$spinner-border: 6px;
+
+.spinner {
+   height:$spinner-width;
+   width:$spinner-width;
+   margin:0 auto;
+   position:relative;
+   -webkit-animation: rotation .6s infinite linear;
+   -moz-animation: rotation .6s infinite linear;
+   -o-animation: rotation .6s infinite linear;
+   animation: rotation .6s infinite linear;
+   border:$spinner-border solid rgba(120,120,120,.15);
+   border-radius:100%;
+}
+
+.spinner:before {
+   content:"";
+   display:block;
+   position:absolute;
+   left:-$spinner-border;
+   top:-$spinner-border;
+   height:100%;
+   width:100%;
+   border:$spinner-border solid rgba(120,120,120,.8);
+   border-left:$spinner-border solid transparent;
+   border-bottom:$spinner-border solid transparent;
+   border-right:$spinner-border solid transparent;
+   border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+}

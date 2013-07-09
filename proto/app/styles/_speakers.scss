@@ -1,4 +1,106 @@
-.speaker {
+.speakers {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    position: relative;
+
+    overflow: hidden;    
+}
+
+#speaker-list {
+    -webkit-flex: 1;
+    flex:1;
+
+    width: 0;
+
+    margin: 0;
+    padding: 0 0 ($padding/4) 0;
+    list-type: none;
+
+    overflow-y: scroll;
+
+    /* Nasty property required for flinging on iOS devices */
+    -webkit-overflow-scrolling: touch;
+}
+
+#speaker-list > li {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    margin: $padding;
+
+    .speaker-thumbnail-container {
+        width: 80px;
+        height: 80px;
+
+        overflow: hidden;
+
+        img {
+            // This isn't great, but without switching to bg-image or
+            // relying on images being square, we can't do this.
+            width: 100%;
+            height: 100%;
+            
+            border-radius: 100%;
+        }
+    }
+}
+
+.speaker-info {
+    width: 0;
+
+    -webkit-flex: 1;
+    flex: 1;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    margin-left: $padding;
+
+    h2 {
+        margin: 0 0 ($padding/2) 0;
+        padding: 0;
+    }
+}
+
+.speaker-talks {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+#speaker-details {
+    -webkit-flex: 1;
+    flex:1;
+
+    width: 0;
+
+    display:none;
+
+    padding: $padding;
+
+    overflow-y: scroll;
+
+    /* Nasty property required for flinging on iOS devices */
+    -webkit-overflow-scrolling: touch;
+
+    h2 {
+        margin: 0 0 ($padding/2) 0;
+        padding: 0;
+    }
+}
+
+/**.speaker {
     height:48px;
     min-width: 240px;
     clear: both;
@@ -18,13 +120,12 @@
     height: 100px;
     max-height: 100px;
     -webkit-mask-box-image: -webkit-radial-gradient(white,white,white,transparent 50%);
-    //border-radius: 100%;
     float: left;
     margin: -15px -10px;
 }
 
 .speaker-info {
-    amargin-left: 72px;
+    margin-left: 72px;
 }
 
 .speaker-name {
@@ -65,4 +166,4 @@
 
     -webkit-flex-direction: row;
     flex-direction: row;
-}
+}**/

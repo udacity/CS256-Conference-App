@@ -85,4 +85,28 @@
         width: 94%;
         height: 100%;
     }
+
+    .speakers {
+        @include display-box;
+        @include box-orient(horizontal);
+    }
+
+    #speaker-list {
+        @include box-flex(1);
+    }
+
+    #speaker-list > li {
+        @include display-box;
+        @include box-orient(horizontal);
+    }
+
+    .speaker-info {
+        @include display-box;
+        @include box-orient(vertical);
+        @include box-flex(1);
+    }
+
+    #speaker-details {
+        @include box-flex(1);
+    }
 }

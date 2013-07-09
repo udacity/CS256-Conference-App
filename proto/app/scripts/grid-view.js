@@ -10,6 +10,8 @@ define([], function () {
     var gridContent = document.querySelector('#grid-content');
     var tracksContainer = document.querySelector('#tracks');
     var timeline = document.querySelector('#timeline');
+    var scheduleGrid = document.querySelector('.schedule-grid');
+    var spinner = document.querySelector('.spinner-center');
 
     window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       ||
@@ -237,7 +239,13 @@ define([], function () {
                 createTrackTitle(track, numberOfRows, borderWidth, rowHeight);
             }
         }
+
+        spinner.style.display = "none";
+        scheduleGrid.style.display = "";
     };
+
+    spinner.style.display = "";
+    scheduleGrid.style.display = "none";
 
     return exports;
 });
