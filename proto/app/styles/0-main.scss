@@ -82,9 +82,10 @@ body > header {
 
     align-items: center;
     -webkit-align-items: center;
+    box-align:center;
+    -webkit-box-align:center;
 
-    min-height: 80px;
-    height: 8%;
+    height: 10%;
 
     #page-title {
         flex: 8;
@@ -106,7 +107,7 @@ body > header {
         display:inline;
 
         img {
-            padding: $padding;
+            padding: $padding / 2;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
@@ -325,6 +326,8 @@ $number-of-rooms: 10;
     display: -webkit-flex;
     -webkit-flex-direction: column;
 
+    height: 0;
+
     ::-webkit-scrollbar {
         display: none;
     }
@@ -377,6 +380,7 @@ $number-of-rooms: 10;
         background-repeat: no-repeat;
         background-position: center;
         text-indent: -9999px;
+        font-size: 0;
 
         &.android {
             background-color: $android-color;
@@ -457,6 +461,8 @@ $number-of-rooms: 10;
 
 #grid-content {
     -webkit-flex: 1;
+
+    width: 0;
 
     overflow: scroll;
     /* Nasty property required for flinging on iOS devices */

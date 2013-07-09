@@ -21,6 +21,7 @@ define([], function () {
     })();
 
     function onGridScroll() {
+        console.log('onGridScroll() :)');
         gridScrollValues.left = gridContent.scrollLeft;
         gridScrollValues.top = gridContent.scrollTop;
 
