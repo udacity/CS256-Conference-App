@@ -10,7 +10,7 @@
         @include display-box;
         @include box-orient(horizontal);
 
-        h1 {
+        #page-title {
             @include box-flex(8);
         }
     }

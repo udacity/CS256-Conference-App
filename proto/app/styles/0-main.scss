@@ -90,7 +90,6 @@ body > header {
     #page-title {
         flex: 8;
         -webkit-flex: 8;
-        display: inline;
         font-size: 2rem;
         text-align: center;
 
@@ -104,7 +103,7 @@ body > header {
     }
 
     a {
-        display:inline;
+        display:inline-block;
 
         img {
             padding: $padding / 2;
