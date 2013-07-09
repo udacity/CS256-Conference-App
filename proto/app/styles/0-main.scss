@@ -79,6 +79,51 @@ img {
 }
 
 body > header {
+    height: 60px;
+
+    position: relative;
+
+    $page-title: 1.6rem;
+    
+    #page-title {
+        position: absolute;
+
+        top: 50%;
+        width: 100%;
+
+        margin-top: -($page-title / 2);
+
+        font-size: $page-title;
+        text-align: center;
+
+        z-index: 0;
+    }
+
+    .logo {
+        position:absolute;
+
+        left: 0;
+    }
+
+    .actions {
+        position: absolute;
+        right: 0;
+    }
+
+    a {
+        position: relative;
+        z-index: 1;
+        display:inline-block;
+        img {
+            max-height: 100%;
+            padding: $padding / 2;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    }
+}
+
+/**body > header {
     display: -webkit-flex;
     display: flex;
 
@@ -95,12 +140,9 @@ body > header {
         -webkit-flex: 8;
         font-size: 2rem;
         text-align: center;
-
-
     }
     
     .action {
-        //padding: 0.5rem;
         -webkit-justify-content: flex-end;
         justify-content: flex-end;
     }
@@ -123,7 +165,7 @@ body > header {
     select {
         margin: auto 0;
     }
-}
+}**/
 
 .main-content {
     /*This feels nasty, but makes flexbox, avoid stretching past the body 100% height*/
