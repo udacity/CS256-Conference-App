@@ -1,0 +1,213 @@
+.home-ui {
+    display: flex;
+    flex-direction: column;
+}
+
+/**
+ * Grow the information pane to fill empty space
+ **/
+.info-pane {
+	height: 0;
+	flex: 4;
+
+	overflow: auto;
+}
+
+/**
+ * Sessions for now and next on tablets
+ **/
+.sessions-now-next {
+	display: none;
+
+	flex-direction: row;
+	
+	overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    section {
+        position: relative;
+        margin: $padding;
+
+        min-width: 12rem;
+
+        h2 {
+            position: absolute;
+            height: 100%;
+            width: 2 * $padding;
+            left: 0px;
+
+            text-indent: -99999px;
+            margin: 0;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        h3, p {
+            padding-left: 3 * $padding;
+        }
+
+        h3 {
+            margin: $padding 0 0 0;
+        }
+
+        p {
+            margin: 0 0 $padding 0;
+        }
+
+        &.android {
+            h2 {
+                //background-color: $android-color;
+                background-image: url('./../images/product_icons/track_android.png');
+            }
+
+            div {
+                //border-color: $android-color;
+            }
+        }
+
+        &.chrome {
+            h2 {
+                //background-color: $chrome-color;
+                background-image: url('./../images/product_icons/track_chromeapps.png');
+            }
+
+            div {
+                //border-color: $chrome-color;
+            }
+        }
+
+        &.g-plus {
+            h2 {
+                //background-color: $google-plus-color;
+                background-image: url('./../images/product_icons/track_googleplus.png');
+            }
+
+            div {
+                //border-color: $google-plus-color;
+            }
+        }
+
+        &.cloud {
+            h2 {
+                //background-color: $cloud-color;
+                background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+            }
+
+            div {
+                //border-color: $cloud-color;
+            }
+        }
+
+        &.maps {
+            h2 {
+                //background-color: $google-maps-color;
+                background-image: url('./../images/product_icons/track_googlemaps.png');
+            }
+
+            div {
+                //border-color: $google-maps-color;
+            }
+        }
+
+        &.youtube {
+            h2 {
+                //background-color: $youtube-color;
+                background-image: url('./../images/product_icons/track_youtube.png');
+            }
+
+            div {
+                //border-color: $youtube-color;
+            }
+        }
+    }
+
+    @media (min-width: 760px) and (min-height: 600px) {
+        display: flex;
+    }
+}
+
+/**
+ * Item Grid
+ */
+$menuItemBreakPoint: 500px;
+
+.menu-items-grid {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+
+    padding: 0 1%;
+
+	a {
+        flex: 0 46%;
+
+        position: relative;
+
+        margin-bottom: ($padding / 2);
+
+        span {
+            display:inline-block;
+            padding: (1.5 * $padding) $padding $padding $padding;
+        }
+    }
+
+    
+
+    @media (min-width: $menuItemBreakPoint) {
+    	a {
+    		flex: 0 24%;
+    	}
+    }
+}
+
+.no-flexbox {
+    .menu-items-grid {
+        flex: 0;
+        
+        display: block;
+
+        a {
+            width: 49%;
+            min-height: 4rem;
+        }
+
+        a:nth-child(2n) {
+            float: right;
+        }
+
+        a:nth-child(2n+1) {
+            float: left;
+        }
+
+        a:after {
+            content: '';
+            clear: both;
+        }
+    }
+}
+
+/**
+ * Wifi Details
+ **/
+.wifi-details {
+ 	padding: ($padding / 2) 0 $padding 0;
+
+    table {
+    	margin: 0 auto;
+    }
+
+    tr {
+        color: inherit;
+    }
+    
+    h2 {
+        margin:0;
+    }
+    
+    td {
+        padding: 0 ($padding / 2);
+    }
+}

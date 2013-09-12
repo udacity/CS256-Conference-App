@@ -1,0 +1,40 @@
+@import "values";
+@import "reset";
+@import "component_page";
+@import "components";
+@import "component_button";
+@import "component_home";
+@import "component_schedule";
+@import "component_map";
+@import "component_session";
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+    color: $primary-text-color;
+    background-color: $bg-color;
+}
+
+body {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.main-content {
+    /*We want the height to be determined by flex*/
+    height: 0;
+
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    
+    flex: 1;
+}

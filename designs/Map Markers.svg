@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="450.4422"
+   height="721.15997"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   inkscape:export-filename="/Users/mattgaunt/Programming/Sites/udacity/app/images/mapmarkers/toilet.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="Map Markers.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="68.834247"
+     inkscape:cy="673.93276"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1124"
+     inkscape:window-height="1147"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       orientation="1,0"
+       position="225.71359,394.44892"
+       id="guide3050" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="803.47238,489.03068"
+       id="guide3052" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="730.61524,744.74492"
+       id="guide3054" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="630.61524,1.8878174"
+       id="guide3056" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="153.48769,291.91843"
+       id="guide3062" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="166.61967,386.87277"
+       id="guide3064" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-146.52762,-23.089984)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#99cc00;fill-opacity:1"
+       id="path3058"
+       sodipodi:cx="370"
+       sodipodi:cy="265.21933"
+       sodipodi:rx="75.714287"
+       sodipodi:ry="70"
+       d="m 445.71429,265.21933 c 0,38.65993 -33.89844,70 -75.71429,70 -41.81585,0 -75.71429,-31.34007 -75.71429,-70 0,-38.65993 33.89844,-70 75.71429,-70 41.81585,0 75.71429,31.34007 75.71429,70 z"
+       transform="matrix(1.9311514,0,0,2.0887965,-342.28481,-298.1836)" />
+    <path
+       style="fill:none;stroke:#99cc00;stroke-width:14;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 372.24121,30.087807 c 0,0 -219.73031,-0.131326 -218.69802,225.131513 0.40783,88.9961 45.62522,101.7718 110.35916,197.10441 64.73394,95.33262 108.33886,290.03845 108.33886,290.03845 0,0 54.37988,-195.07627 110.86425,-290.03061 C 539.58982,357.37723 588.88203,331.01554 589.92909,255.21932 593.02353,31.213456 372.24121,30.087807 372.24121,30.087807 z"
+       id="path3060"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cszczsc" />
+    <image
+       y="163.37723"
+       x="280.84271"
+       id="image3896"
+       xlink:href="data:image/png;base64,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
+"
+       height="184"
+       width="184" />
+  </g>
+</svg>

@@ -1,0 +1,278 @@
+.map-ui {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters-container {
+  margin-bottom: $padding;
+}
+
+.map-layer-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.layer-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+
+  .icon {
+    width: 60%;
+    height:0;
+    padding-bottom: 60%;
+    border-radius: 100%;
+    margin: ($padding / 2) $padding;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+  }
+}
+
+@media screen and (min-width:500px) {
+  .layer-option {
+    .icon {
+      width: 40%;
+      padding-bottom: 40%;
+    }
+  }
+}
+
+@media screen and (min-width:700px) {
+  .layer-option {
+    .icon {
+      width: 30%;
+      padding-bottom: 30%;
+    }
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .layer-option {
+    .icon {
+      width: 20%;
+      padding-bottom: 20%;
+    }
+  }
+}
+
+.layer-option > span {
+  display: none;
+}
+
+.layer-option.toilets > .icon {
+  background-color: $toilet-color;
+  background-image: url('../images/toilet_icon.png');
+}
+
+.layer-option.power > .icon {
+  background-color: $power-color;
+  background-image: url('../images/plug_icon.png');
+}
+
+.layer-option.food > .icon {
+  background-color: $food-color;
+  background-image: url('../images/meal_icon.png');
+}
+
+.layer-option.info > .icon {
+  background-color: $info-color;
+  background-image: url('../images/info_icon_white.png');
+}
+
+.layer-option.room > .icon {
+  background-color: $room-color;
+  background-image: url('../images/room_icon.png');
+}
+
+.layer-option.disabled {
+  .icon {
+    opacity: 0.25;  
+  }
+}
+
+.room-selection {
+  display: block;
+
+  padding: $padding;
+  margin: ($padding / 2) $padding 0 $padding;
+
+  text-align: center;
+  color: $bg-color;
+  background-color: $button-color;
+}
+
+.map-container {
+  display: block;
+  position: relative;
+  flex: 3;
+  overflow: hidden;
+}
+
+.google-map {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+$floor-selector-width: 3.5rem;
+
+.floor-selector {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  margin: $padding;
+  padding: 0;
+
+  list-style-type: none;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: $floor-selector-width;
+    height: $floor-selector-width;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: $map-floor-button-border;
+    border-width: 1px;
+    background-color: $map-floor-buttons;
+
+    margin-bottom: ($padding * 0.5);
+
+    font-size: 1.2rem;
+  }
+
+  li.selected-floor {
+    color: $bg-color;
+    background-color: $map-floor-button-selected;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  li:active, li:hover {
+    color: $bg-color;
+    background-color: $map-floor-button-selected;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  @media screen and (max-height:600px) and (orientation: landscape) {
+    li {
+      float: right;
+      margin-bottom: 0;
+      margin-right: ($padding * 0.5);
+    }
+
+    li:first-child {
+      margin-right: 0;
+    }
+  }
+
+}
+
+@media screen and (max-height:600px) and (orientation: landscape) {
+  .map-ui > header {
+    display: none;
+  }
+}
+
+$marker-height: 54px;
+$marker-point-height: 16px;
+$info-width: 250px;
+.talk-overlay {
+  display: flex;
+  flex-direction: column;
+
+  width: $info-width;
+
+  box-sizing: border-box;
+
+  border-radius: 10px;
+  background-color: #fefefe;
+  z-index: 12;
+  margin-left: -($info-width / 2);
+  //margin-top: (-$info-height - $marker-height - $marker-point-height - 4px);
+  box-shadow: 3px 3px 10px 4px rgba(0,0,0,0.2);
+
+  .room-title {
+    display: block;
+
+    flex: 1;
+
+    font-size: 18px;
+    margin: 0;
+    padding: ($padding / 2) $padding;
+  }
+
+  h2 {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .time-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .talk-title {
+    display: block;
+    flex: 1;
+  }
+
+  .talk-title, .talk-time {
+    font-size: 12px;
+  }
+
+  section {
+    flex: 1;
+    padding: $padding;
+  }
+
+  section:nth-child(2n) {
+    background-color: #fafafa;
+  }
+
+  section:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+
+  section:hover {
+    background-color: darken(#fafafa, 5%);
+  }
+
+  section:active {
+    background-color: darken(#fafafa, 10%);
+  }
+}
+
+.talk-overlay:after {
+   content:"";
+   display:block; /* reduce the damage in FF3.0 */
+   position:absolute;
+   bottom:-($marker-point-height);
+   left:($info-width / 2) - $marker-point-height;
+   width:0;
+   border-width:$marker-point-height $marker-point-height 0;
+   border-style:solid;
+   border-color:#fefefe transparent;
+}

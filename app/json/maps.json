@@ -1,0 +1,116 @@
+{
+    "data": {
+        "event-lat": 37.78315,
+        "event-long": -122.404007,
+        "initial-zoom": 17,
+        "number-of-floors": 3,
+        "map-markers" : [
+            {
+                "floor": 0,
+                "markers": [
+                    {
+                        "id": "lunchroom",
+                        "type": "food",
+                        "lat": 37.78291495782711,
+                        "lng": -122.40424688905476,
+                        "title": "Breakfast / Lunch Cafes"
+                    },{
+                        "id": "information",
+                        "type": "info",
+                        "lat": 37.7836039061948,
+                        "lng": -122.40369737148283,
+                        "title": "Information Desk"
+                    }
+                ]
+            },{
+                "floor": 1,
+                "markers": [
+                    {
+                        "id": "snack1",
+                        "type": "food",
+                        "lat": 37.783387,
+                        "lng": -122.403652,
+                        "title": "Snacks and Drinks"
+                    },{
+                        "id": "room1",
+                        "type": "room",
+                        "lat": 37.783389,
+                        "lng": -122.404145,
+                        "title": "Room 1"
+                    },{
+                        "id": "room2",
+                        "type": "room",
+                        "lat": 37.783231,
+                        "lng": -122.404355,
+                        "title": "Room 2"
+                    },{
+                        "id": "room3",
+                        "type": "room",
+                        "lat": 37.783196,
+                        "lng": -122.403883,
+                        "title": "Room 3"
+                    },{
+                        "id": "room4",
+                        "type": "room",
+                        "lat": 37.783037,
+                        "lng": -122.404106,
+                        "title": "Room 4"
+                    },{
+                        "id": "toilets1",
+                        "type": "toilet",
+                        "lat": 37.783544,
+                        "lng": -122.403958,
+                        "title": "Toilets"
+                    },{
+                        "id": "toilets2",
+                        "type": "toilet",
+                        "lat": 37.782996,
+                        "lng": -122.404691,
+                        "title": "Toilets"
+                    },{
+                        "id": "power1",
+                        "type": "power",
+                        "lat": 37.782389,
+                        "lng": -122.404199,
+                        "title": "Power"
+                    }
+                ]
+            },{
+                "floor":2,
+                "markers":[
+                    {
+                        "id": "snack2",
+                        "type": "food",
+                        "lat": 37.783387,
+                        "lng": -122.403652,
+                        "title": "Snacks and Drinks"
+                    },{
+                        "id": "room5",
+                        "type": "room",
+                        "lat": 37.783025,
+                        "lng": -122.403699,
+                        "title": "Room 5"
+                    },{
+                        "id": "room6",
+                        "type": "room",
+                        "lat": 37.782794,
+                        "lng": -122.403997,
+                        "title": "Room 6"
+                    },{
+                        "id": "power2",
+                        "type": "power",
+                        "lat": 37.783346,
+                        "lng": -122.40314,
+                        "title": "Power"
+                    },{
+                        "id": "toilets3",
+                        "type": "toilet",
+                        "lat": 37.783544,
+                        "lng": -122.403958,
+                        "title": "Toilets"
+                    }
+                ]
+            }
+        ]
+    }
+}

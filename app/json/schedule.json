@@ -1,0 +1,77 @@
+{
+	"data": {
+		"start-date": "2013-05-15T09:00:00",
+		"end-date": "2013-05-16T22:00:00",
+		"timezone": "US/Pacific",
+		"timezone-offset": "-08:00",
+		"tracks": [
+			{
+		    	"id": "246810121",
+		    	"title": "Room 1",
+		    	"class": "room-1",
+		    	"sessions": [
+		    		{
+		    			"id": "session01",
+		    			"start-date": "2013-05-15T09:00:00",
+		    			"end-date": "2013-05-15T10:00:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		},{
+			    		"id": "session02",
+			    		"start-date": "2013-05-15T10:30:00",
+			    		"end-date": "2013-05-15T11:30:00",
+		    			"title": "The Modern Workflow for Developing the Mobile Web"
+			  		},{
+			    		"id": "session01",
+			    		"start-date": "2013-05-15T11:30:00",
+			    		"end-date": "2013-05-15T12:30:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		}
+				]
+		  	},{
+		  		"id": "123456789",
+		    	"title": "Room 2",
+		    	"class": "room-2",
+		    	"sessions": [
+		    		{
+		    			"id": "session02",
+		    			"start-date": "2013-05-15T10:30:00",
+			    		"end-date": "2013-05-15T11:30:00",
+		    			"title": "The Modern Workflow for Developing the Mobile Web"
+			  		},{
+			    		"id": "session01",
+			    		"start-date": "2013-05-15T10:30:00",
+			    		"end-date": "2013-05-15T11:30:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		},{
+			    		"id": "session02",
+			    		"start-date": "2013-05-15T11:30:00",
+			    		"end-date": "2013-05-15T12:30:00",
+		    			"title": "The Modern Workflow for Developing the Mobile Web"
+			  		}
+				]
+		  	},{
+		  		"id": "987654321",
+		    	"title": "Room 3",
+		    	"class": "room-3",
+		    	"sessions": [
+		    		{
+		    			"id": "session01",
+		    			"start-date": "2013-05-15T10:30:00",
+			    		"end-date": "2013-05-15T11:30:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		},{
+			    		"id": "session02",
+			    		"start-date": "2013-05-15T11:30:00",
+			    		"end-date": "2013-05-15T12:30:00",
+		    			"title": "The Modern Workflow for Developing the Mobile Web"
+			  		},{
+			    		"id": "session01",
+			    		"start-date": "2013-05-15T11:30:00",
+			    		"end-date": "2013-05-15T12:30:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		}
+				]
+	  		}
+		]
+	}
+}

@@ -1,0 +1,30 @@
+application: udacity-conf
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index\.html
+
+- url: /scripts
+  static_dir: scripts
+
+- url: /styles
+  static_dir: styles
+
+- url: /images
+  static_dir: images
+
+- url: /pages
+  static_dir: pages
+
+- url: /bower_components
+  static_dir: bower_components
+
+- url: /json
+  static_dir: json
+  http_headers:
+    Access-Control-Allow-Origin: "*"

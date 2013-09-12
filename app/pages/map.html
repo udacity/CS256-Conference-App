@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css({.tmp,app}) ../styles/main.css -->
+        <link rel="stylesheet" href="./../styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js ../scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <header>
+            <a class="logo" href="/"><img src="./../images/io_logo.png" /></a>
+            <div id="page-title"></div>
+            <div class="actions">
+                <a class="action filter" href="#filters"><img src="./../images/filter_icon.png" /></a>
+            </div>
+        </header>
+
+        <a id="filters"></a>
+        <section class="main-content map-component">
+
+            <!-- Filters Container -->
+            <section class="filters-container">
+                <div class="filter-options-container">
+                    <div class="filter-item toilets">
+                        <div class="icon"></div>
+                        <span>Toilets</span>
+                    </div>
+
+                    <div class="filter-item plugs">
+                        <div class="icon"></div>
+                        <span>Plugs</span>
+                    </div>
+
+                    <div class="filter-item food">
+                        <div class="icon"></div>
+                        <span>Food</span>
+                    </div>
+
+                    <div class="filter-item info">
+                        <div class="icon"></div>
+                        <span>Info</span>
+                    </div>
+                </div>
+
+                <a class="room-selection">Go to Room</a>
+            </section>
+
+            <!-- Map Container -->
+            <!--<section class="map-container">-->
+
+                <!-- map (iframe) -->
+                <div id="map-canvas" class="map-container">
+                    <!--<iframe class="map-iframe" src="https://www.google.com/maps?t=m&amp;ie=UTF8&amp;ll=36.122104,-115.168927&amp;spn=0.002795,0.004393&amp;z=18&amp;output=embed"></iframe>-->
+                </div>
+
+                <!-- overlays  -->
+                <!--<article class="map-current-talk">
+                    <div>
+                        <h1>Room 1</h1>
+                        <p class="map-talk-type">Current Talk</p>
+                        <dl>
+                            <dt>Title: The title can be longer than this</dt>
+                            <dd>16:00 - 17:00</dd>
+                        </dl>
+                        <p class="map-talk-type">Next Talk</p>
+                        <dl>
+                            <dt>Title: The title</dt>
+                            <dd>17:00 - 18:00</dd>
+                        </dl> 
+                    </div>
+                    
+                    <svg class="map-talk-end" viewbox="0 0 1 1" preserveAspectRatio="none">     
+                        <polygon points="0 0 0.5 1 1 0" />
+                        <line x1="0" x2="0.5" y1="0" y2="1" />
+                        <line x1="0.5" x2="1" y1="1" y2="0" />
+                    </svg>
+                </article>-->
+
+            <!--</section>-->
+
+        </section>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <!-- build:js ../scripts/main.js -->
+        <script data-main="../scripts/main" src="../bower_components/requirejs/require.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,222 @@
+.session-ui {
+	display: flex;
+	flex-direction: column;
+}
+
+.session-panes-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	height: 0;
+	flex: 1;
+
+	overflow-x: scroll;
+	//-webkit-overflow-scrolling: touch;
+}
+
+.session-panes-container::-webkit-scrollbar {  
+    width: 0px;
+    height:0px;
+}
+
+.session-pane {
+	min-width: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.session-pane::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+}
+
+.session-tabs {
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+
+	$tabIndicatorHeight: 4px;
+	padding-bottom: $tabIndicatorHeight;
+
+	h2 {
+		width: 0;
+		flex: 1;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+
+	.session-tabs-indicator {
+		position: absolute;
+		width: 0;
+		height: $tabIndicatorHeight;
+
+		background-color: $tab-indicator-color;
+
+		left: 0;
+		bottom: 0;
+	}
+
+	@media screen and (min-width:600px) {
+    	h2 {
+    		font-size: 1.6rem;
+    		margin: ($padding / 2) 0;
+    	}
+  	}
+}
+
+@media screen and (min-width:1000px) {
+	.session-pane {
+		width: 0;
+		min-width: 0;
+		flex: 1;
+
+		border-left-style: solid;
+		border-width: 1px;
+	}
+
+	.session-pain:last-child {
+		border-left-style: none;
+	}
+
+	.session-tabs {
+		padding-bottom: 0;
+	}
+
+	.session-tabs > .session-tabs-indicator {
+		display: none;
+		height: 0;
+	}
+}
+
+.session-info-pane {
+	
+}
+
+.session-header {
+	h1 {
+		font-size: 28px;
+		margin: $padding 0;
+		padding: 0;
+	}
+
+	h2 {
+		font-size: 20px;
+		margin: ($padding / 4) 0;
+		padding: 0;
+	}
+}
+
+.session-header, .session-speaker, .session-description,
+.session-qa-input-container {
+
+	margin: $padding;
+
+	@media screen and (min-width:600px) {
+    	margin: 1.5 * $padding;
+  	}
+}
+
+.speaker-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.speaker-list > li {
+	display: flex;
+	flex-direction: column;
+
+	padding: $padding 0 0 0;
+
+	border-top-style: solid;
+	border-color: $session-horizontal-line-color;
+	border-width: 1px;
+}
+
+.speaker-img-container {
+	text-align: center;
+
+	img {
+		width: 40%;
+		border-radius: 100%;
+	}
+}
+
+.speaker-details {
+	flex: 2;
+
+	h4 {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+
+		padding: $padding;
+
+		box-sizing: border-box;
+
+		color: $bg-color;
+		text-align: center;
+
+		background-color: $btn-g-plus-color;
+
+		border-radius: 5px;
+		border-bottom-style: solid;
+		border-width: 4px;
+		border-color: darken($btn-g-plus-color, 10%);
+	}
+
+	.btn:hover {
+		background-color: darken($btn-g-plus-color, 5%);
+	}
+
+	.btn:active {
+		background-color: darken($btn-g-plus-color, 10%);
+		border-color: darken($btn-g-plus-color, 15%);
+	}
+}
+
+.session-qa-pane {
+}
+
+.session-qa-input-container {
+	display: flex;
+	flex-direction: column;
+
+	textarea {
+		flex: 1;
+		width: 100%;
+		height: 140px;
+		resize: none;
+		border-style: solid;
+		border-color: $session-horizontal-line-color;
+		border-width: 1px;
+		padding: ($padding / 2);
+		margin-bottom: $padding;
+		box-sizing: border-box;
+		border-radius: 0;
+	}
+
+	button {
+		width: 100%;
+		padding: $padding;
+		box-sizing: border-box;
+	}
+}
+
+.session-qa-questions {
+	h4 {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	
+}

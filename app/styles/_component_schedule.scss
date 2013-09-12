@@ -1,0 +1,280 @@
+$pixels-per-minute: 2px;
+$tracks-width: 10%;
+$row-height: 50px;
+$number-of-rooms: 10;
+
+.schedule-ui {
+    display: flex;
+    flex-direction: column;
+}
+
+.pan-view {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    height: 0;
+}
+
+.timeline::-webkit-scrollbar {  
+    width: 0px;
+    height:0px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+    
+    margin: 0;
+    padding: 0 0 0 $tracks-width;
+    
+    overflow-x: scroll;
+    color: $light-grey;
+
+    li {
+        $border-width: 1px;
+
+        background-color: rgb(102, 102, 102);
+
+        display: block;
+
+        border-left-style: solid;
+        border-width: $border-width;
+        border-color: $bg-color;
+
+        box-sizing: border-box;
+
+        padding: $padding;
+    }
+}
+
+.pan-view > .content-container {
+	flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.session-container::-webkit-scrollbar {  
+    width: 0px;
+    height:0px;
+}
+
+.session-container {
+	flex: 1;
+
+    width: 0;
+
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    background-color: rgb(255, 255, 255);
+    .row {
+        position: relative;
+        
+        background-image: url('./../images/schedule_bg.png');
+
+        div {
+            position: absolute;
+            
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(185, 185, 185);
+            
+            overflow: hidden;
+
+            background-color: rgb(255, 255, 255);
+
+            box-sizing: border-box;
+
+            padding: $padding / 2;
+        }
+    }
+}
+
+.tracks::-webkit-scrollbar {  
+    width: 0px;
+    height:0px;
+}
+
+.tracks {
+	list-style: none;
+    width: $tracks-width;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    background-color: $timeline-bg;
+    color: $bg-color;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: $bg-color;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+
+        box-sizing: border-box;
+
+        /**&.android {
+            background-color: $android-color;
+            background-image: url('./../images/product_icons/track_android.png');
+        }
+
+        &.chrome {
+            background-color: $chrome-color;
+            background-image: url('./../images/product_icons/track_chromeapps.png');
+        }
+
+        &.g-plus {
+            background-color: $google-plus-color;
+            background-image: url('./../images/product_icons/track_googleplus.png');
+        }
+
+        &.cloud {
+            background-color: $cloud-color;
+            background-image: url('./../images/product_icons/track_googlecloudplatform.png');
+        }
+
+        &.maps {
+            background-color: $google-maps-color;
+            background-image: url('./../images/product_icons/track_googlemaps.png');
+        }
+
+        &.youtube {
+            background-color: $youtube-color;
+            background-image: url('./../images/product_icons/track_youtube.png');
+        }
+
+        &.glass {
+            background-color: $glass-color;
+            background-image: url('./../images/product_icons/track_glass.png');
+        }
+
+        &.ads {
+            background-color: $ads-color;
+            background-image: url('./../images/product_icons/track_googleads.png');
+        }
+
+        &.wallet {
+            background-color: $wallet-color;
+            background-image: url('./../images/product_icons/track_googlewallet.png');
+        }
+
+        &.knowledge {
+            background-color: $knowledge-color;
+            background-image: url('./../images/product_icons/track_knowledgestructureddata.png');
+        }
+
+        &.tech-talk {
+            background-color: $tech-talk-color;
+            background-image: url('./../images/product_icons/track_techtalk.png');
+        }
+
+        &.accessibility {
+            background-color: $accessibility-color;
+            background-image: url('./../images/product_icons/track_accessibility.png');
+        }
+
+        &.gtv {
+            background-color: $gtv-color;
+            background-image: url('./../images/product_icons/track_googletv.png');
+        }
+
+        &.develop-good {
+            background-color: $develop-good-color;
+            background-image: url('./../images/product_icons/track_developforgood.png');
+        }
+
+        &.gdg {
+            background-color: $gdg-color;
+            background-image: url('./../images/product_icons/track_googledevelopergroups.png');
+        }**/
+    }
+}
+
+.flexbox {
+    .tracks > li > span {
+        display: block;
+        line-height: 1rem;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+.no-flexbox.flexboxlegacy {
+    $tracks-width: 15%;
+
+	.pan-view > .content-container {
+		position: relative;
+
+        font-size: 14px;
+	}
+
+    .timeline {
+        padding-left: $tracks-width;
+    }
+
+    .tracks {
+        display:block;
+        position:absolute;
+        left: 0px;
+        height: 100%;
+        width: $tracks-width;
+
+        li > span {
+        }
+    }
+
+    .session-container {
+        display: block;
+        position:absolute;
+        left: $tracks-width;
+        width: 100% - $tracks-width;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:700px) {
+	$tracks-width: 5%;
+    .tracks {
+        width: $tracks-width;
+    }
+
+    .timeline {
+        padding-left: $tracks-width;
+    }
+    
+    .no-flexbox.flexboxlegacy {
+	    $tracks-width: 10%;
+
+        .timeline {
+            padding-left: $tracks-width;
+        }
+
+        .tracks {
+            width: $tracks-width;
+        }
+
+        .session-container {
+            left: $tracks-width;
+            width: 100% - $tracks-width;
+        }
+	}
+}
+
+@media screen and (max-height:600px) and (orientation: landscape) {
+	.schedule-ui > header {
+		display: none;
+	}
+}
+

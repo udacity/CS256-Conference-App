@@ -1,0 +1,47 @@
+.page > header {
+    height: 50px;
+
+    position: relative;
+
+    $page-title: 1.6rem;
+    
+    #page-title {
+        position: absolute;
+
+        top: 50%;
+        width: 100%;
+
+        margin-top: -($page-title / 2);
+
+        font-size: $page-title;
+        text-align: center;
+
+        z-index: 0;
+    }
+
+    .icon {
+        position:absolute;
+        left: 0;
+        max-height: 100%;
+        padding: $padding / 2;
+        box-sizing: border-box;
+    }
+
+    .actions {
+        position: absolute;
+        right: 0;
+    }
+
+    a {
+        position: relative;
+        z-index: 1;
+        display:inline-block;
+
+        img {
+            max-height: 100%;
+            padding: $padding / 2;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    }
+}

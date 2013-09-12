@@ -1,0 +1,11 @@
+.button, button {
+	background-color: $button-color;
+	color: $bg-color;
+	text-decoration: none;
+	font-size: 1.2rem;
+	border-style:none;
+}
+
+.button:active, .button:hover, button:active, button:hover {
+    background-color: darken($button-color, 5%);
+}
