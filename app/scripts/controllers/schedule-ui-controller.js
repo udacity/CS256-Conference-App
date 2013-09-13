@@ -36,5 +36,9 @@ define(['controllers/base-ui-controller', 'views/schedule-view', 'models/schedul
         this.getScheduleView().setModel(this.getScheduleModel());
     }
 
+    ScheduleUIController.prototype.getPageURL = function() {
+        return "schedule";
+    }
+
     return ScheduleUIController;
 });

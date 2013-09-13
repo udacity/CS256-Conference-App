@@ -17,5 +17,13 @@ define([], function () {
 
     }
 
+    BaseUIController.prototype.getPageURL = function() {
+        return "";
+    }
+
+    BaseUIController.prototype.getState = function() {
+        return null;
+    }
+
     return BaseUIController;
 });

@@ -19,6 +19,10 @@ define(['controllers/base-ui-controller', 'views/session-view', 'models/session-
             return sessionModel;
         }
 
+        this.getSessionId = function() {
+            return sessionId;
+        }
+
         this.init();
     }
 
@@ -37,6 +41,10 @@ define(['controllers/base-ui-controller', 'views/session-view', 'models/session-
 
     SessionUIController.prototype.onDataLoaded = function() {
         this.getSessionView().setModel(this.getSessionModel());
+    }
+
+    SessionUIController.prototype.getPageURL = function() {
+        return "session/"+this.getSessionId();
     }
 
     return SessionUIController;

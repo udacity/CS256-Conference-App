@@ -32,7 +32,7 @@ define([], function () {
 
     var currentViewController = null;
 
-    function changeCoreController(uiController) {
+    function changeCoreController(state, uiController) {
         var domElement = uiController.getView();
 
         if(currentViewController) {
@@ -56,6 +56,13 @@ define([], function () {
 
         uiController.addedToDom();
 
+        if(window.history) {
+            history.pushState({
+                appState: state,
+                controllerData: uiController.getState()
+            }, "", uiController.getPageURL());
+        }
+
         currentViewController = uiController;
     }
 
@@ -75,7 +82,7 @@ define([], function () {
         switch(newState) {
             case STATE_HOME:
                 require(['controllers/home-ui-controller'], function(UiController) {
-                    changeCoreController(new UiController());
+                    changeCoreController(newState, new UiController());
 
                     currentState = newState;
                     changingState = false;
@@ -83,7 +90,7 @@ define([], function () {
                 break;
             case STATE_SCHEDULE:
                 require(['controllers/schedule-ui-controller'], function(UiController) {
-                    changeCoreController(new UiController());
+                    changeCoreController(newState, new UiController());
 
                     currentState = newState;
                     changingState = false;
@@ -91,7 +98,7 @@ define([], function () {
                 break;
             case STATE_MAP:
                 require(['controllers/map-ui-controller'], function(UiController) {
-                    changeCoreController(new UiController());
+                    changeCoreController(newState, new UiController(data));
 
                     currentState = newState;
                     changingState = false;
@@ -99,7 +106,7 @@ define([], function () {
                 break;
             case STATE_SESSION:
                 require(['controllers/session-ui-controller'], function(UiController) {
-                    changeCoreController(new UiController(data));
+                    changeCoreController(newState, new UiController(data));
 
                     currentState = newState;
                     changingState = false;
@@ -126,6 +133,14 @@ define([], function () {
                 eventName: 'ShowSession',
                 callback: function(e) {
                     changeState(STATE_SESSION, e.detail.id);
+                }
+            }, {
+                eventName: 'popstate',
+                callback: function(event) {
+                    if(!event.state) {
+                        return;
+                    }
+                    changeState(event.state.appState, event.state.controllerData);
                 }
             }
         ];

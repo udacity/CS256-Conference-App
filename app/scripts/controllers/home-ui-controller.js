@@ -19,5 +19,9 @@ define(['controllers/base-ui-controller', 'views/home-view'], function (BaseUICo
         return this.getHomeView().getDomElement();
     }
 
+    HomeUIController.prototype.getPageURL = function() {
+        return "/";
+    }
+
     return HomeUIController;
 });

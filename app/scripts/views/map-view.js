@@ -26,6 +26,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
 
         var filterView = null;
         var mapContainer = null;
+        var pageContainer = null;
 
         this.cleanUp = function() {
             if(floorOverlays) {
@@ -191,6 +192,14 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         this.getMapContainer = function() {
             return mapContainer;
         }
+
+        this.setPageContainer = function(container) {
+            pageContainer = container;
+        }
+
+        this.getPageContainer = function() {
+            return pageContainer;
+        }
     };
 
     // The HomeUIController class extends the BaseUIController class.
@@ -218,7 +227,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         views.push(mapContainer);
 
         var pageContainer = this.generatePageContainer('map-ui', views);
-
+        this.setPageContainer(pageContainer);
         return pageContainer;
     }
 
@@ -436,6 +445,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                         }
                         this.setFloorLevel(floorLevel);
                         this.updateView();
+                        this.eventDispatchFunction('FloorLevelChange', this.getPageContainer(), {floorLevel: floorLevel})();
                     }.bind(that);
                 }(i), false);
 
