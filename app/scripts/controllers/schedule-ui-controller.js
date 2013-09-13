@@ -37,7 +37,7 @@ define(['controllers/base-ui-controller', 'views/schedule-view', 'models/schedul
     }
 
     ScheduleUIController.prototype.getPageURL = function() {
-        return "schedule";
+        return "/schedule";
     }
 
     return ScheduleUIController;

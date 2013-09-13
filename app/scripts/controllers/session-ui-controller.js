@@ -44,7 +44,7 @@ define(['controllers/base-ui-controller', 'views/session-view', 'models/session-
     }
 
     SessionUIController.prototype.getPageURL = function() {
-        return "session/"+this.getSessionId();
+        return "/session/"+this.getSessionId();
     }
 
     return SessionUIController;

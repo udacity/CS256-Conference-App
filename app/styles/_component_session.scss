@@ -11,7 +11,16 @@
 	flex: 1;
 
 	overflow-x: scroll;
+	overflow-y: hidden;
 	//-webkit-overflow-scrolling: touch;
+
+	.session-pane {
+		pointer-events: none;
+
+		button, a, input, textarea {
+			pointer-events: auto;
+		}
+	}
 }
 
 .session-panes-container::-webkit-scrollbar {  
