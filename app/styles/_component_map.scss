@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-.filters-container {
+.filters-container, .geolocation-container {
   margin-bottom: $padding;
 }
 
@@ -96,7 +96,7 @@
   }
 }
 
-.room-selection {
+.room-selection, .get-direction {
   display: block;
 
   padding: $padding;
@@ -105,6 +105,13 @@
   text-align: center;
   color: $bg-color;
   background-color: $button-color;
+
+  &.disabled{
+    background-color: $button-color-disabled;
+  }
+  &.error{
+    background-color: $button-color-error;
+  }
 }
 
 .map-container {

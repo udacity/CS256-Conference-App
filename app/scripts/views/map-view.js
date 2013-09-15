@@ -6,6 +6,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         BaseView.call(this);
 
         var displayFilter = false;
+        var displayGeoFilter = false;
         var centeredMap = false;
 
         var lat = null;
@@ -25,8 +26,12 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         var filtersDisplay = {};
 
         var filterView = null;
+        var geoFilterView = null;
+        var mapDirectionButton = null;
         var mapContainer = null;
         var pageContainer = null;
+
+        var directionsService = null;
 
         this.cleanUp = function() {
             if(floorOverlays) {
@@ -57,6 +62,22 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         this.toggleDisplayFilter = function() {
             displayFilter = !displayFilter;
         }
+
+        this.toggleGeoDisplayFilter = function() {
+            displayGeoFilter = !displayGeoFilter;
+        }
+
+        this.setDisplayFilter = function(flag) {
+            displayFilter = flag;
+        }
+
+        this.setGeoDisplayFilter = function(flag) {
+            displayGeoFilter = flag;
+        }        
+
+        this.isGeoFilterDisplayed = function() {
+            return displayGeoFilter;
+        }        
 
         this.setLatLong = function(la, lo) {
             lat = la;
@@ -185,6 +206,22 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
             return filterView;
         }
 
+        this.setGeoFilterView = function(view) {
+            geoFilterView = view;
+        }
+
+        this.setDirectionButton = function(button){
+            mapDirectionButton = button;
+        }
+
+        this.getDirectionButton = function(){
+            return mapDirectionButton;
+        }        
+
+        this.getGeoFilterView = function() {
+            return geoFilterView;
+        }        
+
         this.setMapContainer = function(container) {
             mapContainer = container;
         }
@@ -200,6 +237,14 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         this.getPageContainer = function() {
             return pageContainer;
         }
+
+        this.getDirectionsService = function(){
+            return directionsService;
+        }
+
+        this.setDirectiosService = function(service){
+            directionsService = service;
+        }
     };
 
     // The HomeUIController class extends the BaseUIController class.
@@ -211,14 +256,30 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         var header = this.generateTopBar('Map', [{
             imgSrc: 'images/filter_icon.png',
             eventName: 'FilterAction'
+        },{
+            imgSrc: 'images/locate_icon.png',
+            eventName: 'GeolocationAction'            
         }]);
+
         if(header) {
             views.push(header);
+        
             header.addEventListener('FilterAction', function() {
                 this.toggleDisplayFilter();
+                this.setGeoDisplayFilter(false);
                 this.updateView();
             }.bind(this), false);
+
+            header.addEventListener('GeolocationAction', function(){
+                this.toggleGeoDisplayFilter();
+                this.setDisplayFilter(false);
+                this.triggerGeolocation();
+                this.updateView();
+            }.bind(this), false)
         }
+
+        var locationView = this.generateGeolocationPanel();
+        views.push(locationView);
         
         var filterView = this.generateFilterOptions();
         views.push(filterView);
@@ -229,6 +290,58 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         var pageContainer = this.generatePageContainer('map-ui', views);
         this.setPageContainer(pageContainer);
         return pageContainer;
+    }
+
+    MapView.prototype.triggerGeolocation = function(){
+        var directionButton = this.getDirectionButton();
+        directionButton.classList.remove('error');
+        directionButton.classList.add('disabled');
+        directionButton.removeAttribute('href');
+        directionButton.removeAttribute('target');
+        directionButton.textContent = 'retrieving current position ...';
+
+        navigator.geolocation.getCurrentPosition( 
+            function(position){
+                this.elaborateDistance(position);
+            }.bind(this),
+            function(error){
+                directionButton.classList.remove('disabled');
+                directionButton.classList.add('error');
+                directionButton.textContent = error.message;    
+            }.bind(this),
+            {   
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            }
+        )
+    }
+
+    MapView.prototype.elaborateDistance = function(position){
+        var confPos = new google.maps.LatLng(this.getLat(),this.getLong());
+        var userPos = new google.maps.LatLng(32.546813,-89.14856); 
+        // var userPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); 
+        var directionsService = this.getDirectionsService();
+        var directionButton = this.getDirectionButton();
+
+        directionsService.route({
+                origin: userPos,
+                destination: confPos,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(result, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    var stats = result.routes[0].legs[0];
+                    directionButton.classList.remove('disabled');
+                    directionButton.textContent = stats.distance.text + ", " + stats.duration.text + " - tap for route";
+                    directionButton.setAttribute('href', "http://maps.google.com/maps?saddr="+32.546813+","+-89.14856+"&daddr="+this.getLat()+","+this.getLong());
+                    directionButton.setAttribute('target', '_blank');
+                }else{
+                    directionButton.classList.remove('disabled');
+                    directionButton.classList.add('error');
+                    directionButton.textContent = "error: " + status.toLowerCase();
+                }
+            }.bind(this)
+        );
     }
 
     MapView.prototype.getFilterOptionSwitch = function(type) {
@@ -268,6 +381,24 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                 cb: this.getFilterOptionSwitch('room')
             }
         ];
+    }
+
+    MapView.prototype.generateGeolocationPanel = function(){
+
+        var directionButton = document.createElement('a');
+        directionButton.classList.add('get-direction');
+        directionButton.appendChild(document.createTextNode('Get Directions'));
+
+        var container = document.createElement('div');
+        container.classList.add('geolocation-container');
+
+        container.style['display'] = this.isGeoFilterDisplayed() ? 'block' : 'none';
+        container.appendChild(directionButton);
+
+        this.setDirectionButton(directionButton);
+        this.setGeoFilterView(container);
+
+        return container;
     }
 
     MapView.prototype.generateFilterOptions = function() {
@@ -343,7 +474,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
             zoom: 8,
             zoomControl: false,
             mapTypeControl: false,
-            center: new google.maps.LatLng(-34.397, 150.644),
+            center: new google.maps.LatLng(-34.397,150.644),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         
@@ -363,6 +494,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
     MapView.prototype.loadGoogleMaps = function() {
         if(typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
             this.initaliseMap();
+            this.setDirectiosService(new google.maps.DirectionsService());
             return;
         }
 
@@ -370,6 +502,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         var mapElement = mapContainer.querySelector('#map-canvas');
         mapElement.addEventListener('GoogleMapsLoaded', function(){
             this.initaliseMap();
+            this.setDirectiosService(new google.maps.DirectionsService());
         }.bind(this));
 
         window.mapsAPILoaded = function() {
@@ -378,15 +511,20 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
 
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDDe8D78sJVN5DHJj7MaNae5qKMfrTx9K0&sensor=false&callback=mapsAPILoaded";
+        script.src = "http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDDe8D78sJVN5DHJj7MaNae5qKMfrTx9K0&sensor=false&callback=mapsAPILoaded";
         document.body.appendChild(script);
     }
 
     MapView.prototype.updateView = function() {
         var filterContainer = this.getFilterView();
+        var filterGeoContainer = this.getGeoFilterView();
         if(filterContainer) {
             filterContainer.style['display'] = this.isFilterDisplayed() ? 'block' : 'none';
         }
+        if(filterGeoContainer){
+            filterGeoContainer.style['display'] = this.isGeoFilterDisplayed() ? 'block' : 'none';   
+        }
+
 
         var mapLayersContainer = filterContainer.querySelector('.map-layer-options');
         var layers = this.getLayers();
