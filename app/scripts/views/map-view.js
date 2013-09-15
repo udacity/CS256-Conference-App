@@ -319,8 +319,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
 
     MapView.prototype.elaborateDistance = function(position){
         var confPos = new google.maps.LatLng(this.getLat(),this.getLong());
-        var userPos = new google.maps.LatLng(32.546813,-89.14856); 
-        // var userPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); 
+        var userPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); 
         var directionsService = this.getDirectionsService();
         var directionButton = this.getDirectionButton();
 
@@ -333,7 +332,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                     var stats = result.routes[0].legs[0];
                     directionButton.classList.remove('disabled');
                     directionButton.textContent = stats.distance.text + ", " + stats.duration.text + " - tap for route";
-                    directionButton.setAttribute('href', "http://maps.google.com/maps?saddr="+32.546813+","+-89.14856+"&daddr="+this.getLat()+","+this.getLong());
+                    directionButton.setAttribute('href', "http://maps.google.com/maps?saddr="+position.coords.latitude+","+position.coords.longitude+"&daddr="+this.getLat()+","+this.getLong());
                     directionButton.setAttribute('target', '_blank');
                 }else{
                     directionButton.classList.remove('disabled');
