@@ -5,13 +5,7 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
     function MapView() {
         BaseView.call(this);
 
-        var displayFilter = false;
-        var displayGeoFilter = false;
         var centeredMap = false;
-
-        var lat = null;
-        var lon = null;
-        var zoomLevel = null;
 
         var mapView = null;
         var floorSelectorView = null;
@@ -21,17 +15,30 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         var currentOverlay = null;
 
         var floorLevel = 0;
-        var numOfFloors = 0;
         var floorMarkers = [];
-        var filtersDisplay = {};
 
-        var filterView = null;
-        var geoFilterView = null;
-        var mapDirectionButton = null;
         var mapContainer = null;
-        var pageContainer = null;
 
-        var directionsService = null;
+        var floorChangeListener = null;
+        var sessionClickListener = null;
+
+        var model = null;
+
+        this.getOnFloorChangeListener = function() {
+            return floorChangeListener;
+        }
+
+        this.setOnFloorChangeListener = function(listener) {
+            floorChangeListener = listener;
+        }
+
+        this.getOnSessionClickListener = function() {
+            return sessionClickListener;
+        }
+
+        this.setOnSessionClickListener = function(listener) {
+            sessionClickListener = listener;
+        }
 
         this.cleanUp = function() {
             if(floorOverlays) {
@@ -51,53 +58,16 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                 mapView = null;
             }
 
-            filterView = null;
             mapContainer = null;
         }
 
-        this.isFilterDisplayed = function() {
-            return displayFilter;
+        this.setModel = function(m) {
+            model = m;
+            this.updateView();
         }
 
-        this.toggleDisplayFilter = function() {
-            displayFilter = !displayFilter;
-        }
-
-        this.toggleGeoDisplayFilter = function() {
-            displayGeoFilter = !displayGeoFilter;
-        }
-
-        this.setDisplayFilter = function(flag) {
-            displayFilter = flag;
-        }
-
-        this.setGeoDisplayFilter = function(flag) {
-            displayGeoFilter = flag;
-        }        
-
-        this.isGeoFilterDisplayed = function() {
-            return displayGeoFilter;
-        }        
-
-        this.setLatLong = function(la, lo) {
-            lat = la;
-            lon = lo;
-        }
-
-        this.getLat = function() {
-            return lat;
-        }
-
-        this.getLong = function() {
-            return lon;
-        }
-
-        this.setZoomLevel = function(zoom) {
-            zoomLevel = zoom;
-        }
-
-        this.getZoomLevel = function() {
-            return zoomLevel;
+        this.getModel = function() {
+            return model;
         }
 
         this.hasCenteredMap = function() {
@@ -121,22 +91,20 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         }
 
         this.getFloorLevel = function() {
-            if(numOfFloors == 0) {
+            if(!model) {
                 return -1;
             }
+
+            var numOfFloors = model.getNumberOfFloors();
+            if(numOfFloors <= 0) {
+                return -1;
+            }
+
             if(floorLevel >= numOfFloors) {
                 floorLevel = 0;
             }
 
             return floorLevel;
-        }
-
-        this.setNumberOfFloors = function(count) {
-            numOfFloors = count;
-        }
-
-        this.getNumberOfFloors = function() {
-            return numOfFloors;
         }
 
         this.setFloorSelectorView = function(view) {
@@ -159,18 +127,6 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
             floorMarkers = markers;
         }
 
-        this.getFloorMarkers = function() {
-            if(floorMarkers == null) {
-                floorMarkers = [];
-            }
-
-            return floorMarkers;
-        }
-
-        this.setFloorOverlays = function(overlays) {
-            floorOverlays = overlays;
-        }
-
         this.getFloorOverlays = function() {
             if(floorOverlays == null) {
                 floorOverlays = [];
@@ -178,16 +134,8 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
             return floorOverlays;
         }
 
-        this.setShowFilters = function(filterName, display) {
-            filtersDisplay[filterName] = display;
-        }
-
-        this.getShowFilter = function(filterName) {
-            var display = filtersDisplay[filterName];
-            if(typeof display === 'undefined') {
-                display = true;
-            }
-            return display;
+        this.setFloorOverlays = function(overlays) {
+            floorOverlays = overlays;
         }
 
         this.setCurrentOverlay = function(overlay) {
@@ -198,30 +146,6 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
             return currentOverlay;
         }
 
-        this.setFilterView = function(view) {
-            filterView = view;
-        }
-
-        this.getFilterView = function() {
-            return filterView;
-        }
-
-        this.setGeoFilterView = function(view) {
-            geoFilterView = view;
-        }
-
-        this.setDirectionButton = function(button){
-            mapDirectionButton = button;
-        }
-
-        this.getDirectionButton = function(){
-            return mapDirectionButton;
-        }        
-
-        this.getGeoFilterView = function() {
-            return geoFilterView;
-        }        
-
         this.setMapContainer = function(container) {
             mapContainer = container;
         }
@@ -229,216 +153,12 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         this.getMapContainer = function() {
             return mapContainer;
         }
-
-        this.setPageContainer = function(container) {
-            pageContainer = container;
-        }
-
-        this.getPageContainer = function() {
-            return pageContainer;
-        }
-
-        this.getDirectionsService = function(){
-            return directionsService;
-        }
-
-        this.setDirectiosService = function(service){
-            directionsService = service;
-        }
     };
 
-    // The HomeUIController class extends the BaseUIController class.
     MapView.prototype = Object.create( BaseView.prototype );
 
     MapView.prototype.getDomElement = function() {
-        var views = [];
-
-        var header = this.generateTopBar('Map', [{
-            imgSrc: 'images/filter_icon.png',
-            eventName: 'FilterAction'
-        },{
-            imgSrc: 'images/locate_icon.png',
-            eventName: 'GeolocationAction'            
-        }]);
-
-        if(header) {
-            views.push(header);
-        
-            header.addEventListener('FilterAction', function() {
-                this.toggleDisplayFilter();
-                this.setGeoDisplayFilter(false);
-                this.updateView();
-            }.bind(this), false);
-
-            header.addEventListener('GeolocationAction', function(){
-                this.toggleGeoDisplayFilter();
-                this.setDisplayFilter(false);
-                this.triggerGeolocation();
-                this.updateView();
-            }.bind(this), false)
-        }
-
-        var locationView = this.generateGeolocationPanel();
-        views.push(locationView);
-        
-        var filterView = this.generateFilterOptions();
-        views.push(filterView);
-
-        var mapContainer = this.generateGoogleMap();
-        views.push(mapContainer);
-
-        var pageContainer = this.generatePageContainer('map-ui', views);
-        this.setPageContainer(pageContainer);
-        return pageContainer;
-    }
-
-    MapView.prototype.triggerGeolocation = function(){
-        var directionButton = this.getDirectionButton();
-        directionButton.classList.remove('error');
-        directionButton.classList.add('disabled');
-        directionButton.removeAttribute('href');
-        directionButton.removeAttribute('target');
-        directionButton.textContent = 'retrieving current position ...';
-
-        navigator.geolocation.getCurrentPosition( 
-            function(position){
-                this.elaborateDistance(position);
-            }.bind(this),
-            function(error){
-                directionButton.classList.remove('disabled');
-                directionButton.classList.add('error');
-                directionButton.textContent = error.message;    
-            }.bind(this),
-            {   
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-            }
-        )
-    }
-
-    MapView.prototype.elaborateDistance = function(position){
-        var confPos = new google.maps.LatLng(this.getLat(),this.getLong());
-        var userPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); 
-        var directionsService = this.getDirectionsService();
-        var directionButton = this.getDirectionButton();
-
-        directionsService.route({
-                origin: userPos,
-                destination: confPos,
-                travelMode: google.maps.TravelMode.DRIVING
-            }, function(result, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    var stats = result.routes[0].legs[0];
-                    directionButton.classList.remove('disabled');
-                    directionButton.textContent = stats.distance.text + ", " + stats.duration.text + " - tap for route";
-                    directionButton.setAttribute('href', "http://maps.google.com/maps?saddr="+position.coords.latitude+","+position.coords.longitude+"&daddr="+this.getLat()+","+this.getLong());
-                    directionButton.setAttribute('target', '_blank');
-                }else{
-                    directionButton.classList.remove('disabled');
-                    directionButton.classList.add('error');
-                    directionButton.textContent = "error: " + status.toLowerCase();
-                }
-            }.bind(this)
-        );
-    }
-
-    MapView.prototype.getFilterOptionSwitch = function(type) {
-        return function() {
-            var display = this.getShowFilter(type);
-            this.setShowFilters(type, !display);
-            this.updateView();
-        }.bind(this);
-    }
-
-    MapView.prototype.getLayers = function() {
-        return [
-            {
-                className: 'toilets',
-                title: 'Toilets',
-                type: 'toilet',
-                cb: this.getFilterOptionSwitch('toilet')
-            },{
-                className: 'power',
-                title: 'Power',
-                type: 'power',
-                cb: this.getFilterOptionSwitch('power')
-            },{
-                className: 'food',
-                title: 'Food',
-                type: 'food',
-                cb: this.getFilterOptionSwitch('food')
-            },{
-                className: 'info',
-                title: 'Info',
-                type: 'info',
-                cb: this.getFilterOptionSwitch('info')
-            },{
-                className: 'room',
-                title: 'Rooms',
-                type: 'room',
-                cb: this.getFilterOptionSwitch('room')
-            }
-        ];
-    }
-
-    MapView.prototype.generateGeolocationPanel = function(){
-
-        var directionButton = document.createElement('a');
-        directionButton.classList.add('get-direction');
-        directionButton.appendChild(document.createTextNode('Get Directions'));
-
-        var container = document.createElement('div');
-        container.classList.add('geolocation-container');
-
-        container.style['display'] = this.isGeoFilterDisplayed() ? 'block' : 'none';
-        container.appendChild(directionButton);
-
-        this.setDirectionButton(directionButton);
-        this.setGeoFilterView(container);
-
-        return container;
-    }
-
-    MapView.prototype.generateFilterOptions = function() {
-        var layerOptions = this.getLayers();
-
-        var mapLayerOptions = document.createElement('div');
-        mapLayerOptions.classList.add('map-layer-options');
-        for(var i = 0; i < layerOptions.length; i++) {
-            var optionContainer = document.createElement('div');
-            optionContainer.classList.add('layer-option');
-            optionContainer.classList.add(layerOptions[i].className);
-
-            var icon = document.createElement('div');
-            icon.classList.add('icon');
-
-            optionContainer.appendChild(icon);
-
-            var span = document.createElement('span');
-            span.appendChild(document.createTextNode(layerOptions[i].title));
-
-            optionContainer.appendChild(span);
-            optionContainer.addEventListener('click', layerOptions[i].cb, false);
-
-            mapLayerOptions.appendChild(optionContainer);
-        }
-
-        var roomButton = document.createElement('a');
-        roomButton.classList.add('room-selection');
-        roomButton.appendChild(document.createTextNode('Find Room'));
-
-        var container = document.createElement('div');
-        container.classList.add('filters-container');
-
-        container.appendChild(mapLayerOptions);
-        container.appendChild(roomButton);
-
-        container.style['display'] = this.isFilterDisplayed() ? 'block' : 'none';
-
-        this.setFilterView(container);
-
-        return container;
+        return this.generateGoogleMap();
     }
 
     MapView.prototype.generateGoogleMap = function() {
@@ -485,23 +205,17 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                 this.setCurrentOverlay(null);
             }
         }.bind(this));
+        
         this.setMapView(map);
 
         this.updateView();
     }
 
     MapView.prototype.loadGoogleMaps = function() {
-        if(typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
-            this.initaliseMap();
-            this.setDirectiosService(new google.maps.DirectionsService());
-            return;
-        }
-
         var mapContainer = this.getMapContainer();
         var mapElement = mapContainer.querySelector('#map-canvas');
         mapElement.addEventListener('GoogleMapsLoaded', function(){
             this.initaliseMap();
-            this.setDirectiosService(new google.maps.DirectionsService());
         }.bind(this));
 
         window.mapsAPILoaded = function() {
@@ -515,49 +229,37 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
     }
 
     MapView.prototype.updateView = function() {
-        var filterContainer = this.getFilterView();
-        var filterGeoContainer = this.getGeoFilterView();
-        if(filterContainer) {
-            filterContainer.style['display'] = this.isFilterDisplayed() ? 'block' : 'none';
-        }
-        if(filterGeoContainer){
-            filterGeoContainer.style['display'] = this.isGeoFilterDisplayed() ? 'block' : 'none';   
-        }
-
-
-        var mapLayersContainer = filterContainer.querySelector('.map-layer-options');
-        var layers = this.getLayers();
-        for(var i = 0; i < layers.length; i++) {
-            var className = layers[i].className;
-            var layerElement = mapLayersContainer.querySelector('.'+className);
-            if(!layerElement) {
-                continue;
-            }
-
-            if(!this.getShowFilter(layers[i].type)) {
-                layerElement.classList.add('disabled');
-            } else {
-                layerElement.classList.remove('disabled');
-            }
-        }
-
         var mapView = this.getMapView();
-
         if(!mapView) {
             return;
         }
 
-        if(!this.hasCenteredMap() && this.getLat() && this.getLong()) {
+        var model = this.getModel();
+        if(!model) {
+            return;
+        }
+
+        if(!this.hasCenteredMap() && model.getLat() && model.getLong()) {
             this.setHasCenteredMap(true);
 
-            mapView.setCenter(new google.maps.LatLng(this.getLat(), this.getLong()));
-            mapView.setZoom(this.getZoomLevel());
+            mapView.setCenter(new google.maps.LatLng(model.getLat(), model.getLong()));
+            mapView.setZoom(model.getInitZoomLevel());
         }
+
+        this.prepareFloorLevels();
+
+        this.displayFloorOverlay();        
+
+        this.displayMapPins();
+    }
+
+    MapView.prototype.prepareFloorLevels = function() {
+        var model = this.getModel();
 
         var selectedFoorLevel = this.getFloorLevel();
         var floorSelectorView = this.getFloorSelectorView();
 
-        var numberOfFloors = this.getNumberOfFloors();
+        var numberOfFloors = model.getNumberOfFloors();
         if(numberOfFloors != floorSelectorView.childNodes.length) {
             this.clearChildViews(floorSelectorView);
 
@@ -577,12 +279,15 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                     return function() {
                         var overlay = this.getCurrentOverlay();
                         if(overlay != null) {
-                            overley.setMap(null);
+                            overlay.setMap(null);
                             this.setCurrentOverlay(null);
                         }
                         this.setFloorLevel(floorLevel);
                         this.updateView();
-                        this.eventDispatchFunction('FloorLevelChange', this.getPageContainer(), {floorLevel: floorLevel})();
+                        var floorListener = this.getOnFloorChangeListener();
+                        if(floorListener != null) {
+                            floorListener(floorLevel);
+                        }
                     }.bind(that);
                 }(i), false);
 
@@ -598,7 +303,11 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
                 }
             }
         }
-        
+    }
+
+    MapView.prototype.displayFloorOverlay = function() {
+        var mapView = this.getMapView();
+        var selectedFoorLevel = this.getFloorLevel();
 
         var swCoord = new google.maps.LatLng(37.782183491969200, -122.40508084900665);
         var neCoord = new google.maps.LatLng(37.783841211929845, -122.40297799713898);
@@ -632,21 +341,66 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
 
         newFloorOverlay.setMap(mapView);
         this.setFloorMapOverlay(newFloorOverlay);
+    }
 
-        var allFloorMarkers = this.getFloorMarkers();
-        var floorOverlays = [];
+    MapView.prototype.getRoomMarkerClickFunction = function(roomDetails, mapView) {
+        return function() {
+            var that = this;
+            require(['views/room-overlay-view'], function (RoomOverlayView) {
+                var currentOverlay = that.getCurrentOverlay();
+                if(currentOverlay != null) {
+                    currentOverlay.setMap(null);
+                }
+
+                var currentSession = {
+                    title: 'A More Awesome Web: Features You\'ve Always Wanted',
+                    start: '09:00',
+                    end: '10:30',
+                    id: 'session01'
+                };
+                var nextSession = {
+                    title: 'The Modern Workflow for Developing the Mobile Web',
+                    start: '11:00',
+                    end: '12:30',
+                    id: 'session02'
+                };
+
+                // On mobile this leads to a poor experience, so switched off
+                var panTo = true;
+                var overlay = new RoomOverlayView(roomDetails, currentSession, nextSession, mapView, panTo, function(session){
+                    var listener = that.getOnSessionClickListener();
+                    if(listener != null) {
+                        listener(session);
+                    }
+                });
+                that.setCurrentOverlay(overlay);
+            }); 
+        }.bind(this);
+    }
+
+    MapView.prototype.displayMapPins = function() {
+        var model = this.getModel();
+        var allFloorMarkers = model.getMapMarkers();
+        var mapView = this.getMapView();
+        var selectedFoorLevel = this.getFloorLevel();
 
         var oldFloorOverlays = this.getFloorOverlays();
         for(var i = 0; i < oldFloorOverlays.length; i++) {
             oldFloorOverlays[i].setMap(null);
         }
 
+        if(!allFloorMarkers) {
+            return;
+        }
+
+        var floorOverlays = [];
+
         if(selectedFoorLevel < allFloorMarkers.length) {
             var markers = allFloorMarkers[selectedFoorLevel];
             if(markers) {
                 for(var i = 0; i < markers.length; i++) {
                     var singleMarker = markers[i];
-                    var display = this.getShowFilter(singleMarker['type']);
+                    var display = model.getShowFilter(singleMarker['type']);
                     if(!display) {
                         continue;
                     }
@@ -699,50 +453,10 @@ define(['views/base-view', 'utils'], function (BaseView, Utils) {
         this.setFloorOverlays(floorOverlays);
     }
 
-    MapView.prototype.getRoomMarkerClickFunction = function(roomDetails, mapView) {
-        return function() {
-            var that = this;
-            require(['views/room-overlay-view'], function (RoomOverlayView) {
-                var currentOverlay = that.getCurrentOverlay();
-                if(currentOverlay != null) {
-                    currentOverlay.setMap(null);
-                }
-
-                var currentSession = {
-                    title: 'A More Awesome Web: Features You\'ve Always Wanted',
-                    start: '09:00',
-                    end: '10:30',
-                    id: 'session01'
-                };
-                var nextSession = {
-                    title: 'The Modern Workflow for Developing the Mobile Web',
-                    start: '11:00',
-                    end: '12:30',
-                    id: 'session02'
-                };
-
-                // On mobile this leads to a poor experience, so switched off
-                var panTo = true;
-                var overlay = new RoomOverlayView(roomDetails, currentSession, nextSession, mapView, panTo, function(session){
-                    that.eventDispatchFunction('ShowSession', window, session)();
-                });
-                that.setCurrentOverlay(overlay);
-            }); 
-        }.bind(this);
-    }
-
     MapView.prototype.centerMapClickFunction = function(markerDetails, mapView) {
         return function() {
             mapView.panTo(new google.maps.LatLng(markerDetails['lat'], markerDetails['lng']));
         };
-    }
-
-    MapView.prototype.setModel = function(model) {
-        this.setLatLong(model.getLat(), model.getLong());
-        this.setZoomLevel(model.getInitZoomLevel());
-        this.setNumberOfFloors(model.getNumberOfFloors());
-        this.setFloorMarkers(model.getMapMarkers());
-        this.updateView();
     }
 
     return MapView;

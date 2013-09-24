@@ -3,6 +3,13 @@
 	flex-direction: column;
 }
 
+.tab-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: 0;
+}
+
 .session-panes-container {
 	display: flex;
 	flex-direction: row;
@@ -11,16 +18,7 @@
 	flex: 1;
 
 	overflow-x: scroll;
-	overflow-y: hidden;
-	//-webkit-overflow-scrolling: touch;
-
-	.session-pane {
-		pointer-events: none;
-
-		button, a, input, textarea {
-			pointer-events: auto;
-		}
-	}
+	overflow-y: hidden;	
 }
 
 .session-panes-container::-webkit-scrollbar {  
@@ -32,6 +30,14 @@
 	min-width: 100%;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
+
+	// Enabling this fixes horizontal scroll on iOS
+	// but breaks Chrome
+	//pointer-events: none;
+
+	button, a, input, textarea {
+		pointer-events: auto;
+	}
 }
 
 .session-pane::-webkit-scrollbar {
@@ -102,21 +108,7 @@
 	
 }
 
-.session-header {
-	h1 {
-		font-size: 28px;
-		margin: $padding 0;
-		padding: 0;
-	}
-
-	h2 {
-		font-size: 20px;
-		margin: ($padding / 4) 0;
-		padding: 0;
-	}
-}
-
-.session-header, .session-speaker, .session-description,
+.session-details-section, .session-speaker, .session-description,
 .session-qa-input-container {
 
 	margin: $padding;
@@ -143,52 +135,8 @@
 	border-width: 1px;
 }
 
-.speaker-img-container {
-	text-align: center;
-
-	img {
-		width: 40%;
-		border-radius: 100%;
-	}
-}
-
-.speaker-details {
-	flex: 2;
-
-	h4 {
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		font-size: 20px;
-	}
-
-	.btn {
-		display: block;
-		width: 100%;
-
-		padding: $padding;
-
-		box-sizing: border-box;
-
-		color: $bg-color;
-		text-align: center;
-
-		background-color: $btn-g-plus-color;
-
-		border-radius: 5px;
-		border-bottom-style: solid;
-		border-width: 4px;
-		border-color: darken($btn-g-plus-color, 10%);
-	}
-
-	.btn:hover {
-		background-color: darken($btn-g-plus-color, 5%);
-	}
-
-	.btn:active {
-		background-color: darken($btn-g-plus-color, 10%);
-		border-color: darken($btn-g-plus-color, 15%);
-	}
+.speaker-list > li > .speaker-details-section {
+	padding: 0;
 }
 
 .session-qa-pane {
@@ -228,4 +176,10 @@
 	}
 
 	
+}
+
+.session-review-pane {
+	padding: 0 $padding;
+
+	box-sizing: border-box;
 }

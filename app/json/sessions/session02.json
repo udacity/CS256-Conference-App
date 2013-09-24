@@ -9,6 +9,7 @@
         "title": "The Modern Workflow for Developing the Mobile Web",
         "description": "Building for today's mobile web, getting 60fps across all target devices, while still delivering a fantastic user experience is a huge challenge. We'll dive into all the tools for development, testing, and performance evaluation of mobile webapps. Understand how best to develop with immediate feedback from the mobile devices you're targetting, scale up complexity to avoid hard performance decisions later. We'll also review all the possibilities of device testing locally and in the cloud. In this session we'll debut improved remote debugging with Chrome for Android and the Chrome DevTools. You can now do local tunneling for improved local development. You'll walk away from the session with a solid overview of the landscape of mobile web tooling and feel confident returning to your projects.",
         "speakers": [{
+            "id": "matt_gaunt",
             "name": "Matt Gaunt",
             "bio": "I'm one of the Developer Advocates on the Chrome team working from the London Office. I've had a history of developing mobile applications for agencies and looking to help developers create high quality, beautiful and fun apps for the mobile web.",
             "photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",

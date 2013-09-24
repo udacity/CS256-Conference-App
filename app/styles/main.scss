@@ -7,6 +7,10 @@
 @import "component_schedule";
 @import "component_map";
 @import "component_session";
+@import "component_speakers";
+@import "component_speaker_detail";
+@import "component_session_details";
+@import "component_speaker_session";
 
 html, body {
     height: 100%;

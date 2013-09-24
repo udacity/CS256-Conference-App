@@ -1,5 +1,5 @@
 /*global define */
-define(['views/base-view'], function (BaseView) {
+define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-view'], function (BaseView, SpeakerDetailsView, SessionDetailsView) {
     'use strict';
 
     var SCROLL_END_LIMIT = 200;
@@ -35,6 +35,16 @@ define(['views/base-view'], function (BaseView) {
 
         var scrollToLeft = 0;
         var performScrollAnimation = false;
+
+        var sessionDetails;
+
+        this.setSessionDetailsView = function(view) {
+            sessionDetails = view;
+        }
+
+        this.getSessionDetailsView = function() {
+            return sessionDetails;
+        }
 
         this.setSessionModel = function(m) {
             model = m;
@@ -104,24 +114,6 @@ define(['views/base-view'], function (BaseView) {
             return isBeingTouched;
         }
 
-        /**this.setStartTouchCoords = function(coords) {
-            touchStartCoords = coords;
-            touchCurrentCoords = coords;
-            isBeingTouched = true;
-        }
-
-        this.getStartTouchCoords = function() {
-            return touchStartCoords;
-        }
-
-        this.setCurrentTouchCoords = function(coords) {
-            touchCurrentCoords = coords;
-        }
-
-        this.getCurrentTouchCoords = function() {
-            return touchCurrentCoords;
-        }**/
-
         this.isScrollingLocked = function() {
             return isLocked;
         }
@@ -189,15 +181,9 @@ define(['views/base-view'], function (BaseView) {
         }
     };
 
-    // The HomeUIController class extends the BaseUIController class.
     SessionView.prototype = Object.create( BaseView.prototype );
 
     SessionView.prototype.getDomElement = function() {
-        var header = this.generateTopBar('Session', [{
-            imgSrc: 'images/favorite_icon.png',
-            eventName: 'Favorite'
-        }]);
-
         var contentContainer = document.createElement('div');
         contentContainer.classList.add('session-panes-container');
         this.setPaneContainerElement(contentContainer);
@@ -213,7 +199,6 @@ define(['views/base-view'], function (BaseView) {
         contentContainer.appendChild(qaPane);
         contentContainer.appendChild(reviewPane);
 
-        var pageContainer = this.generatePageContainer('session-ui', [header, tabSection, contentContainer]);
         var that = this;
         contentContainer.addEventListener('scroll', function(e) {
             that.updateScrollEventTime();
@@ -229,9 +214,14 @@ define(['views/base-view'], function (BaseView) {
             that.endScrollAnimation();
         }, false);
         
+        var wrapper = document.createElement('div');
+        wrapper.classList.add('tab-wrapper');
+        wrapper.appendChild(tabSection);
+        wrapper.appendChild(contentContainer);
+
         this.updateView();
 
-        return pageContainer;
+        return wrapper;
     }
 
     SessionView.prototype.animFrameUpdate = function() {
@@ -296,17 +286,20 @@ define(['views/base-view'], function (BaseView) {
         infoPane.classList.add('session-info-pane');
         infoPane.classList.add('session-pane');
 
-        var titleSection = this.generateSessionTitle();
-        this.setTitleElement(titleSection);
+        //var titleSection = this.generateSessionTitle();
+        //this.setTitleElement(titleSection);
 
-        var descriptionSection = this.generateDescription();
-        this.setDescriptionElement(descriptionSection);
+        //var descriptionSection = this.generateDescription();
+        //this.setDescriptionElement(descriptionSection);
+
+        var sessionSection = this.generateSessionSection();
 
         var speakerSection = this.generateSpeakerSection();
         this.setSpeakerElement(speakerSection);
 
-        infoPane.appendChild(titleSection);
-        infoPane.appendChild(descriptionSection);
+        //infoPane.appendChild(titleSection);
+        //infoPane.appendChild(descriptionSection);
+        infoPane.appendChild(sessionSection);
         infoPane.appendChild(speakerSection);
 
         return infoPane;
@@ -346,41 +339,21 @@ define(['views/base-view'], function (BaseView) {
         reviewPane.classList.add('session-review-pane');
         reviewPane.classList.add('session-pane');
 
-        var titleSection = this.generateSessionTitle();
-        titleSection.appendChild(document.createTextNode('I\'m the Review Pane'));
+        //var titleSection = this.generateSessionTitle();
+        //titleSection.appendChild(document.createTextNode('I\'m the Review Pane'));
 
-        reviewPane.appendChild(titleSection);
+        var reviewText = document.createElement('p');
+        reviewText.appendChild(document.createTextNode('I\'m the Review Pane'));
+
+        reviewPane.appendChild(reviewText);
 
         return reviewPane;
     }
 
-    SessionView.prototype.generateSessionTitle = function() {
-        var container = document.createElement('section');
-        container.classList.add('session-header');
-
-        var title = document.createElement('h1');
-        title.classList.add('session-title');
-
-        container.appendChild(title);
-
-        var date = document.createElement('h2');
-        date.classList.add('session-date');
-
-        container.appendChild(date);
-
-        var room = document.createElement('h2');
-        room.classList.add('session-room');
-
-        container.appendChild(room);
-
-        return container;
-    }
-
-    SessionView.prototype.generateDescription = function() {
-        var container = document.createElement('section');
-        container.classList.add('session-description');
-
-        return container;
+    SessionView.prototype.generateSessionSection = function() {
+        var sessionDetails = new SessionDetailsView();
+        this.setSessionDetailsView(sessionDetails);
+        return sessionDetails.getDomElement();
     }
 
     SessionView.prototype.generateSpeakerSection = function() {
@@ -402,8 +375,9 @@ define(['views/base-view'], function (BaseView) {
         }
 
         this.updateTabSection();
-        this.updateTitleSection();
-        this.updateDescriptionSection();
+        //this.updateTitleSection();
+        //this.updateDescriptionSection();
+        this.updateSessionSection();
         this.updateSpeakerSection();
     }
 
@@ -452,59 +426,14 @@ define(['views/base-view'], function (BaseView) {
         this.setTabIndicator(tabIndicatorElement);
     }
 
-    SessionView.prototype.updateTitleSection = function() {
+    SessionView.prototype.updateSessionSection = function() {
         var model = this.getSessionModel();
-        var header = this.getTitleElement();
-        if(!model || !header) {
+        var sessionDetailsView = this.getSessionDetailsView();
+        if(!model || !sessionDetailsView) {
             return;
         }
 
-        var titleElement = header.querySelector('.session-title');
-        this.clearChildViews(titleElement);
-
-        titleElement.appendChild(document.createTextNode(model.getTitle()));
-
-        var dateElement = header.querySelector('.session-date');
-        this.clearChildViews(dateElement);
-
-        var startTime = model.getStartTime();
-        var startHours = startTime.getHours();
-        var startMinutes = startTime.getMinutes();
-
-        var endTime = model.getEndTime();
-        var endHours = endTime.getHours();
-        var endMinutes = endTime.getMinutes();
-
-        var dateString = startTime.toDateString() + ' ';
-        dateString += (startHours < 10) ? '0'+startHours : startHours;
-        dateString += ':';
-        dateString += (startMinutes < 10) ? '0'+startMinutes : startMinutes;
-        dateString += ' - ';
-        dateString += (endHours < 10) ? '0'+endHours : endHours;
-        dateString += ':';
-        dateString += (endMinutes < 10) ? '0'+endMinutes : endMinutes;
-
-        dateElement.appendChild(document.createTextNode(dateString));
-
-        var roomElement = header.querySelector('.session-room');
-        this.clearChildViews(roomElement);
-
-        roomElement.appendChild(document.createTextNode(model.getRoomName()));
-    }
-
-    SessionView.prototype.updateDescriptionSection = function() {
-        var model = this.getSessionModel();
-        var descripElement = this.getDescriptionElement();
-        if(!model || !descripElement) {
-            return;
-        }
-
-        this.clearChildViews(descripElement);
-
-        var paragraph = document.createElement('p');
-        paragraph.appendChild(document.createTextNode(model.getDescription()));
-
-        descripElement.appendChild(paragraph);
+        sessionDetailsView.setModel(model.getSessionDetailsModel());
     }
 
     SessionView.prototype.updateSpeakerSection = function() {
@@ -517,40 +446,16 @@ define(['views/base-view'], function (BaseView) {
         var listElement = speakerElement.querySelector('.speaker-list');
         this.clearChildViews(listElement);
 
-        var speakers = model.getSpeakers();
-        for(var i = 0; i < speakers.length; i++) {
-            var speaker = speakers[i];
+        var numOfSpeakers = model.getNumberOfSpeakers();
+        for(var i = 0; i < numOfSpeakers; i++) {
+            var speakerModel = model.getSpeakerModel(i);
 
             var liElement = document.createElement('li');
 
-            var imageContainer = document.createElement('div');
-            imageContainer.classList.add('speaker-img-container');
+            var speakerView = new SpeakerDetailsView();
+            speakerView.setModel(speakerModel);
 
-            var speakerImg = document.createElement('img');
-            speakerImg.src = speaker.photoUrl;
-            imageContainer.appendChild(speakerImg);
-
-            liElement.appendChild(imageContainer);
-
-            var detailsContainer = document.createElement('div');
-            detailsContainer.classList.add('speaker-details');
-
-            var speakerName = document.createElement('h4');
-            speakerName.appendChild(document.createTextNode(speaker.name));
-            detailsContainer.appendChild(speakerName);
-
-            var bio = document.createElement('p');
-            bio.appendChild(document.createTextNode(speaker.bio));
-            detailsContainer.appendChild(bio);
-
-            var url = document.createElement('a');
-            url.classList.add('btn');
-            url.classList.add(speaker.urlType);
-            url.href = speaker.url;
-            url.appendChild(document.createTextNode(speaker.urlText));
-            detailsContainer.appendChild(url);
-
-            liElement.appendChild(detailsContainer);
+            liElement.appendChild(speakerView.getDomElement());
 
             listElement.appendChild(liElement);
         }

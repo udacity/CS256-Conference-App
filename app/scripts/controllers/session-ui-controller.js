@@ -26,11 +26,18 @@ define(['controllers/base-ui-controller', 'views/session-view', 'models/session-
         this.init();
     }
 
-    // The SessionUIController class extends the BaseUIController class.
     SessionUIController.prototype = Object.create( BaseUIController.prototype );
 
     SessionUIController.prototype.getView = function() {
-        return this.getSessionView().getDomElement();
+        var header = this.generateTopBar('Session', [{
+            imgSrc: 'images/favorite_icon.png',
+            eventName: 'Favorite'
+        }]);
+
+        var sessionView = this.getSessionView().getDomElement();
+
+        var pageContainer = this.generatePageContainer('session-ui', [header, sessionView]);
+        return pageContainer;
     }
 
     SessionUIController.prototype.init = function() {

@@ -115,8 +115,6 @@ define([], function () {
         var marginTopValue = (-div.offsetHeight - markerHeight - pointHeight - optionPadding);
         div.style.marginTop = marginTopValue+'px';
 
-        console.log('div.style.marginTop = '+div.style.marginTop+" div.offsetHeight = "+div.offsetHeight);
-
         if(this.panOnAdd) {
             var centerX = bounds.x;
             var centerY = bounds.y + (marginTopValue / 2);

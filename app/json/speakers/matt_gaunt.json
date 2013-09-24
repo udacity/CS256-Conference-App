@@ -1,0 +1,29 @@
+{
+	"data": {
+		"id": "matt_gaunt",
+        "name": "Matt Gaunt",
+        "bio": "I'm one of the Developer Advocates on the Chrome team working from the London Office. I've had a history of developing mobile applications for agencies and looking to help developers create high quality, beautiful and fun apps for the mobile web.",
+        "photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+        "url": "https://plus.google.com/108026429364238951323",
+        "urlText": "Matt Gaunt on G+",
+        "urlType": "gplus",
+        "talks": [
+        	{
+		    			"id": "session01",
+		    			"start-date": "2013-05-15T09:00:00",
+		    			"end-date": "2013-05-15T10:00:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		},{
+			    		"id": "session02",
+			    		"start-date": "2013-05-15T10:30:00",
+			    		"end-date": "2013-05-15T11:30:00",
+		    			"title": "The Modern Workflow for Developing the Mobile Web"
+			  		},{
+			    		"id": "session01",
+			    		"start-date": "2013-05-15T11:30:00",
+			    		"end-date": "2013-05-15T12:30:00",
+		    			"title": "A More Awesome Web: Features You've Always Wanted"
+			  		}
+        ]
+	}
+}

@@ -37,7 +37,7 @@ $number-of-rooms: 10;
     li {
         $border-width: 1px;
 
-        background-color: rgb(102, 102, 102);
+        background-color: $timeline-color;
 
         display: block;
 
@@ -241,6 +241,7 @@ $number-of-rooms: 10;
         left: $tracks-width;
         width: 100% - $tracks-width;
         height: 100%;
+        flex: auto;
     }
 }
 

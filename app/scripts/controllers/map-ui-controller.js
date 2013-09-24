@@ -1,13 +1,22 @@
 /*global define */
-define(['controllers/base-ui-controller', 'views/map-view', 'models/map-model'], function (BaseUIController, MapView, MapModel) {
+define(['controllers/base-ui-controller', 
+    'views/map-view', 
+    'models/map-model', 
+    'views/map-filter-view',
+    'views/map-geo-view'], 
+    function (BaseUIController, MapView, MapModel, FilterView, GeoView) {
     'use strict';
 
     function MapUIController(data) {
         BaseUIController.call(this);
 
-        console.log(data);
-
         var mapView = new MapView();
+        mapView.setOnFloorChangeListener(this.onFloorChange.bind(this));
+        mapView.setOnSessionClickListener(this.onSessionClick.bind(this));
+
+        var filterView = new FilterView();
+        var geoView = new GeoView();
+
         var mapModel;
         if(data && data.mapModel) {
             mapModel = data.mapModel;
@@ -31,6 +40,14 @@ define(['controllers/base-ui-controller', 'views/map-view', 'models/map-model'],
             return storedState;
         }
 
+        this.getFilterView = function() {
+            return filterView;
+        }
+
+        this.getGeoView = function() {
+            return geoView;
+        }
+
         this.init();
     }
 
@@ -38,16 +55,37 @@ define(['controllers/base-ui-controller', 'views/map-view', 'models/map-model'],
     MapUIController.prototype = Object.create( BaseUIController.prototype );
 
     MapUIController.prototype.getView = function() {
-        var element = this.getMapView().getDomElement();
-        element.addEventListener('FloorLevelChange', function(event) {
-            if(window.history) {
-                var currentState = history.state;
-                currentState.controllerData = this.getState();
-                history.replaceState(currentState, "", this.getPageURL());
-            }
-        }.bind(this));
+        var header = this.generateTopBar('Map', [{
+            imgSrc: 'images/locate_icon.png',
+            eventName: 'GeolocationAction'            
+        }, {
+            imgSrc: 'images/filter_icon.png',
+            eventName: 'FilterAction'
+        }]);
 
-        return element;
+        header.addEventListener('FilterAction', function() {
+            var filterView = this.getFilterView();
+            filterView.toggleDisplayFilter();
+
+            var geoView = this.getGeoView();
+            geoView.setDisplayGeoView(false);
+        }.bind(this), false);
+
+        header.addEventListener('GeolocationAction', function(){
+            var geoView = this.getGeoView();
+            geoView.toggleGeoDisplayFilter();
+            geoView.triggerGeolocation();
+
+            var filterView = this.getFilterView();
+            filterView.setDisplayFilterView(false);
+        }.bind(this), false)
+
+        var filterView = this.getFilterView().getDomElement();
+        var geoView = this.getGeoView().getDomElement();
+        var mapView = this.getMapView().getDomElement();
+        /**mapView.addEventListener('FloorLevelChange', );**/
+
+        return this.generatePageContainer('map-ui', [header, filterView, geoView, mapView]);
     }
 
     MapUIController.prototype.addedToDom = function() {
@@ -66,14 +104,32 @@ define(['controllers/base-ui-controller', 'views/map-view', 'models/map-model'],
     }
 
     MapUIController.prototype.onDataLoaded = function(mapState) {
+        this.getMapModel().setOnFilterChangeListener(this.onFilterChange.bind(this));
         this.getMapView().setModel(this.getMapModel());
+        this.getFilterView().setModel(this.getMapModel());
+        this.getGeoView().setModel(this.getMapModel());
 
         var data = this.getStoredState();
         if(data && data.floorLevel) {
-            console.log('onDataLoaded data.floorLevel = '+data.floorLevel);
             this.getMapView().setFloorLevel(data.floorLevel);
             this.getMapView().updateView();
         }
+    }
+
+    MapUIController.prototype.onFloorChange = function() {
+        if(window.history) {
+            var currentState = history.state;
+            currentState.controllerData = this.getState();
+            history.replaceState(currentState, "", this.getPageURL());
+        }
+    }
+
+    MapUIController.prototype.onSessionClick = function(session) {
+        this.eventDispatchFunction('ShowSession', window, session)();
+    }
+
+    MapUIController.prototype.onFilterChange = function() {
+        this.getMapView().updateView();
     }
 
     MapUIController.prototype.getPageURL = function() {

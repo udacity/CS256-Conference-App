@@ -8,6 +8,8 @@ define(['controllers/base-ui-controller', 'views/schedule-view', 'models/schedul
         var scheduleView = new ScheduleView();
         var scheduleModel = new ScheduleModel();
 
+        scheduleView.setOnItemClickListener(this.onItemClick.bind(this));
+
         this.getScheduleView = function () {
             return scheduleView;
         }
@@ -23,7 +25,11 @@ define(['controllers/base-ui-controller', 'views/schedule-view', 'models/schedul
     ScheduleUIController.prototype = Object.create( BaseUIController.prototype );
 
     ScheduleUIController.prototype.getView = function() {
-        return this.getScheduleView().getDomElement();
+        var header = this.generateTopBar('Schedule', []);
+        var scheduleView = this.getScheduleView().getDomElement();
+        var pageContainer = this.generatePageContainer('schedule-ui', [header, scheduleView]);
+
+        return pageContainer;
     }
 
     ScheduleUIController.prototype.init = function() {
@@ -38,6 +44,10 @@ define(['controllers/base-ui-controller', 'views/schedule-view', 'models/schedul
 
     ScheduleUIController.prototype.getPageURL = function() {
         return "/schedule";
+    }
+
+    ScheduleUIController.prototype.onItemClick = function(sessionData) {
+        this.eventDispatchFunction('ShowSession', window, sessionData)();
     }
 
     return ScheduleUIController;

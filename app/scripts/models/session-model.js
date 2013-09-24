@@ -1,17 +1,11 @@
 /*global define */
-define(['config'], function (config) {
+define(['config', 'models/speaker-model', 'models/session-details-model'], function (config, SpeakerModel, SessionDetailsModel) {
     'use strict';
 
     function SessionModel(id) {
         var sessionId = id;
         var speakers = null;
-        var startTime = null;
-        var endTime = null;
-        var title = null;
-        var description = null;
-        var roomName = null;
-        var roomId = null;
-        var level = null;
+        var sessionDetailsModel = null;
 
         this.getSessionId = function() {
             return sessionId;
@@ -21,72 +15,26 @@ define(['config'], function (config) {
             speakers = info;
         }
 
-        this.getSpeakers = function() {
+        this.getNumberOfSpeakers = function() {
             if(!speakers) {
-                return [];
+                return 0;
             }
 
-            return speakers;
+            return speakers.length;
         }
 
-        this.setStartTime = function(time) {
-            startTime = time;
+        this.getSpeakerModel = function(index) {
+            var model = new SpeakerModel();
+            model.setSpeaker(speakers[index]);
+            return model;
         }
 
-        this.getStartTime = function() {
-            return startTime;
+        this.setSessionDetailsModel = function(model) {
+            sessionDetailsModel = model;
         }
 
-        this.setEndTime = function(time) {
-            endTime = time;
-        }
-
-        this.getEndTime = function() {
-            return endTime;
-        }
-
-        this.setDescription = function(d) {
-            description = d;
-        }
-
-        this.getDescription = function() {
-            return description;
-        }
-
-        this.setTitle = function(t) {
-            title = t;
-        }
-
-        this.getTitle = function() {
-            if(!title) {
-                return '';
-            }
-
-            return title;
-        }
-
-        this.setRoomName = function(name) {
-            roomName = name;
-        }
-
-        this.getRoomName = function() {
-            return roomName;
-        }
-
-        this.setRoomId = function(id) {
-            roomId = id;
-        }
-
-        this.getRoomId = function() {
-            return roomId;
-        }
-
-        this.setLevel = function(l) {
-            level = l;
-        }
-
-        this.getLevel = function() {
-            return level;
+        this.getSessionDetailsModel = function() {
+            return sessionDetailsModel;
         }
     };
 
@@ -122,13 +70,11 @@ define(['config'], function (config) {
         var data = response.data;
 
         this.setSpeakers(data.speakers);
-        this.setStartTime(new Date(Date.parse(data['start-date'])));
-        this.setEndTime(new Date(Date.parse(data['end-date'])));
-        this.setTitle(data.title);
-        this.setDescription(data.description);
-        this.setRoomName(data['room-name']);
-        this.setRoomId(data['room-id']);
-        this.setLevel(data['level']);
+
+        var sessionDetailsModel = new SessionDetailsModel();
+        sessionDetailsModel.setData(data);
+        this.setSessionDetailsModel(sessionDetailsModel);
+        
         successCb();
     }
 

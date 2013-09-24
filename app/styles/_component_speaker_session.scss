@@ -1,0 +1,26 @@
+.speaker-details-ui {
+	display: flex;
+	flex-direction: column;
+}
+
+.speaker-session-wrapper {
+	flex: 1;
+	height: 0;
+	overflow-y: scroll
+}
+
+.speaker-session-wrapper > .heading {
+	padding: $padding / 2;
+	margin: 0 $padding;
+		
+	box-sizing: border-box;
+
+	color: $speaker-heading-text-color;
+	background-color: $speaker-heading-bg-color;
+}
+
+.speaker-session-session-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}

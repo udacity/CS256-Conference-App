@@ -212,7 +212,7 @@ define(['views/base-view'], function (BaseView) {
             textNode = document.createTextNode(this.getTimeString(startStep));
             timeLineElement.appendChild(textNode);
 
-            timeLineElement.style['min-width'] = elementMinWidth+'px';
+            timeLineElement.style.minWidth = elementMinWidth+'px';
 
             timeline.appendChild(timeLineElement);
 
@@ -265,7 +265,7 @@ define(['views/base-view'], function (BaseView) {
 
         var span = document.createElement('span');
         span.appendChild(titleTextNode);
-        span.style['min-width'] = trackTitleElement.style.height;
+        span.style.minWidth = trackTitleElement.style.height;
 
         trackTitleElement.appendChild(span);
 
@@ -326,7 +326,7 @@ define(['views/base-view'], function (BaseView) {
         }
 
         for(i = 0; i < trackRows.length; i++) {
-            trackRows[i].style['padding-bottom'] = this.getBorderWidth()+'px';
+            trackRows[i].style.paddingBottom = this.getBorderWidth()+'px';
         }
 
         return trackRows;
@@ -351,7 +351,7 @@ define(['views/base-view'], function (BaseView) {
         sessionElement.style.left = leftOffset+'px';
         sessionElement.style.width = (sessionWidth - this.getBorderWidth())+'px';
         sessionElement.style.height = rowHeight +'px';
-        sessionElement.style['margin-left'] = this.getBorderWidth()+'px';
+        sessionElement.style.marginLeft = this.getBorderWidth()+'px';
 
         var that = this;
         sessionElement.addEventListener('click', function(sessionData) {

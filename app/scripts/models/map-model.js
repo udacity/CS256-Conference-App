@@ -8,7 +8,9 @@ define(['config'], function (config) {
         var initZoomLevel = null;
         var numberOfFloors = 0;
         var floorMarkers = [];
-
+        var filtersDisplay = {};
+        var filterChangeListener = null;
+        
         this.setEventLatLong = function(la, lo) {
             lat = la;
             lon = lo;
@@ -56,6 +58,30 @@ define(['config'], function (config) {
 
         this.getMapMarkers = function() {
             return floorMarkers;
+        }
+
+        this.setShowFilters = function(filterName, display) {
+            filtersDisplay[filterName] = display;
+            var listener = this.getOnFilterChangeListener();
+            if(listener != null) {
+                listener();
+            }
+        }
+
+        this.getShowFilter = function(filterName) {
+            var display = filtersDisplay[filterName];
+            if(typeof display === 'undefined') {
+                display = true;
+            }
+            return display;
+        }
+
+        this.setOnFilterChangeListener = function(listener) {
+            filterChangeListener = listener;
+        }
+
+        this.getOnFilterChangeListener = function() {
+            return filterChangeListener;
         }
     };
 

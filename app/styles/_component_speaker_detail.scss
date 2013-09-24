@@ -1,0 +1,51 @@
+.speaker-details-section {
+	padding: $padding;
+}
+
+.speaker-details-img-container {
+	text-align: center;
+
+	img {
+		width: 40%;
+		border-radius: 100%;
+	}
+}
+
+.speaker-details-container {
+	flex: 2;
+
+	h4 {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+
+		padding: $padding;
+
+		box-sizing: border-box;
+
+		color: $bg-color;
+		text-align: center;
+
+		background-color: $btn-g-plus-color;
+
+		border-radius: 5px;
+		border-bottom-style: solid;
+		border-width: 4px;
+		border-color: darken($btn-g-plus-color, 10%);
+	}
+
+	.btn:hover {
+		background-color: darken($btn-g-plus-color, 5%);
+	}
+
+	.btn:active {
+		background-color: darken($btn-g-plus-color, 10%);
+		border-color: darken($btn-g-plus-color, 15%);
+	}
+}

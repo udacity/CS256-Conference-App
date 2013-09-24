@@ -1,0 +1,87 @@
+{
+	"data": {
+		"speakers" : [
+			{
+				"id": "eric_bidelman",
+				"name": "Eric Bidelman",
+				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session01",
+						"title": "A More Awesome Web: Features You've Always Wanted"
+					}
+				]
+			}, {
+				"id": "eric_bidelman",
+				"name": "Eric Bidelman",
+				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session01",
+						"title": "A More Awesome Web: Features You've Always Wanted"
+					}
+				]
+			}, {
+				"id": "eric_bidelman",
+				"name": "Eric Bidelman",
+				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session01",
+						"title": "A More Awesome Web: Features You've Always Wanted"
+					}
+				]
+			}, {
+				"id": "eric_bidelman",
+				"name": "Eric Bidelman",
+				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session01",
+						"title": "A More Awesome Web: Features You've Always Wanted"
+					}
+				]
+			}, {
+				"id": "matt_gaunt",
+				"name": "Matt Gaunt",
+				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session02",
+						"title": "The Modern Workflow for Developing the Mobile Web"
+					}
+				]
+			}, {
+				"id": "matt_gaunt",
+				"name": "Matt Gaunt",
+				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session02",
+						"title": "The Modern Workflow for Developing the Mobile Web"
+					}
+				]
+			}, {
+				"id": "matt_gaunt",
+				"name": "Matt Gaunt",
+				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session02",
+						"title": "The Modern Workflow for Developing the Mobile Web"
+					}
+				]
+			}, {
+				"id": "matt_gaunt",
+				"name": "Matt Gaunt",
+				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"sessions": [
+					{
+						"id": "session02",
+						"title": "The Modern Workflow for Developing the Mobile Web"
+					}
+				]
+			}
+		]
+	}
+}

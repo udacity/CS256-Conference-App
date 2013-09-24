@@ -12,3 +12,6 @@ You get the following with this wonderful command
 
 Please test orientation as well as various screen sizes in the browser.
 Support touch feedback where ever possible.
+
+To Deploy:
+- appcfg.py --oauth2 update ./dist/

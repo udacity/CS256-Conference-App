@@ -26,6 +26,8 @@ define([], function () {
     var STATE_SCHEDULE = 1;
     var STATE_MAP = 2;
     var STATE_SESSION = 3;
+    var STATE_SPEAKERS = 4;
+    var STATE_SPEAKER_DETAILS = 5;
 
     var currentState;
     var changingState = false;
@@ -112,6 +114,22 @@ define([], function () {
                     changingState = false;
                 });   
                 break;
+            case STATE_SPEAKERS:
+                require(['controllers/speakers-ui-controller'], function(UiController) {
+                    changeCoreController(newState, new UiController());
+
+                    currentState = newState;
+                    changingState = false;
+                });   
+                break;
+            case STATE_SPEAKER_DETAILS:
+                require(['controllers/speaker-details-ui-controller'], function(UiController) {
+                    changeCoreController(newState, new UiController(data));
+
+                    currentState = newState;
+                    changingState = false;
+                }); 
+                break;
         }
 
         if(nextUIController !== null) {
@@ -134,6 +152,12 @@ define([], function () {
                 callback: function(e) {
                     changeState(STATE_SESSION, e.detail.id);
                 }
+            }, {
+                eventName: 'ShowSpeakers',
+                callback: function() {changeState(STATE_SPEAKERS);}
+            }, {
+                eventName: 'ShowSpeakerDetails',
+                callback: function(e) {changeState(STATE_SPEAKER_DETAILS, e.detail.id);}
             }, {
                 eventName: 'popstate',
                 callback: function(event) {
