@@ -15,5 +15,3 @@ Support touch feedback where ever possible.
 
 To Deploy:
 - appcfg.py --oauth2 update ./dist/
-
-testing ability to push to github
