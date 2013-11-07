@@ -1,7 +1,6 @@
 /*global define */
-define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-view'], function (BaseView, SpeakerDetailsView, SessionDetailsView) {
+define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-view','shake'], function (BaseView, SpeakerDetailsView, SessionDetailsView) {
     'use strict';
-
     var SCROLL_END_LIMIT = 200;
     var SCROLL_STEP_SIZE = 0.4;
 
@@ -194,10 +193,12 @@ define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-v
         var infoPane = this.generateInfoPane();
         var qaPane = this.generateQAPane();
         var reviewPane = this.generateReviewPane();
+        var feedbackPane = this.generateFeedbackPane();
 
         contentContainer.appendChild(infoPane);
         contentContainer.appendChild(qaPane);
         contentContainer.appendChild(reviewPane);
+        contentContainer.appendChild(feedbackPane);
 
         var that = this;
         contentContainer.addEventListener('scroll', function(e) {
@@ -379,6 +380,9 @@ define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-v
         //this.updateDescriptionSection();
         this.updateSessionSection();
         this.updateSpeakerSection();
+
+        // window.
+        this.generateInfoPane();
     }
 
     SessionView.prototype.updateTabSection = function() {
@@ -464,6 +468,34 @@ define(['views/base-view', 'views/speaker-detail-view', 'views/session-details-v
     SessionView.prototype.setModel = function(model) {
         this.setSessionModel(model);
         this.updateView();
+    }
+
+    SessionView.prototype.generateFeedbackPane = function () {
+        var feedbackPane = document.createElement('div');
+        feedbackPane.classList.add('session-feedback-pane');
+
+        var feedbackContainer = document.createElement('div');
+        feedbackContainer.classList.add('session-feedback-container');
+
+        var inputBox = document.createElement('textarea');
+        inputBox.placeholder = 'Please type your feedback here...';
+
+        var feedbackButton = document.createElement('button');
+        feedbackButton.appendChild(document.createTextNode('Submit'));
+        feedbackButton.addEventListener('click', function() {
+            alert('TODO: Your feedback is submitted.');
+            document.getElementsByClassName('session-feedback-pane')[0].style.display = 'none'
+        }, false);
+
+        feedbackContainer.appendChild(inputBox);
+        feedbackContainer.appendChild(feedbackButton);
+
+        feedbackPane.appendChild(feedbackContainer);
+        window.addEventListener('shakingStarted', function(){
+            document.getElementsByClassName('session-feedback-pane')[0].style.display = 'block'
+        }, false)
+
+        return feedbackPane
     }
 
     return SessionView;
