@@ -28,6 +28,7 @@ define([], function () {
     var STATE_SESSION = 3;
     var STATE_SPEAKERS = 4;
     var STATE_SPEAKER_DETAILS = 5;
+    var STATE_PROFILE = 6;
 
     var currentState;
     var changingState = false;
@@ -130,6 +131,14 @@ define([], function () {
                     changingState = false;
                 }); 
                 break;
+            case STATE_PROFILE:
+                require(['controllers/profile-ui-controller'], function(UiController) {
+                    changeCoreController(newState, new UiController(data));
+
+                    currentState = newState;
+                    changingState = false;
+                }); 
+                break;
         }
 
         if(nextUIController !== null) {
@@ -147,6 +156,9 @@ define([], function () {
             },{
                 eventName: 'ShowMap',
                 callback: function() {changeState(STATE_MAP);}
+            },{
+                eventName: 'ShowProfile',
+                callback: function() {changeState(STATE_PROFILE);}
             },{
                 eventName: 'ShowSession',
                 callback: function(e) {

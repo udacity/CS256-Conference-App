@@ -1,0 +1,23 @@
+.profile-container {
+	display:block;
+	padding: 1em;
+	font-size: 1.4em;
+	overflow: auto;
+	height: 95vh;
+}
+
+.profile-ui header { display:none }
+
+.profile-line-item {
+	display: flex;
+	flex-direction: row;
+	align-items: right;
+	margin: 0.5em 0;
+}
+.profile-label-text {
+	display: inline-block;
+	flex-grow: 1;
+}
+.profile-input-field {
+	width: 40vw;
+}

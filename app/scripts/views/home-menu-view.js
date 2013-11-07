@@ -38,8 +38,8 @@ define(['views/base-view'], function (BaseView) {
                 text: 'Speakers',
                 eventName: 'ShowSpeakers'
             }, {
-                text: 'Info',
-                eventName: ''
+                text: 'Profile',
+                eventName: 'ShowProfile'
             }
         ];
 
