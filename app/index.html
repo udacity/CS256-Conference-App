@@ -13,8 +13,6 @@
         <!-- build:css({.tmp,app}) /styles/main.css -->
         <link rel="stylesheet" href="/styles/main.css">
         <!-- endbuild -->
-
-        <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
         
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -38,7 +36,22 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
 
-        </script>        
+        </script>
+
+        <!-- Asynch loading external CSS font file -->
+        <script type="text/javascript">
+            function loadCss(url) {
+                var link = document.createElement("link");
+                link.type = "text/css";
+                link.rel = "stylesheet";
+                link.href = url;
+                document.getElementsByTagName("head")[0].appendChild(link);
+            }
+
+            document.addEventListener("DOMContentLoaded", function(event) {
+                loadCss('http://fonts.googleapis.com/css?family=Roboto:300,500,700');
+            });
+        </script>     
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
