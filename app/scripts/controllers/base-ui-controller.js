@@ -44,6 +44,8 @@ define(['utils'], function (Utils) {
 
         var icon = document.createElement('img');
         icon.classList.add('icon');
+        icon.setAttribute('width','64px');
+        icon.setAttribute('height','65px');
         icon.src = "images/icon.png";
         icon.addEventListener('click', this.eventDispatchFunction('Home', window), false);
 
