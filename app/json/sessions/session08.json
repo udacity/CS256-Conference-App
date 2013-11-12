@@ -1,0 +1,15 @@
+{
+    "data": {
+        "id": "session08",
+        "start-date": "2013-05-15T09:00:00",
+        "end-date": "2013-05-15T10:00:00",
+        "room-id": "room10",
+        "room-name": "Room 10",
+        "level": "Intermediate",
+        "title": "Haberdashery and the zen of monkey tickling",
+        "description": "You would never think that Haberdashery and Monkey tickling would be two concepts that would be closely aligned, but they were two industries that reached a peak prior to the invention semiconductor.  Yet they are both on the rise again, thanks to the Hipster movement of the 20th century.  You will learn how to spot the patterns of the past to prevent your brands and products from going the way of a tri-fold threaded yarn.",
+        "speakers": [{
+            "id": "paul_kinlan"
+        }]
+    }
+}

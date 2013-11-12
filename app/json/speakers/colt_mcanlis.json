@@ -1,0 +1,19 @@
+{
+	"data": {
+		"id": "colt_mcanlis",
+        "name": "Colt McAnlis",
+        "bio": "Colt McAnlis is a Developer Advocate at Google focusing on Chrome Games and Performance; Before that, he was a systems & graphics programmer in the games industry working at Blizzard, Microsoft (Ensemble), and Petroglyph. He’s a UDACITY course professor for HTML5 games, and also spent 4 years as an Adjunct Professor at SMU Guildhall's school for game development. When he's not working with developers, Colt spends his time preparing for an invasion of giant ants from outer space.",
+        "photoUrl": "https://lh6.googleusercontent.com/-ZNzykWTFSPk/UoJqoEpJ2iI/AAAAAAAALUs/TPe6xlXwpwU/s336-no/colt_mcanlis.jpg?sz=256",
+        "url": "https://plus.google.com/+ColtMcAnlis",
+        "urlText": "Colt McAnlis on G+",
+        "urlType": "gplus",
+        "talks": [
+        	{
+		        "id": "session09",
+		        "start-date": "2013-05-15T09:00:00",
+		        "end-date": "2013-05-15T10:00:00",
+		        "title": "Evitar a Guarda: strategies for avoiding the guard"
+			}
+		]
+	}
+}

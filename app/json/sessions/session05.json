@@ -1,0 +1,21 @@
+{
+    "data": {
+        "id": "session05",
+        "start-date": "2013-05-15T09:00:00",
+        "end-date": "2013-05-15T10:00:00",
+        "room-id": "room10",
+        "room-name": "Room 10",
+        "level": "Advanced",
+        "title": "Is CSS a Turing complete language ?",
+        "description": "In this talk we’ll reach the boundaries of what can be done with pure CSS: animations, slideshows, a clone of minefield and even a fully functional calculator. Will we also be able to build a complete Turing machine? Join us to discover it! ",
+        "speakers": [{
+            "id": "sandro_paganotti",
+            "name": "Sandro Paganotti",
+            "bio": "Sandro Paganotti (1983) is co-founder and software architect at Comparto Web. He loves developing web interfaces that showcase the full power of HTML5 and CSS3. He's author of "Designing next generation web Projects with CSS3" for Packt Publishing, technical writer for html.it, teacher at Accademia di belle arti Santa Giulia, Google Developer Expert in HTML5 ans speaker at various technical events.",
+            "photoUrl": "https://lh6.googleusercontent.com/-dqaA6ERa3ro/UoJrFl6q8dI/AAAAAAAALVs/Ps4mppgTi2Y/w874-h878-no/sandro_paganotti.jpeg?sz=256",
+            "url": "https://plus.google.com/+SandroPaganotti",
+            "urlText": "Sandro Paganotti on G+",
+            "urlType": "gplus"
+        }]
+    }
+}

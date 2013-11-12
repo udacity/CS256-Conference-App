@@ -1,0 +1,29 @@
+{
+    "data": {
+        "id": "session07",
+        "start-date": "2013-05-15T09:00:00",
+        "end-date": "2013-05-15T10:00:00",
+        "room-id": "room10",
+        "room-name": "Room 10",
+        "level": "Intermediate",
+        "title": "EME WTF?",
+        "description": "EME used to be just three letters.  
+
+Now it's an acronym. Or maybe an abbreviation. 
+
+In this session, we give you the burndown on alphabetical goodness:
+The how and the wow of three letter acronyms,
+Internationalisation: what's in a word?,
+Embedding letters in your workflow,
+Acronym bloat, and how to tackle it,
+Implementing for a variety of platforms: cross-stitch, crewel-work, crochet -- and more!,
+Optimising acronyms for a multi-device world.
+
+This session is brought to you by 5th and 13th letters of the alphabet.
+
+#perfmatters",
+        "speakers": [{
+            "id": "sam_dutton"
+        }]
+    }
+}

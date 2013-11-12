@@ -1,0 +1,19 @@
+{
+	"data": {
+		"id": "paul_kinlan",
+        "name": "Paul Kinlan",
+        "bio": "Paul Kinlan was not in the Dutch Special Forces, but he is still special.",
+        "photoUrl": "https://lh4.googleusercontent.com/-e0diCCAqIVU/UoJqv5TPUiI/AAAAAAAALVA/eUmBbmgikjU/s256-no/paulkinlan.jpg?sz=256",
+        "url": "https://plus.google.com/+PaulKinlan",
+        "urlText": "Paul Kinlan on G+",
+        "urlType": "gplus",
+        "talks": [
+        	{
+		        "id": "session08",
+		        "start-date": "2013-05-15T09:00:00",
+		        "end-date": "2013-05-15T10:00:00",
+		        "title": "Haberdashery and the zen of monkey tickling"
+			}
+		]
+	}
+}

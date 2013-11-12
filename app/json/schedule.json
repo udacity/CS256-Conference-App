@@ -16,15 +16,15 @@
 		    			"end-date": "2013-05-15T10:00:00",
 		    			"title": "A More Awesome Web: Features You've Always Wanted"
 			  		},{
-			    		"id": "session02",
+			    		"id": "session03",
 			    		"start-date": "2013-05-15T10:30:00",
 			    		"end-date": "2013-05-15T11:30:00",
-		    			"title": "The Modern Workflow for Developing the Mobile Web"
+		    			"title": "Remixing the Web"
 			  		},{
-			    		"id": "session01",
+			    		"id": "session04",
 			    		"start-date": "2013-05-15T11:30:00",
 			    		"end-date": "2013-05-15T12:30:00",
-		    			"title": "A More Awesome Web: Features You've Always Wanted"
+		    			"title": "10 AWESOME things Web Developers can learn from a giant robot startup dinosaur"
 			  		}
 				]
 		  	},{
@@ -38,15 +38,15 @@
 			    		"end-date": "2013-05-15T11:30:00",
 		    			"title": "The Modern Workflow for Developing the Mobile Web"
 			  		},{
-			    		"id": "session01",
+			    		"id": "session05",
 			    		"start-date": "2013-05-15T10:30:00",
 			    		"end-date": "2013-05-15T11:30:00",
-		    			"title": "A More Awesome Web: Features You've Always Wanted"
+		    			"title": "Is CSS a Turing complete language?"
 			  		},{
-			    		"id": "session02",
+			    		"id": "session06",
 			    		"start-date": "2013-05-15T11:30:00",
 			    		"end-date": "2013-05-15T12:30:00",
-		    			"title": "The Modern Workflow for Developing the Mobile Web"
+		    			"title": "Mobile Web is as Good as Spinach"
 			  		}
 				]
 		  	},{
@@ -55,20 +55,20 @@
 		    	"class": "room-3",
 		    	"sessions": [
 		    		{
-		    			"id": "session01",
+		    			"id": "session07",
 		    			"start-date": "2013-05-15T10:30:00",
 			    		"end-date": "2013-05-15T11:30:00",
-		    			"title": "A More Awesome Web: Features You've Always Wanted"
+		    			"title": "EME WTF?"
 			  		},{
-			    		"id": "session02",
+			    		"id": "session08",
 			    		"start-date": "2013-05-15T11:30:00",
 			    		"end-date": "2013-05-15T12:30:00",
-		    			"title": "The Modern Workflow for Developing the Mobile Web"
+		    			"title": "Haberdashery and the zen of monkey tickling"
 			  		},{
-			    		"id": "session01",
+			    		"id": "session09",
 			    		"start-date": "2013-05-15T11:30:00",
 			    		"end-date": "2013-05-15T12:30:00",
-		    			"title": "A More Awesome Web: Features You've Always Wanted"
+		    			"title": "Evitar a Guarda: strategies for avoiding the guard"
 			  		}
 				]
 	  		}

@@ -1,0 +1,19 @@
+{
+	"data": {
+		"id": "chris_wilson",
+        "name": "Chris Wilson",
+        "bio": "Chris Wilson is an Open Web Platform Developer Advocate on the Google Chrome team.  He started working on web browsers in 1993 when he co-authored the original Windows version of NCSA Mosaic, worked on Internet Explorer for fifteen years at Microsoft, and joined Google in 2010,.  He has a particular interest in enabling awesome user experiences on the web platform, and is a long-time participant in various web standards working groups.",
+        "photoUrl": "https://lh6.googleusercontent.com/-NP8XvtiMuKw/UoJnaxwGUGI/AAAAAAAALUE/9qjg39T0NyI/s512-no/CWilso_headshot.jpg?sz=256",
+        "url": "https://plus.google.com/+ChrisWilson",
+        "urlText": "Chris Wilson on G+",
+        "urlType": "gplus",
+        "talks": [
+        	{
+				"id": "session03",
+    			"start-date": "2013-05-15T10:30:00",
+    			"end-date": "2013-05-15T12:00:00",
+    			"title": "Remixing the Web"
+	  		}
+        ]
+	}
+}

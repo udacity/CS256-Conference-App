@@ -2,33 +2,23 @@
 	"data": {
 		"speakers" : [
 			{
-				"id": "eric_bidelman",
-				"name": "Eric Bidelman",
-				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"id": "chris_wilson",
+				"name": "Chris Wilson",
+				"photoUrl": "https://lh3.googleusercontent.com/-tmAMNRw6k6w/UoJrFsXICOI/AAAAAAAALV0/IG9kwCqK9Hs/s512-no/CWilso_headshot.jpg?sz=256",
 				"sessions": [
 					{
-						"id": "session01",
-						"title": "A More Awesome Web: Features You've Always Wanted"
+						"id": "session03",
+						"title": "Remixing the Web"
 					}
 				]
 			}, {
-				"id": "eric_bidelman",
-				"name": "Eric Bidelman",
-				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
+				"id": "colt_mcanlis",
+				"name": "Colt McAnlis",
+		        "photoUrl": "https://lh6.googleusercontent.com/-ZNzykWTFSPk/UoJqoEpJ2iI/AAAAAAAALUs/TPe6xlXwpwU/s336-no/colt_mcanlis.jpg?sz=256",
 				"sessions": [
 					{
-						"id": "session01",
-						"title": "A More Awesome Web: Features You've Always Wanted"
-					}
-				]
-			}, {
-				"id": "eric_bidelman",
-				"name": "Eric Bidelman",
-				"photoUrl": "https://lh5.googleusercontent.com/-kgFnix5akCc/AAAAAAAAAAI/AAAAAAAAGHA/eiLgR7hCZRY/photo.jpg?sz=256",
-				"sessions": [
-					{
-						"id": "session01",
-						"title": "A More Awesome Web: Features You've Always Wanted"
+						"id": "session09",
+						"title": "Evitar a Guarda: strategies for avoiding the guard"
 					}
 				]
 			}, {
@@ -44,41 +34,55 @@
 			}, {
 				"id": "matt_gaunt",
 				"name": "Matt Gaunt",
-				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"photoUrl": "https://lh6.googleusercontent.com/-fdCa6978n-A/UoJrFmqpJVI/AAAAAAAALVo/dB4Zs09Dgcs/w804-h823-no/matt_gaunt.jpg?sz=256",
 				"sessions": [
 					{
 						"id": "session02",
 						"title": "The Modern Workflow for Developing the Mobile Web"
+					},
+					{
+						"id": "session06",
+						"title": "I love me spinach and I love me mobile web, who doesn’t?"
 					}
 				]
 			}, {
-				"id": "matt_gaunt",
-				"name": "Matt Gaunt",
-				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
-				"sessions": [
-					{
-						"id": "session02",
-						"title": "The Modern Workflow for Developing the Mobile Web"
+				"id": "paul_kinlan",
+		        "name": "Paul Kinlan",
+		        "photoUrl": "https://lh4.googleusercontent.com/-e0diCCAqIVU/UoJqv5TPUiI/AAAAAAAALVA/eUmBbmgikjU/s256-no/paulkinlan.jpg?sz=256",
+		        "sessions": [
+		        	{
+				    	"id": "session08",
+				        "title": "Haberdashery and the zen of monkey tickling"
 					}
 				]
 			}, {
-				"id": "matt_gaunt",
-				"name": "Matt Gaunt",
-				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"id": "peter_lubbers",
+				"name": "Peter Lubbers",
+				"photoUrl": "https://lh4.googleusercontent.com/-5kYeLib0fzY/UoJqoMCUVLI/AAAAAAAALUw/OUq_wy411kA/s236-no/peter_lubbers.jpg?sz=256",
 				"sessions": [
 					{
-						"id": "session02",
-						"title": "The Modern Workflow for Developing the Mobile Web"
+						"id": "session04",
+						"title": "A More Awesome Web: Features You've Always Wanted"
 					}
 				]
 			}, {
-				"id": "matt_gaunt",
-				"name": "Matt Gaunt",
-				"photoUrl": "https://lh5.googleusercontent.com/-vHdofDMKLtA/AAAAAAAAAAI/AAAAAAAAFbE/9XGkN9ISGWs/photo.jpg?sz=256",
+				"id": "sandro_paganotti",
+				"name": "Sandro Paganotti",
+				"photoUrl": "https://lh6.googleusercontent.com/-dqaA6ERa3ro/UoJrFl6q8dI/AAAAAAAALVs/Ps4mppgTi2Y/w874-h878-no/sandro_paganotti.jpeg?sz=256",
 				"sessions": [
 					{
-						"id": "session02",
-						"title": "The Modern Workflow for Developing the Mobile Web"
+						"id": "session05",
+						"title": "Is CSS a Turing complete language?"
+					}
+				]
+			}, {
+				"id": "sam_dutton",
+				"name": "Sam Dutton",
+				"photoUrl": "https://lh5.googleusercontent.com/-exOdcE4vxwA/UoJqoqzPNyI/AAAAAAAALU4/vtxnHikKcqI/s382-no/sam_dutton.png?sz=256",
+				"sessions": [
+					{
+						"id": "session07",
+						"title": "EME: WTF?"
 					}
 				]
 			}

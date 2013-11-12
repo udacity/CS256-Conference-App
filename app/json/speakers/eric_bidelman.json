@@ -17,60 +17,6 @@
         		"level": "Intermediate",
         		"title": "A More Awesome Web: Features You've Always Wanted",
         		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
-        	}, {
-        		"id": "session01",
-        		"start-date": "2013-05-15T09:00:00",
-        		"end-date": "2013-05-15T10:00:00",
-        		"room-id": "room10",
-        		"room-name": "Room 10",
-        		"level": "Intermediate",
-        		"title": "A More Awesome Web: Features You've Always Wanted",
-        		"description": "The web continues to evolve at an accelerated rate. It's hard to keep up! This session will cover the bleeding-edge features of HTML5 that you may have missed, focusing on features that make developers' lives easier and apps more powerful. A heavy focus will be on freshly landed CSS/JS/HTML primitives which address layout, performance, and specific use cases...especially on mobile: @viewport, @supports, intrinsic/viewport units, resolution & pointer media queries, User/Resource Timing APIs, JS i18n API, iframe goodies, <template>, <dialog>, and more."
         	}
         ] 
     }
