@@ -4,7 +4,8 @@
   "dependencies": {
     "requirejs": "~2.1.4",
     "modernizr": "~2.6.2",
-    "jquery": "~1.9.1"
+    "jquery": "~1.9.1",
+    "polymer-platform": "~0.1.0"
   },
   "devDependencies": {}
 }
