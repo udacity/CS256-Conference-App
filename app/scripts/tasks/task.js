@@ -43,9 +43,8 @@
 
 /* TODO:
  *
- * - Refactor config to be a requirejs dependency
  * - Refactor screen display into something not sucky
- * - Refactor graph of tasks as requirejs dependencies
+ * - MutationObserver doesn't fire on changes to computed styles, only the actual DOM element. Need to figure out a way around this.
  * 
  */
 define(['howler', 'polymer'], function(howler, polymer) {
