@@ -31,7 +31,7 @@ function iphoneScaleFix () {
 }
 
 // TODO: Add initial task to requirejs here. Should be in the 'tasks' subfolder
-require(['app-controller'], function (appController) {
+require(['app-controller', 'tasks/flexbox/flexbox'], function (appController, flexboxTask) {
     'use strict';
 
     iphoneScaleFix();
@@ -39,5 +39,5 @@ require(['app-controller'], function (appController) {
     fasterTouchResponse();
 
     // TODO: Call initial task here
-    
+    flexboxTask();
 });
