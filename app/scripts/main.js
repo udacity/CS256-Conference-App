@@ -1,6 +1,8 @@
 require.config({
     paths: {
-        jquery: '../bower_components/jquery/jquery'
+        jquery: '../bower_components/jquery/jquery',
+        polymer: '../bower_components/polymer-platform/platform',
+        howler: '../bower_components/howler/howler'
     }
 });
 
@@ -9,9 +11,9 @@ function fasterTouchResponse() {
 }
 
 /**
-	iOS actually scales the window when you change orientation to landscape,
-	so to overcome this you need to fix the scale factor and we release it
-	as soon as a gesture is started.
+    iOS actually scales the window when you change orientation to landscape,
+    so to overcome this you need to fix the scale factor and we release it
+    as soon as a gesture is started.
 **/
 function iphoneScaleFix () {
     // Taken from HTML5 Boiletplate
@@ -28,10 +30,14 @@ function iphoneScaleFix () {
     }
 }
 
+// TODO: Add initial task to requirejs here. Should be in the 'tasks' subfolder
 require(['app-controller'], function (appController) {
     'use strict';
 
     iphoneScaleFix();
 
     fasterTouchResponse();
+
+    // TODO: Call initial task here
+    
 });
