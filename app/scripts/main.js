@@ -11,9 +11,9 @@ function fasterTouchResponse() {
 }
 
 /**
-    iOS actually scales the window when you change orientation to landscape,
-    so to overcome this you need to fix the scale factor and we release it
-    as soon as a gesture is started.
+	iOS actually scales the window when you change orientation to landscape,
+	so to overcome this you need to fix the scale factor and we release it
+	as soon as a gesture is started.
 **/
 function iphoneScaleFix () {
     // Taken from HTML5 Boiletplate
@@ -30,14 +30,14 @@ function iphoneScaleFix () {
     }
 }
 
-// TODO: Add initial task to requirejs here. Should be in the 'tasks' subfolder
-require(['app-controller'], function (appController) {
+// Add initial task to requirejs here. Should be in the 'tasks' subfolder
+require(['app-controller', 'tasks/viewport/viewport'], function (appController, viewportTask) {
     'use strict';
 
     iphoneScaleFix();
 
     fasterTouchResponse();
 
-    // TODO: Call initial task here
-    
+    // Call initial task here
+    viewportTask();
 });
