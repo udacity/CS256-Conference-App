@@ -55,14 +55,28 @@ define(['howler', 'polymer'], function(howler, polymer) {
 
 	return function Task(taskConfig) {
 		return function() {
+			var instructions = null;
+			var segue = null;
+
 			// Start loading instruction sound file in case it takes awhile.
-			var instructions = new howler.Howl({
-				urls: [taskConfig.instructions.audio],
-				onloaderror: function(error) {
-					console.log('Howler encountered error: ', error);
-					instructions = null;
-				}
-			});
+			if (taskConfig.instructions.audio) {
+				instructions = new howler.Howl({
+					urls: [taskConfig.instructions.audio],
+					onloaderror: function(error) {
+						console.log('Howler encountered error: ', error);
+						instructions = null;
+					},
+					onend: function(event) {
+						// If we have no predicate to test against, just play the next
+						// task, if available.
+						if (taskConfig.tests[0] &&
+							taskConfig.tests[0].predicate === null &&
+							taskConfig.tests[0].next !== null) {
+							taskConfig.tests[0].next();
+						}
+					}
+				});
+			}
 
 			var currentPoints = 0;
 			var tasks = [];
@@ -71,34 +85,38 @@ define(['howler', 'polymer'], function(howler, polymer) {
 				// We set observer out here so that we can access it later
 				// to disconnect it.
 				var observer = null;
-				tasks.push(test.description);
+				if (test.description) {
+					tasks.push(test.description);
+				}
 
 				// Start loading segue sound file in case it takes awhile.
-				var segue = new Howl({
-					urls: [test.segue.audio],
-					onend: function(event) {
-						// When the sound file stops playing, check if we can
-						// move onto the next Task.
-						if (currentPoints >= taskConfig.pointsNecessary) {
-							if (taskList) {
-								taskList.innerHTML = '';
+				if (test.segue && test.segue.audio) {
+					segue = new Howl({
+						urls: [test.segue.audio],
+						onend: function(event) {
+							// When the sound file stops playing, check if we can
+							// move onto the next Task.
+							if (currentPoints >= taskConfig.pointsNecessary) {
+								if (taskList) {
+									taskList.innerHTML = '';
+								}
+								test.next();
 							}
-							test.next();
+						},
+						onloaderror: function(error) {
+							// Supposed to fire if the sound file fails to load for
+							// whatever reason, but doesn't actually work. The idea
+							// was to use this for detecting when we should check
+							// whether we should move onto the next Task, after
+							// the segue finishes playing, or inside the actual
+							// MutationObserver.
+							//
+							// WTF Howler?!
+							console.log('Howler encountered error: ', error);
+							segue = null;
 						}
-					},
-					onloaderror: function(error) {
-						// Supposed to fire if the sound file fails to load for
-						// whatever reason, but doesn't actually work. The idea
-						// was to use this for detecting when we should check
-						// whether we should move onto the next Task, after
-						// the segue finishes playing, or inside the actual
-						// MutationObserver.
-						//
-						// WTF Howler?!
-						console.log('Howler encountered error: ', error);
-						segue = null;
-					}
-				});
+					});
+				}
 
 				// Create a new MutationObserver, and immediately start observing
 				// the specified target for changes.
@@ -122,16 +140,18 @@ define(['howler', 'polymer'], function(howler, polymer) {
 
 								currentPoints += test.points;
 
-								console.log(test.segue.console);
-								if (caption) {
-									caption.innerHTML = test.segue.screen;
+								if (test.segue) {
+									console.log(test.segue.console);
+									if (caption) {
+										caption.innerHTML = test.segue.screen;
+									}
 								}
 
 								if (segue) {
 									currentPlaying = segue;
 									segue.play();
 								} else if (currentPoints >= taskConfig.pointsNecessary) {
-									(window[test.next])();
+									test.next();
 								}
 							}
 						});
@@ -158,7 +178,14 @@ define(['howler', 'polymer'], function(howler, polymer) {
 			}
 
 			currentPlaying = instructions;
-			instructions.play();
+
+			if (instructions) {
+				instructions.play();
+			} else if (taskConfig.tests[0] &&
+				taskConfig.tests[0].predicate === null &&
+				taskConfig.tests[0].next !== null) {
+				taskConfig.tests[0].next();
+			}
 		};
 	};
 });
