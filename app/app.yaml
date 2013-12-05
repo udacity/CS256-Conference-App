@@ -18,6 +18,9 @@ handlers:
 - url: /images
   static_dir: images
 
+- url: /audio
+  static_dir: audio
+
 - url: /pages
   static_dir: pages
 
