@@ -1,6 +1,5 @@
 .home-ui {
-    display: flex;
-    flex-direction: column;
+
 }
 
 /**
@@ -8,7 +7,6 @@
  **/
 .info-pane {
 	height: 0;
-	flex: 4;
 
 	overflow: auto;
 }
@@ -134,15 +132,10 @@
 $menuItemBreakPoint: 500px;
 
 .menu-items-grid {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: space-around;
 
     padding: 0 1%;
 
 	a {
-        flex: 0 46%;
 
         position: relative;
 
@@ -154,13 +147,6 @@ $menuItemBreakPoint: 500px;
         }
     }
 
-    
-
-    @media (min-width: $menuItemBreakPoint) {
-    	a {
-    		flex: 0 24%;
-    	}
-    }
 }
 
 .no-flexbox {
