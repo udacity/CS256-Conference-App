@@ -1,0 +1,73 @@
+CACHE MANIFEST
+#version 1.0
+
+CACHE:
+bower_components/requirejs/require.js
+favicon.ico
+styles/aab0066e.main.css
+scripts/1396e6bc.main.js
+scripts/vendor/f7f27360.modernizr.js
+images/icon.png
+images/favorite_icon.png
+images/schedule_bg.png
+images/locate_icon.png
+images/filter_icon.png
+images/Roboto-light.woff
+images/Roboto-medium.woff
+images/Roboto-bold.woff
+images/maptiles/floor0-v2.svg
+images/maptiles/floor1-v2.svg
+images/maptiles/floor2-v2.svg
+images/mapmarkers/food.svg
+images/mapmarkers/info.svg
+images/mapmarkers/power.svg
+images/mapmarkers/room.svg
+images/mapmarkers/toilet.svg
+images/profiles/chris_wilson.jpg
+images/profiles/colt_mcanlis.jpg
+images/profiles/eric_bidelman.jpg
+images/profiles/matt_gaunt.jpg
+images/profiles/paul_kinlan.jpg
+images/profiles/peter_lubbers.jpg
+images/profiles/sam_dutton.jpg
+images/profiles/sandro_paganotti.jpg
+json/sessions/session01.json
+json/sessions/session02.json
+json/sessions/session03.json
+json/sessions/session04.json
+json/sessions/session05.json
+json/sessions/session06.json
+json/sessions/session07.json
+json/sessions/session08.json
+json/sessions/session09.json
+json/speakers/chris_wilson.json
+json/speakers/colt_mcanlis.json
+json/speakers/eric_bidelman.json
+json/speakers/matt_gaunt.json
+json/speakers/paul_kinlan.json
+json/speakers/peter_lubbers.json
+json/speakers/sam_dutton.json
+json/speakers/sandro_paganotti.json
+json/maps.json
+json/schedule.json
+json/speakers.json
+
+# / is wildcard for all pages  
+# so, for all pages, offline.html will be displayed if the user is offline
+# NB path is relative to this file
+#FALLBACK:
+#/ offline.html
+
+# Resources that require the user to be online
+NETWORK:
+http://www.google-analytics.com/ga.js
+http://maps.googleapis.com/
+http://maps.gstatic.com/
+http://mt0.googleapis.com/
+http://mt1.googleapis.com/
+http://csi.gstatic.com/
+http://fonts.googleapis.com/
+http://themes.googleusercontent.com/
+
+
+#*

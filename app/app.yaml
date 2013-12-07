@@ -9,6 +9,14 @@ handlers:
   static_files: index.html
   upload: index\.html
 
+- url: /manifest.appcache
+  static_files: manifest.appcache
+  upload: manifest\.appcache
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
 - url: /scripts
   static_dir: scripts
 

@@ -7,13 +7,12 @@
         "room-name": "Room 10",
         "level": "Intermediate",
         "title": "10 AWESOME things Web Developers can learn from a giant robot startup dinosaur",
-        "description": "What can developers learn from @FAKEGRIMLOCK, the giant robot startup dinosaur? Well, for starters they should obviously write code, drink coffee, and kick ass, but there are other, more esoteric things that developers must consider if they want to take their skills to the next level and become uppercase AWESOME.  In this talk, Peter will share some of these mind-blowing, yet common sense nuggets of wisdom and if the stars are aligned just right Fake G. may stop by! If you want to build \"bacon\" instead of \"broccoli\" sites, come to this talk and set course for Awesome!
-",
+        "description": "What can developers learn from @FAKEGRIMLOCK, the giant robot startup dinosaur? Well, for starters they should obviously write code, drink coffee, and kick ass, but there are other, more esoteric things that developers must consider if they want to take their skills to the next level and become uppercase AWESOME.  In this talk, Peter will share some of these mind-blowing, yet common sense nuggets of wisdom and if the stars are aligned just right Fake G. may stop by! If you want to build 'bacon' instead of 'broccoli' sites, come to this talk and set course for Awesome!",
         "speakers": [{
             "id": "peter_lubbers",
             "name": "Peter Lubbers",
             "bio": "Peter Lubbers is a Program Manager at Google in the Chrome Developer Relations team and lives and breathes HTML5 (even his car’s licence plate is HTML5!). He is the co-author of Pro HTML5 Programming (Apress) and the founder of the San Francisco HTML5 User Group, the largest HTML5 User Group in the world. A native of the Netherlands, Peter served as a Special Forces commando in the Royal Dutch Green Berets. In his spare time Peter likes jumping out of planes, bungee-jumping, and running ultra-marathons.",
-            "photoUrl": "https://lh4.googleusercontent.com/-5kYeLib0fzY/UoJqoMCUVLI/AAAAAAAALUw/OUq_wy411kA/s236-no/peter_lubbers.jpg?sz=256",
+            "photoUrl": "/images/profiles/peter_lubbers.jpg",
             "url": "https://plus.google.com/+PeterLubbers",
             "urlText": "Peter Lubbers on G+",
             "urlType": "gplus"

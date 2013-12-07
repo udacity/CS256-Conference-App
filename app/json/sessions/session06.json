@@ -7,11 +7,10 @@
         "room-name": "Room 10",
         "level": "Intermediate",
         "title": "Mobile Web is as Good as Spinach",
-        "description": "I love me spinach and I love me mobile web, who doesn’t?  Learn how a native app can be like a can of spinach, using it to transport the awesomeness of the web straight to your users. 
-The Ring Pull is the User Experience. The Tin is the native components and the spinach is your incredible web.
-#SpinachMatters",
+        "description": "I love me spinach and I love me mobile web, who doesn’t?  Learn how a native app can be like a can of spinach, using it to transport the awesomeness of the web straight to your users.  The Ring Pull is the User Experience. The Tin is the native components and the spinach is your incredible web. #SpinachMatters",
         "speakers": [{
             "id": "matt_gaunt",
+            "photoUrl": "/images/profiles/matt_gaunt.jpg"
 
         }]
     }

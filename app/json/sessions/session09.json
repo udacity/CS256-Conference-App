@@ -7,13 +7,10 @@
         "room-name": "Room 10",
         "level": "Advanced",
         "title": "Evitar a Guarda: strategies for avoiding the guard",
-        "description": "Guard passing is hard.
-
-To pass a good guard it takes a substantial amount of speed, power and technique. The Jiu Jitsu ruleset recognizes that playing from the top is more difficult than sweeping from guard, which is why passing is allotted more points in the scoring system. That extra point isn’t always enough to incentivize guard passing, however, due to the restrictive time limits and advanced guards commonly encountered in modern Jiu Jitsu tournaments. It’s just too easy to get swept or get stalled out when attempting to pass. 
-At all belt levels, the current crop of competitors is implementing a strategy of avoiding the top position. The benefits can be seen in the rash of submission victories by athletes such as the Mendes brothers. 
-This session will focus on several methods of bypassing the guard, many of which you will have seen before – Marcelo Garcia’s armdrag, Rafael Mendes’s berimbolo and other de la Riva back-take positions, the reverse X-guard/leg drag sweep, and the Beijo do Dragão. Put together, it become clear that some of the most aggressive champions of Jiu Jitsu have individually came to the same conclusion – why waste time passing when you can bypass the guard to achieve a dominant position and finish the match?",
+        "description": "Guard passing is hard.  To pass a good guard it takes a substantial amount of speed, power and technique. The Jiu Jitsu ruleset recognizes that playing from the top is more difficult than sweeping from guard, which is why passing is allotted more points in the scoring system. That extra point isn’t always enough to incentivize guard passing, however, due to the restrictive time limits and advanced guards commonly encountered in modern Jiu Jitsu tournaments. It’s just too easy to get swept or get stalled out when attempting to pass.  At all belt levels, the current crop of competitors is implementing a strategy of avoiding the top position. The benefits can be seen in the rash of submission victories by athletes such as the Mendes brothers.  This session will focus on several methods of bypassing the guard, many of which you will have seen before – Marcelo Garcia’s armdrag, Rafael Mendes’s berimbolo and other de la Riva back-take positions, the reverse X-guard/leg drag sweep, and the Beijo do Dragão. Put together, it become clear that some of the most aggressive champions of Jiu Jitsu have individually came to the same conclusion – why waste time passing when you can bypass the guard to achieve a dominant position and finish the match?",
         "speakers": [{
-            "id": "colt_mcanlis"
+            "id": "colt_mcanlis",
+            "photoUrl": "/images/profiles/colt_mcanlis.jpg"
         }]
     }
 }

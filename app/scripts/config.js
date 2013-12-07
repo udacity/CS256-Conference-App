@@ -5,8 +5,8 @@ define([''], function () {
     var config = {};
 
     config.getRootUrl = function() {
-        return 'http://udacity-conf.appspot.com';
-        //return 'http://localhost:8080'
+        //return 'http://udacity-conf.appspot.com';
+        return 'http://localhost:8080'
     }
 
     return config;
