@@ -1,5 +1,5 @@
-application: udacity-conf
-version: 1
+application: udacity-extras
+version: cs256
 runtime: python27
 api_version: 1
 threadsafe: yes
