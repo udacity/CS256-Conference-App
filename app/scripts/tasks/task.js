@@ -49,7 +49,7 @@
 /* TODO:
  * - Refactor screen display into something not sucky
  */
-define(['howler', 'polymer'], function(howler, polymer) {
+define(['howler'], function(howler) {
 	var currentPlaying = null;
 	var taskList = document.querySelector('#tasks');
 	var caption = document.querySelector('#caption');

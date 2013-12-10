@@ -31,7 +31,7 @@ function iphoneScaleFix () {
 }
 
 // Add initial task to requirejs here. Should be in the 'tasks' subfolder
-require(['app-controller', 'controllers/home-ui-controller', 'jquery', 'tasks/flexbox/flexbox'], function (appController, HomeUIController, jquery, flexboxTask) {
+require(['app-controller', 'controllers/home-ui-controller', 'tasks/flexbox/flexbox'], function (appController, HomeUIController, flexboxTask) {
     'use strict';
 
     iphoneScaleFix();
