@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/info-pane-flex'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/info-pane-flex'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/info-pane-flex'], function(Task, nextTask) 
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "There's another problem with the links. If we resize the window to about 400px, they look fine, but as we make the window wider, we see that it looks kind of empty, the links get to be too far apart. Let's tell the buttons to fill that empty space. There are two ways we could do this. We could set '.menu-items-grid a' to 'flex-grow: 0' and 'flex-basis: 24%', or we could use the shorthand 'flex: 0 24%'. Try that now.",
 			screen: "There's another problem with the links. If we resize the window to about 400px, they look fine, but as we make the window wider, we see that it looks kind of empty, the links get to be too far apart. Let's tell the buttons to fill that empty space. There are two ways we could do this. We could set '.menu-items-grid a' to 'flex-grow: 0' and 'flex-basis: 24%', or we could use the shorthand 'flex: 0 24%'. Try that now.",
@@ -23,15 +18,17 @@ define(['tasks/task', 'tasks/flexbox/info-pane-flex'], function(Task, nextTask) 
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.menu-items-grid a'),
+			targets: ".menu-items-grid a",
 			description: "set '.menu-items-grid a' to 'flex: 0 24%'",
-			predicate: function(mutation) {
-				var style = window.getComputedStyle(mutation.target);
-				var flex = style.getPropertyValue('flex');
-				var flexGrow = style.getPropertyValue('flex-grow');
-				var flexBasis = style.getPropertyValue('flex-basis');
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					var style = window.getComputedStyle(target);
+					var flex = style.getPropertyValue('flex');
+					var flexGrow = style.getPropertyValue('flex-grow');
+					var flexBasis = style.getPropertyValue('flex-basis');
 
-				return (flex === '0 24%' || (flexGrow === '0' && flexBasis === '24%'));
+					return (flex === '0 24%' || (flexGrow === '0' && flexBasis === '24%'));
+				});
 			},
 			next: nextTask,
 			points: 1,

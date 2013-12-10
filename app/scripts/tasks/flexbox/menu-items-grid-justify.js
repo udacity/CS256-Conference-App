@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/menu-items-grid-wrap'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/menu-items-grid-wrap'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-wrap'], function(Task, next
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "Now what we'd like to do is space our links across the page. To do this, let's set 'justify-content' on '.menu-items-grid' to 'space-around'.",
 			screen: "Now what we'd like to do is space our links across the page. To do this, let's set 'justify-content' on '.menu-items-grid' to 'space-around'.",
@@ -23,10 +18,12 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-wrap'], function(Task, next
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.menu-items-grid'),
+			targets: ".menu-items-grid",
 			description: "set the section '.menu-items-grid' to 'justify-content: space-around'",
-			predicate: function(mutation) {
-				return window.getComputedStyle(mutation.target).getPropertyValue('justify-content') === 'space-around';
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					return window.getComputedStyle(target).getPropertyValue('justify-content') === 'space-around';
+				});
 			},
 			next: nextTask,
 			points: 1,

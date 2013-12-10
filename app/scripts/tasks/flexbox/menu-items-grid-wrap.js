@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/menu-items-grid-a-flex'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/menu-items-grid-a-flex'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-a-flex'], function(Task, ne
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "If you resize the window down small enough (feel free to try this now), you'll see the links start overlapping each other, and running off the right side of the page. This isn't really what we want. We'd like the links to wrap around if the window gets too small, so let's tell '.menu-items-grid' that we want its children to wrap.",
 			screen: "If you resize the window down small enough (feel free to try this now), you'll see the links start overlapping each other, and running off the right side of the page. This isn't really what we want. We'd like the links to wrap around if the window gets too small, so let's tell '.menu-items-grid' that we want its children to wrap.",
@@ -23,10 +18,12 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-a-flex'], function(Task, ne
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.menu-items-grid'),
+			targets: ".menu-items-grid",
 			description: "set the section '.menu-items-grid' to 'flex-wrap: wrap'",
-			predicate: function(mutation) {
-				return window.getComputedStyle(mutation.target).getPropertyValue('flex-wrap') === 'wrap';
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					return window.getComputedStyle(target).getPropertyValue('flex-wrap') === 'wrap';
+				});
 			},
 			next: nextTask,
 			points: 1,

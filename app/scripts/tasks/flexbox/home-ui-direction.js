@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/menu-items-grid-display'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/menu-items-grid-display'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-display'], function(Task, n
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "Now, if you mouse over the child sections of '.home-ui' in the developer tools, you can see that they're laid out in a row. We really want these in a column layout; First the header, then the info-pane, then the menu, and finally the wifi details. Let's set the direction to column to achieve this.",
 			screen: "Now, if you mouse over the child sections of '.home-ui' in the developer tools, you can see that they're laid out in a row. We really want these in a column layout; First the header, then the info-pane, then the menu, and finally the wifi details. Let's set the direction to column to achieve this.",
@@ -23,10 +18,12 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-display'], function(Task, n
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.home-ui'),
+			targets: ".home-ui",
 			description: "set the section '.home-ui' to 'flex-direction: column'",
-			predicate: function(mutation) {
-				return window.getComputedStyle(mutation.target).getPropertyValue('flex-direction') === 'column';
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					return window.getComputedStyle(target).getPropertyValue('flex-direction') === 'column';
+				});
 			},
 			next: nextTask,
 			points: 1,

@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/menu-items-grid-justify'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/menu-items-grid-justify'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-justify'], function(Task, n
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "Next let's take a look at the section containing our links, the one with class 'menu-items-grid'. If you look at its children, you can see that the buttons are really inline 'a' tags containing spans. We'd like to lay these out with flexbox as well. Go ahead and set this section to 'display: flex'.",
 			screen: "Next let's take a look at the section containing our links, the one with class 'menu-items-grid'. If you look at its children, you can see that the buttons are really inline 'a' tags containing spans. We'd like to lay these out with flexbox as well. Go ahead and set this section to 'display: flex'.",
@@ -23,11 +18,12 @@ define(['tasks/task', 'tasks/flexbox/menu-items-grid-justify'], function(Task, n
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.menu-items-grid'),
+			targets: ".menu-items-grid",
 			description: "set the section '.menu-items-grid' to 'display: flex'",
-			predicate: function(mutation) {
-				console.log('computed styles: ', window.getComputedStyle(mutation.target));
-				return window.getComputedStyle(mutation.target).getPropertyValue('display') === 'flex';
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					return window.getComputedStyle(target).getPropertyValue('display') === 'flex';
+				});
 			},
 			next: nextTask,
 			points: 1,

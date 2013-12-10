@@ -1,4 +1,3 @@
-//TODO: Change 'next' to something semantically meaningful
 define(['tasks/task'], function(Task) {
 
 /*

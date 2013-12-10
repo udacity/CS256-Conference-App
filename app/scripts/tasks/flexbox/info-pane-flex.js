@@ -1,5 +1,4 @@
-//TODO: Change 'next' to something semantically meaningful
-define(['tasks/task', 'tasks/flexbox/finale'], function(Task, nextTask) {
+define(['app-controller', 'controllers/home-ui-controller', 'tasks/task', 'tasks/flexbox/finale'], function(AppController, HomeUIController, Task, nextTask) {
 
 /*
  * Step 1: .home-ui display: flex
@@ -12,10 +11,6 @@ define(['tasks/task', 'tasks/flexbox/finale'], function(Task, nextTask) {
  * Step 8: .info-pane flex: 4
  */
 	var flexboxTask = new Task({
-		initObserver: {
-			attributes: true,
-			attributeFilter: ['style']
-		},
 		instructions: {
 			console: "We're almost done! The last thing we want to do is push those links down to the bottom. Notice the section with class 'info-pane'? This is currently empty, but we might want to put conference updates or other information here that we want all attendees to see. We can use 'flex-grow' or 'flex' on '.info-pane' to specify that we want it to take up as much space as we give it. Do that by setting 'flex-grow' to any number greater than 0.",
 			screen: "We're almost done! The last thing we want to do is push those links down to the bottom. Notice the section with class 'info-pane'? This is currently empty, but we might want to put conference updates or other information here that we want all attendees to see. We can use 'flex-grow' or 'flex' on '.info-pane' to specify that we want it to take up as much space as we give it. Do that by setting 'flex-grow' to any number greater than 0.",
@@ -23,14 +18,16 @@ define(['tasks/task', 'tasks/flexbox/finale'], function(Task, nextTask) {
 		},
 		pointsNecessary: 1,
 		tests: [{
-			target: document.querySelector('.info-pane'),
+			targets: ".info-pane",
 			description: "set the section '.info-pane' to 'flex: 4'",
-			predicate: function(mutation) {
-				var style = window.getComputedStyle(mutation.target);
-				var flex = style.getPropertyValue('flex');
-				var flexGrow = style.getPropertyValue('flex-grow');
+			predicate: function(targets) {
+				return targets.every(function(target) {
+					var style = window.getComputedStyle(target);
+					var flex = parseInt(style.getPropertyValue('flex'), 10);
+					var flexGrow = parseInt(style.getPropertyValue('flex-grow'), 10);
 
-				return (flex === '4' || flexGrow === '4');
+					return (flex >= 1 || flexGrow >= 1);
+				});
 			},
 			next: nextTask,
 			points: 1,
