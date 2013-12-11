@@ -30,14 +30,17 @@ function iphoneScaleFix () {
     }
 }
 
-// TODO: Add initial task to requirejs here. Should be in the 'tasks' subfolder
-require(['app-controller'], function (appController) {
+// Add initial task to requirejs here. Should be in the 'tasks' subfolder, flexbox task is an example
+require(['app-controller', 'controllers/home-ui-controller', 'tasks/flexbox/flexbox'], function (appController, HomeUIController, flexboxTask) {
     'use strict';
 
     iphoneScaleFix();
 
     fasterTouchResponse();
 
-    // TODO: Call initial task here
-    
+    //Dirty, dirty hack
+    setTimeout(function() {
+        // Call initial task here
+        
+    }, 2000);
 });
