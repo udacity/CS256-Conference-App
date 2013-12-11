@@ -1,29 +1,29 @@
 /*global define */
-define(['utils'], function (Utils) {
+define(['utils', 'views/instructions-view'], function (Utils, InstructionsView) {
     'use strict';
 
     function BaseUIController() {}
 
     BaseUIController.prototype.getView = function() {
-    	console.error('BaseUIController.getView: This method ' +
-    		'must be overriden');
-    }
+        console.error('BaseUIController.getView: This method ' +
+            'must be overriden');
+    };
 
     BaseUIController.prototype.addedToDom = function() {
 
-    }
+    };
 
     BaseUIController.prototype.onRemovePage = function () {
 
-    }
+    };
 
     BaseUIController.prototype.getPageURL = function() {
         return "";
-    }
+    };
 
     BaseUIController.prototype.getState = function() {
         return null;
-    }
+    };
 
     BaseUIController.prototype.generatePageContainer = function(className, elements) {
         var container = document.createElement('section');
@@ -37,7 +37,7 @@ define(['utils'], function (Utils) {
         }
 
         return container;
-    }
+    };
 
     BaseUIController.prototype.generateTopBar = function(title, actions) {
         var header = document.createElement('header');
@@ -77,13 +77,22 @@ define(['utils'], function (Utils) {
         header.appendChild(actionsContainer);
 
         return header;
-    }
+    };
+
+    BaseUIController.prototype.generateInstructionsPane = function() {
+        var body = document.querySelector('body');
+        if (document.querySelector('.instructions-pane') === null) {
+            var instructions = new InstructionsView();
+
+            body.appendChild(instructions.getDomElement());
+        }
+    };
 
     BaseUIController.prototype.eventDispatchFunction = function(eventName, target, data) {
         return function(e) {
             Utils.dispatchEvent(eventName, target, data);
         };
-    }
+    };
 
     return BaseUIController;
 });

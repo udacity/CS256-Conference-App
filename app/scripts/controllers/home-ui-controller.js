@@ -5,6 +5,7 @@ define(['controllers/base-ui-controller', 'views/home-menu-view', 'views/home-in
     function HomeUIController() {
         BaseUIController.call(this);
 
+        this.generateInstructionsPane();
         var menuView = new MenuView();
         var infoView = new InfoView();
         var wifiView = new WifiView();
