@@ -48,11 +48,19 @@
 
 /* TODO:
  * - Refactor screen display into something not sucky
+ * -- Get rid of position: absolute on '.page', ruins instructions
+ * -- Show instructions for task, completion, segue
+ * -- Add pop-in/pop-out control to page, transition
+ * --- position of control
+ * --- z-index of instruction div
+ * --- maybe perspective to give it a nice animation effect
+ * --- Make transition delay around 0.2s
+ * --- Make transition duration around 0.4s
+ *
  */
-define(['howler'], function(howler) {
+define(['howler', 'views/instructions-view'], function(howler, InstructionsView) {
 	var currentPlaying = null;
-	var taskList = document.querySelector('#tasks');
-	var caption = document.querySelector('#caption');
+	var view = new InstructionsView();
 
 	return function Task(taskConfig) {
 		return function() {
@@ -84,9 +92,6 @@ define(['howler'], function(howler) {
 
 			taskConfig.tests.forEach(function(test) {
 				if (test.predicate !== null) {
-					if (test.description) {
-						tasks.push(test.description);
-					}
 
 					// Start loading segue sound file in case it takes awhile.
 					if (test.segue && test.segue.audio) {
@@ -96,9 +101,6 @@ define(['howler'], function(howler) {
 								// When the sound file stops playing, check if we can
 								// move onto the next Task.
 								if (currentPoints >= taskConfig.pointsNecessary) {
-									if (taskList) {
-										taskList.innerHTML = '';
-									}
 									test.next();
 								}
 							},
@@ -144,10 +146,9 @@ define(['howler'], function(howler) {
 								// Display segue info if it exists
 								if (test.segue) {
 									console.log(test.segue.console);
+									view.generateTask(test.segue.screen);
 									console.log('\n\n\n');
-									if (caption) {
-										caption.innerHTML = test.segue.screen;
-									}
+
 								}
 
 								// Play segue audio if it exists, otherwise immediately check
@@ -157,9 +158,6 @@ define(['howler'], function(howler) {
 									currentPlaying = segue;
 									segue.play();
 								} else if (currentPoints >= taskConfig.pointsNecessary) {
-									if (taskList) {
-										taskList.innerHTML = '';
-									}
 									test.next();
 								}
 							}
@@ -170,10 +168,7 @@ define(['howler'], function(howler) {
 
 			// Once everything is setup, run ALL THE INSTRUCTIONS.
 			console.log(taskConfig.instructions.console);
-
-			if (caption) {
-				caption.innerHTML = taskConfig.instructions.screen;
-			}
+			view.generateTask(taskConfig.instructions.screen);
 
 			tasks.forEach(function(task) {
 				if (taskList) {

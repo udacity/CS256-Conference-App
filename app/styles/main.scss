@@ -4,6 +4,7 @@
 @import "components";
 @import "component_button";
 @import "component_home";
+@import "component_instructions";
 @import "component_schedule";
 @import "component_map";
 @import "component_session";
@@ -28,8 +29,10 @@ body {
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    align-items: flex-start;
 }
 
 .main-content {

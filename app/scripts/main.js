@@ -38,5 +38,8 @@ require(['app-controller', 'controllers/home-ui-controller', 'tasks/flexbox/flex
 
     fasterTouchResponse();
 
-    flexboxTask();
+    //Dirty, dirty hack
+    setTimeout(function() {
+        flexboxTask();
+    }, 2000);
 });
