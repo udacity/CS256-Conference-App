@@ -153,21 +153,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        sass: {
-            dist: {
-                options: {
-                    sourcemap: true,
-                    lineNumbers: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/styles',
-                    src: ['*.scss'],
-                    dest: '.tmp/styles',
-                    ext: '.css'
-                }]
-            }
-        },
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
@@ -180,11 +165,13 @@ module.exports = function (grunt) {
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
-                relativeAssets: false
+                relativeAssets: false,
+                raw: 'sass_options = {:sourcemap => true}\n'
             },
             dist: {},
             server: {
                 options: {
+                    raw: 'sass_options = {:sourcemap => true}\n'
                 }
             }
         },
@@ -320,7 +307,8 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt,yaml}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/*'
+                        'styles/fonts/*',
+                        'styles/{,*/}*.{scss,sass}'
                     ]
                 }, {
                     expand: true,
@@ -393,16 +381,16 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        //'useminPrepare',
+        'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
         'requirejs',
-        //'concat',
-        //'cssmin',
-        //'uglify',
+        'concat',
+        'cssmin',
+        'uglify',
         'copy:dist',
-        'rev',
-        //'usemin'
+        //'rev',
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
