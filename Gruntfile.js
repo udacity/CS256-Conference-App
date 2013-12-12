@@ -38,6 +38,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer' ]
             },
+            sass: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+                tasks: ['sass:server', 'autoprefixer']
+            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['copy:styles', 'autoprefixer']
@@ -150,6 +154,34 @@ module.exports = function (grunt) {
                     src: '{,*/}*.coffee',
                     dest: '.tmp/spec',
                     ext: '.js'
+                }]
+            }
+        },
+        sass: {
+            dist: {
+                options: {
+                    sourcemap: true,
+                    lineNumbers: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: 'dist/styles',
+                    ext: '.css'
+                }]
+            },
+            server: {
+                options: {
+                    sourcemap: true,
+                    lineNumbers: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '.tmp/styles',
+                    ext: '.css'
                 }]
             }
         },
@@ -340,6 +372,8 @@ module.exports = function (grunt) {
             dist: [
                 'coffee',
                 'compass',
+                //'bower',
+                'sass',
                 'copy:styles',
                 'imagemin',
                 'svgmin',
@@ -383,10 +417,11 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
+        //'bower',
         'autoprefixer',
         'requirejs',
         'concat',
-        'cssmin',
+        //'cssmin',
         'uglify',
         'copy:dist',
         //'rev',
