@@ -12,8 +12,8 @@ define(['tasks/task', 'tasks/viewport/finale'], function(Task, finale) {
 
 	var viewport = new Task({
 		instructions: {
-			console: "Setting the viewport is relatively simple. Open up the Elements tab in your developer tools, and add a <meta> tag with the name attribute set to 'viewport' and the content attribute set to 'width=device-width'.",
-			screen: "Setting the viewport is relatively simple. Open up the Elements tab in your developer tools, and add a <meta> tag with the name attribute set to 'viewport' and the content attribute set to 'width=device-width'.",
+			console: "Setting the viewport is relatively simple. Open up the Elements tab in your developer tools, and add a <meta> tag with the name attribute set to 'viewport' and the content attribute set to 'width=device-width'. Note that, if you're doing this in the Udacity classroom, make sure you set the viewport inside the iframe, rather than the outer one for the classroom page itself.",
+			screen: "Setting the viewport is relatively simple. Open up the Elements tab in your developer tools, and add a <meta> tag with the name attribute set to 'viewport' and the content attribute set to 'width=device-width'. Note that, if you're doing this in the Udacity classroom, make sure you set the viewport inside the iframe, rather than the outer one for the classroom page itself.",
 			audio: null//"/audio/tasks/viewport/viewportIntroduction.mp3"
 		},
 		pointsNecessary: 1,
