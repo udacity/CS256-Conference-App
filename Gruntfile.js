@@ -153,6 +153,21 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        sass: {
+            dist: {
+                options: {
+                    sourcemap: true,
+                    lineNumbers: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '.tmp/styles',
+                    ext: '.css'
+                }]
+            }
+        },
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
@@ -170,7 +185,6 @@ module.exports = function (grunt) {
             dist: {},
             server: {
                 options: {
-                    debugInfo: true
                 }
             }
         },
@@ -379,16 +393,16 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'useminPrepare',
+        //'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
         'requirejs',
-        'concat',
-        'cssmin',
-        'uglify',
+        //'concat',
+        //'cssmin',
+        //'uglify',
         'copy:dist',
         'rev',
-        'usemin'
+        //'usemin'
     ]);
 
     grunt.registerTask('default', [
