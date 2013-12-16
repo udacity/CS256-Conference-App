@@ -38,6 +38,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer' ]
             },
+            sass: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+                tasks: ['sass:server', 'autoprefixer']
+            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['copy:styles', 'autoprefixer']
@@ -153,6 +157,34 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        sass: {
+            dist: {
+                options: {
+                    sourcemap: true,
+                    lineNumbers: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: 'dist/styles',
+                    ext: '.css'
+                }]
+            },
+            server: {
+                options: {
+                    sourcemap: true,
+                    lineNumbers: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '.tmp/styles',
+                    ext: '.css'
+                }]
+            }
+        },
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
@@ -165,12 +197,13 @@ module.exports = function (grunt) {
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
-                relativeAssets: false
+                relativeAssets: false,
+                raw: 'sass_options = {:sourcemap => true}\n'
             },
             dist: {},
             server: {
                 options: {
-                    debugInfo: true
+                    raw: 'sass_options = {:sourcemap => true}\n'
                 }
             }
         },
@@ -306,7 +339,8 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt,yaml}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/*'
+                        'styles/fonts/*',
+                        'styles/{,*/}*.{scss,sass}'
                     ]
                 }, {
                     expand: true,
@@ -338,6 +372,8 @@ module.exports = function (grunt) {
             dist: [
                 'coffee',
                 'compass',
+                //'bower',
+                'sass',
                 'copy:styles',
                 'imagemin',
                 'svgmin',
@@ -381,13 +417,14 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
+        //'bower',
         'autoprefixer',
         'requirejs',
         'concat',
-        'cssmin',
+        //'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
+        //'rev',
         'usemin'
     ]);
 
