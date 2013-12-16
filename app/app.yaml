@@ -1,5 +1,5 @@
 application: udacity-extras
-version: cs256
+version: 1
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -13,6 +13,9 @@ handlers:
   static_dir: scripts
 
 - url: /styles
+  static_dir: styles
+
+- url: /app/styles
   static_dir: styles
 
 - url: /images
