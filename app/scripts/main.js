@@ -31,7 +31,7 @@ function iphoneScaleFix () {
 }
 
 // Add initial task to requirejs here. Should be in the 'tasks' subfolder, flexbox task is an example
-require(['app-controller', 'controllers/home-ui-controller'], function (appController, HomeUIController) {
+require(['app-controller', 'controllers/home-ui-controller', 'tasks/media_queries/media_queries'], function (appController, HomeUIController, mediaQueriesTask) {
     'use strict';
 
     iphoneScaleFix();
@@ -41,6 +41,6 @@ require(['app-controller', 'controllers/home-ui-controller'], function (appContr
     //Dirty, dirty hack
     setTimeout(function() {
         // Call initial task here
-        
+        mediaQueriesTask();
     }, 2000);
 });

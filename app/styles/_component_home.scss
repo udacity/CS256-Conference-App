@@ -156,11 +156,7 @@ $menuItemBreakPoint: 500px;
 
     
 
-    @media (min-width: $menuItemBreakPoint) {
-    	a {
-    		flex: 0 24%;
-    	}
-    }
+
 }
 
 .no-flexbox {
