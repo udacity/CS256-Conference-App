@@ -2,17 +2,9 @@
 .instructions-pane {
     display: flex;
     flex: 1;
-    background: #333333;
-    color: #ddd;
+    background: white;
     border-radius: 0px 0px 5px 0px;
     transition: all 0.4s 0.2s;
-}
-
-.visible {
-    color: #aaa;
-}
-
-.hidden {
 }
 
 .pin-left {
@@ -54,14 +46,6 @@
     }
 }
 
-section.pin-button-section {
-    display: flex;
-}
-
 div.tasks-section {
     margin: 1em;
-}
-
-.task-item {
-    background: #191919;
 }
