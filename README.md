@@ -18,3 +18,5 @@ You get the following with Grunt
 - Auto-Prefixing (i.e. display: flex; will be old and new flexbox standards AND get vendor prefixed)
 - Loads of other cool and useful stuff.... ;)
 - Check out `Gruntfile.js` in order to check it out. Not the easiest going, but useful to learn.
+
+An instance of this app is hosted, BTW, at http://udacity-conf.appspot.com/.
